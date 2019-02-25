@@ -59,6 +59,45 @@
 \input{backmatter/acronimos}
 \makeglossaries
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definicion de ecuaaciones
+%\DeclareFloatingEnvironment[
+%  fileext=myeq,
+%  listname=Formula, % English name
+%  name=\'Indice de formula, % English name
+%  placement=tbp,
+%]{formula}
+%
+%\addto\captionsbrazil{% provide translations for Portuguese
+%  \renewcommand{\formulaname}{Ecuaci\'on}%
+%  \renewcommand{\listformulaname}{\'Indice de Ecuaciones}%
+%}
+
+\DeclareFloatingEnvironment[
+  fileext=lofor,
+  listname=Formula, % English name
+  name=List of Formulas, % English name
+  placement=tbp,
+]{formula}
+
+\addto\captionsspanish{% provide translations for Portuguese
+  \renewcommand{\formulaname}{Ecuaci\'on}%
+  \renewcommand{\listformulaname}{\'Indice de Ecuaciones}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definicion de ecuaaciones
+\DeclareFloatingEnvironment[
+  fileext=loc,
+  listname=Chart, % English name
+  name=List of Charts, % English name
+  placement=tbp,
+]{chart}
+
+\addto\captionsspanish{% provide translations for Portuguese
+  \renewcommand{\chartname}{Gr\'afico}%
+  \renewcommand{\listchartname}{\'Indice de Gr\'aficos}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter
 \input{frontmatter/caratula}
