@@ -14,12 +14,42 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{bm}
 \usepackage{appendix}
-
-\parindent=0cm %Modificacion de sangria
+\usepackage{subfigure}
+\usepackage[subfigure]{tocloft}
+\usepackage{multirow} % para las tablas
+\usepackage{longtable}
+\usepackage{lipsum}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[acronym,section=section]{glossaries}
+\usepackage{fancyhdr, lastpage}
+\usepackage{afterpage}
+\usepackage{caption,newfloat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agregar una pagina en blanco
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modificacion de estilos de encabezados y pie de pagina
+\fancypagestyle{plain}{
+  \fancyhf{}% Clear header/footer
+  \fancyfoot[R]{\thepage}% Right footer
+  \renewcommand{\headrulewidth}{0.0pt}%
+}
+\pagestyle{plain}% Set page style to plain.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modificar los niveles de nuemeracion
+\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modificacion de sangria
+\parindent=0cm 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% configuracion de anexos
 \renewcommand{\appendixname}{Anexos}
 \renewcommand{\appendixtocname}{Anexos}
 \renewcommand{\appendixpagename}{Anexos}
-
 \begin{document}
 \frontmatter
 \input{frontmatter/caratula}
