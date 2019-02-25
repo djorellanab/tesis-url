@@ -40,7 +40,7 @@
 }
 \pagestyle{plain}% Set page style to plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modificar los niveles de nuemeracion
+% Modificar los niveles de nuemeracionº
 \setcounter{secnumdepth}{4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modificacion de sangria
@@ -50,6 +50,15 @@
 \renewcommand{\appendixname}{Anexos}
 \renewcommand{\appendixtocname}{Anexos}
 \renewcommand{\appendixpagename}{Anexos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glosario correspondiente
+% \gls{nombre} referenciar la palabra al glosario
+% \acrfull{NOMBRE} referenciar el acronimo 
+% \acrshort{NOMBRE} Escribir la descripcion del acronimo
+\input{backmatter/glosario}
+\input{backmatter/acronimos}
+\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter
 \input{frontmatter/caratula}
