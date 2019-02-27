@@ -24,6 +24,8 @@
 \usepackage{fancyhdr, lastpage}
 \usepackage{afterpage}
 \usepackage{caption,newfloat}
+%\usepackage{natbib}
+\usepackage{apacite}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Agregar una pagina en blanco
 \newcommand\blankpage{%
@@ -60,18 +62,6 @@
 \makeglossaries
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definicion de ecuaaciones
-%\DeclareFloatingEnvironment[
-%  fileext=myeq,
-%  listname=Formula, % English name
-%  name=\'Indice de formula, % English name
-%  placement=tbp,
-%]{formula}
-%
-%\addto\captionsbrazil{% provide translations for Portuguese
-%  \renewcommand{\formulaname}{Ecuaci\'on}%
-%  \renewcommand{\listformulaname}{\'Indice de Ecuaciones}%
-%}
-
 \DeclareFloatingEnvironment[
   fileext=lofor,
   listname=Formula, % English name
@@ -98,6 +88,10 @@
   \renewcommand{\listchartname}{\'Indice de Gr\'aficos}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Estilos de bibliografia
+%\bibliographystyle{apalike} 
+\bibliographystyle{apacite}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter
 \input{frontmatter/caratula}
@@ -113,6 +107,6 @@
 \input{mainmatter/conclusiones}
 \input{mainmatter/recomendaciones}
 \backmatter
-\input{backmatter/bibliografia}
+\bibliography{backmatter/bibliografia}
 \input{backmatter/anexo}
 \end{document}

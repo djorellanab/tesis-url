@@ -12,7 +12,7 @@ Estructura de Tesis segun los criterios de la Universidad Rafael Landivar.
 1. Debes generar el indice principal
 ```
 \tableofcontents
-``````
+```
 
 2. Generar los demas indices
 ```
@@ -31,6 +31,23 @@ Estructura de Tesis segun los criterios de la Universidad Rafael Landivar.
 \listofcharts
 \listofformulas
 ```
+### Compilacion de bibliografia
+1. pdflatex
+2. biblatex
+3. pdflatex
+
+### Citas Bibliograficas
+1. Para citar un documento debe incluirse en el archivo, backmatter/bibliografia
+```
+@type{name,
+	attributes
+}
+```
+2. Para hacer referencia a un documento
+```
+\cite{name}
+\citep{name}
+```
 
 ### Compilacion de glosario y abreviaturas
 1. Agregar el script (Orden personalizados), Make glossaries
@@ -41,6 +58,9 @@ makeglossaries %
 2. Ejecutar compilacion PDFLatex
 
 3. Ejecutar script, Make Glossaries
+```
+makeglossaries %
+```
 
 4. Ejecutar compilacion PDFLates
 
