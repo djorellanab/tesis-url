@@ -3,8 +3,8 @@
 \section{LO ESCRITO SOBRE EL TEMA}
 \section{MARCO TEÓRICO}
 \subsection{C\'AMARA CON SENSOR DE PROFUNDIDAD}
-Según el estudio, On the performance of the Intel SR300 depth camera: metrological and critical characterization \cite{carfagni2017performance}, menciona que unas de las principales funciones de las \acrfull{RGBD} es adquirir y procesar datos en \acrfull{TRESD}, estas cámaras se han utilizado en el sector industrial y académico en aplicaciones tales como: La localización y mapeo simultáneos, reconocimiento de posiciones y gestos e ingeniería inversa. \\
-Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments   \cite{carfagni2017performance}, indica que las cámaras con sensor de profundidad capturan píxeles de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
+Según el estudio, On the performance of the Intel SR300 depth camera: metrological and critical characterization \cite{carfagni2017performance}, menciona que unas de las principales funciones de las \acrfull{RGBD} es adquirir y procesar datos en \acrfull{TRESD}, estas cámaras se han utilizado en el sector industrial y académico en aplicaciones tales como: La localización y mapeo simultáneos, ingeniería inversa y reconocimiento de posiciones y gestos. \\
+Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments   \cite{henry2012rgb}, indica que las cámaras con sensor de profundidad capturan píxeles de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
 \begin{figure}[h]
 	\caption{Captura de datos de una cámara con sensor de profundidad}
 	\label{fig:RGBD}
@@ -12,5 +12,45 @@ Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for de
 	\includegraphics[]{graphics/RGB-D.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}  \\
-La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que los píxeles  blancos de la imagen de la derecha, no se puede determinar el valor de profundidad, debido que falta el análisis de distancia, angulo relativo de la superficie, material de superficie, y otras variable más que se observará en el presente trabajo.
+La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que los píxeles  blancos de la imagen de la derecha, no se puede determinar el valor de profundidad, debido que falta el análisis de distancia, angulo relativo de la superficie, material de superficie, y otras variable más que se indicará en el presente trabajo.
+\subsubsection{Dispositivos en el mercado}
+A continuación se presentará una lista de cámaras con sensor de profundidad, que se encuentra en el mercado hoy en día:
+\begin{itemize}
+	\item \textbf{ASUS XtionPro Live:} la corporación ASUSTeK Computer \cite{xtionAsus}, desarrolló una cámara con sensor de profundidad e infrarrojo, que permite detectar profundidad adaptativa, imagen en color y flujo de audio. Estas características permite capturar la imagen, el movimiento y la voz en tiempo real de un usuario. 
+	\item \textbf{Structure Sensor:} La empresa, Occipital inc \cite{structureOccipital}, implementa un sensor de estructura, que permite escanear personas, espacios, mapas y objetos en 3D. 
+	\item \textbf{Intel RealSense cameras:} Según la tecnología Intel RealSense \cite{intelRealSense}, permite detectar una alta velocidad de cuadros (píxeles), RGB de calidad y la mejor resolución de profundidad, en soluciones de realidad virtual, realidad aumentada, robótica, drones y otras aplicaciones más..
+	\item \textbf{Microsoft Kinect:} Según el estudio, Microsoft Kinect Sensor and its effect	\cite{zhang2012microsoft}, menciona que el Kinect contiene un sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
+\end{itemize}
+Tal como se observa en el listado, todas las cámaras RGB-D permite detectar características del ambiente, por lo cual a la hora de escoger una cámara RGB-D se debe tomar las siguientes especificaciones:
+\begin{itemize}
+	\item \textbf{Alcance del sensor 3D:}
+	\item \textbf{3D Resolución:}
+	\item \textbf{RGB Resolución:}
+	\item \textbf{\acrfull{FOV}:}
+	\item \textbf{\acrfull{Conexión}:}
+\end{itemize}
+
+\begin{table}[H]
+\begin{center}
+\caption{Comparación de especificaciones entre RGB-D cameras}
+\label{tab:RGBD}
+\begin{tabular}{|l|l|l|l|l|l|} 
+\hline
+\textbf{Características}                                                          & \begin{tabular}[c]{@{}l@{}}\textbf{ASUS}\\\textbf{XtionPro}\\\textbf{Live}\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\textbf{Structure}\\\textbf{Sensor}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}\textbf{Intel}\\\textbf{RealSense}\\\textbf{SR300}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}\textbf{Microsoft}\\\textbf{Kinect}\\\textbf{Live}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Microsoft}\\\textbf{Kinect}\\\textbf{v2}\end{tabular}	  \\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Alcance del}\\\textbf{ sensor 3D}\end{tabular} & 0.8 a 3.5 m                                                                               & 0.4 a 3.5m                                                                   & 0.2 a 1.5m                                                                                  & 1.8 a 3.5m                                                                                 & 1.3 a 3.5m                                                                                  \\ 
+\hline
+\textbf{3D Resolución}                                                            &\begin{tabular}[c]{@{}l@{}}640x480\\30fps\end{tabular}                   & \begin{tabular}[c]{@{}l@{}}640x480\\30fps\end{tabular}     & \begin{tabular}[c]{@{}l@{}}640x480\\60fps\end{tabular}                    &\begin{tabular}[c]{@{}l@{}}320x240\\30fps\end{tabular}					& \begin{tabular}[c]{@{}l@{}}512x424\\30fps\end{tabular}                    \\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}\textbf{RGB}\\\textbf{ Resolución}\end{tabular}        &\begin{tabular}[c]{@{}l@{}}1280x1024\\30fps\end{tabular}                   & \begin{tabular}[c]{@{}l@{}}640x480\\30fps\end{tabular}     & \begin{tabular}[c]{@{}l@{}}1920x1080\\30fps\end{tabular}                    &\begin{tabular}[c]{@{}l@{}}640x480\\30fps\end{tabular}					& \begin{tabular}[c]{@{}l@{}}1920x1080\\30fps\end{tabular}                    \\ 
+\hline
+\textbf{FOV}                                                                      & 58°H, 45°V                                                                                & 58°H, 45°V                                                                   & 73°H, 59°V                                                                                  & 57°H, 43°V                                                                                 & 70°H, 60°V                                                                                  \\ 
+\hline
+\textbf{Conexión}                                                                 & USB 2.0                                                                                   & USB 2.0                                                                      & USB 3.0                                                                                     & USB 2.0                                                                                    & USB 3.0                                                                                     \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Fuente:} Desarrollo de una aplicación interactiva con Intel RealSense \cite{molero2018desarrollo} y Evaluation of the spatial resolution accuracy of the face tracking system for kinect for windows v1 and v2 \cite{amon2014evaluation}
+\end{table}
+Hola mundo
 \section{TRABAJOS RELACIONADOS}
