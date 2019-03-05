@@ -1,7 +1,7 @@
 \section{MARCO TEÓRICO}
 \subsection{C\'AMARA CON SENSOR DE PROFUNDIDAD}
 Según el estudio, On the performance of the Intel SR300 depth camera: metrological and critical characterization \cite{carfagni2017performance}, menciona que unas de las principales funciones de las \acrfull{RGBD} es adquirir y procesar datos en \acrfull{TRESD}, estas cámaras se han utilizado en el sector industrial y académico en aplicaciones tales como: La localización y mapeo simultáneos, ingeniería inversa y reconocimiento de posiciones y gestos. \\
-Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments   \cite{henry2012rgb}, indica que las cámaras con sensor de profundidad capturan píxeles de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
+Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments   \cite{henry2012rgb}, indica que las cámaras con sensor de profundidad capturan \gls{pixeles} de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
 \begin{figure}[h]
 	\caption{Captura de datos de una cámara con sensor de profundidad}
 	\label{fig:RGBD}
@@ -18,18 +18,18 @@ A continuación se presentará una lista de cámaras con sensor de profundidad, que
 	\item \textbf{Intel RealSense cameras:} Según la tecnología Intel RealSense \cite{intelRealSense}, permite detectar una alta velocidad de cuadros (píxeles), RGB de calidad y la mejor resolución de profundidad, en soluciones de realidad virtual, realidad aumentada, robótica, drones y otras aplicaciones más..
 	\item \textbf{Microsoft Kinect:} Según el estudio, Microsoft Kinect Sensor and its effect	\cite{zhang2012microsoft}, menciona que el Kinect contiene un sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
 \end{itemize}
-Tal como se observa en el listado, todas las cámaras RGB-D permite detectar características del ambiente, por lo cual a la hora de escoger una cámara RGB-D se debe tomar las siguientes especificaciones:
+Tal como se observa en el listado, todas las cámaras de RGB-D permite detectar características del ambiente, por lo cual a la hora de escoger una cámara se debe tomar en cuenta las siguientes especificaciones:
 \begin{itemize}
-	\item \textbf{Alcance del sensor 3D:}
-	\item \textbf{3D Resolución:}
-	\item \textbf{RGB Resolución:}
-	\item \textbf{\acrfull{FOV}:}
-	\item \textbf{Conexión:}
+	\item \textbf{Alcance del sensor 3D:} Según el artículo científico, Kinect depth sensor evaluation for computer vision applications \cite{andersen2012kinect}, menciona que el alcance del sensor 3D es la medida máxima de profundidad (z) desde un objeto hasta el sensor de profundidad.
+	\item \textbf{3D Resolución:} Hace referencia a la cantidad de píxeles de la imagen que se obtiene del sensor de \gls{infrarrojo}.
+	\item \textbf{RGB Resolución:} Hace referencia a la cantidad de píxeles de colores de una imagen.
+	\item \textbf{\acrfull{FOV}:} Hace referencia al ángulo máximo que puede detectar la cámara, respecto a la horizontal(x) y la vertical (y).
+	\item \textbf{Conexión:} Hace referencia al puerto de entrada y salida de la cámara.
 \end{itemize}
-
+A continuación se presentará una comparación de especificaciones entre las cámaras de RGB-D, mencionadas anteriormente:
 \begin{table}[H]
 \begin{center}
-\caption{Comparación de especificaciones entre RGB-D cameras}
+\caption{Comparación de especificaciones entre cámaras de RGB-D }
 \label{tab:RGBD}
 \begin{tabular}{|l|l|l|l|l|l|} 
 \hline
@@ -49,3 +49,4 @@ Tal como se observa en el listado, todas las cámaras RGB-D permite detectar cara
 \end{center}
 \textbf{Fuente:} Desarrollo de una aplicación interactiva con Intel RealSense \cite{molero2018desarrollo} y Evaluation of the spatial resolution accuracy of the face tracking system for kinect for windows v1 and v2 \cite{amon2014evaluation}
 \end{table}
+En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras, Intel RealSense SR300 y Microsoft Kinect V2, destacan de las demás cámaras debido  que tiene una mayor resolución del sensor RGB y un campo de visión más amplio, por lo cual para el presente proyecto se seleccionará la cámara Microsoft Kinect V2. 
