@@ -3,7 +3,7 @@
 Según el estudio, On the performance of the Intel SR300 depth camera: metrological and critical characterization \cite{carfagni2017performance}, menciona que unas de las principales funciones de las \acrfull{RGBD} es adquirir y procesar datos en \acrfull{TRESD}, estas cámaras se han utilizado en el sector industrial y académico en aplicaciones tales como: La localización y mapeo simultáneos, ingeniería inversa y reconocimiento de posiciones y gestos.
 \medbreak
 Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments \cite{henry2012rgb}, indica que las cámaras con sensor de profundidad capturan \gls{pixeles} de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{Captura de datos de una cámara con sensor de profundidad}
 	\label{fig:RGBD}
 	\centering
@@ -20,17 +20,18 @@ A continuación se presentará una lista de cámaras con sensor de profundidad, que
 	\item \textbf{Microsoft Kinect:} Según el estudio, Microsoft Kinect Sensor and its effect	\cite{zhang2012microsoft}, menciona que el Kinect contiene un sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
 \end{itemize}
 Tal como se observa en el listado, todas las cámaras con RGB-D, permite detectar características del ambiente, sin embargo se puede diferenciar con las siguientes especificaciones:
-\begin{figure}[H]
+\begin{figure}[ht]
 	\caption{Especificaciones de una c\'amara con RGB-D}
 	\label{fig:RGBESP}
 	\centering
 	\includegraphics[width=300px,height=300px]{graphics/RGBFeatures.png} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
-En la figura \ref{fig:RGBESP}, se muestra una vista general de las características de una cámara con RGB-D, entre ellas se puede observar el alcance máximo de profundidad (Alcance del sensor 3D). Así mismo se encuentra el \acrfull{FOV}, cuya finalidad es determinar el ángulo máximo de la cámara, respecto a los ejes: horizontal(H), vertical (V) y profundidad (D). Por otra parte, se encuentra la conexión de la cámara al dispositivo, cuya función es capturar los datos de entradas y salidas, como por ejemplo: la Resolución de colores e infrarrojo (Tal como se observa en la figura \ref{fig:RGBD})
+\medbreak
+En la figura \ref{fig:RGBESP}, se muestra una vista general de las características de una cámara con RGB-D, entre ellas se puede observar el alcance máximo de profundidad (Alcance del sensor 3D). Así mismo se encuentra el \acrfull{FOV}, cuya finalidad es determinar el ángulo máximo de la cámara, respecto a los ejes: horizontal(H), vertical (V) y profundidad (D). Por otra parte, se encuentra la conexión de la cámara al dispositivo, cuya función es capturar los datos de entradas y salidas, como por ejemplo: la Resolución de colores e infrarrojo (Tal como se observa en la figura \ref{fig:RGBD}).
 \medbreak
 A continuación se presentará una comparación de las especificaciones entre las cámaras de RGB-D, mencionadas anteriormente:
-\begin{table}[H]
+\begin{table}[ht]
 \begin{center}
 \caption{Comparación de especificaciones entre cámaras de RGB-D }
 \label{tab:RGBD}
@@ -52,16 +53,29 @@ A continuación se presentará una comparación de las especificaciones entre las c
 \end{center}
 \textbf{Fuente:} Desarrollo de una aplicación interactiva con Intel RealSense \cite{molero2018desarrollo} y Evaluation of the spatial resolution accuracy of the face tracking system for kinect for windows v1 and v2 \cite{amon2014evaluation}
 \end{table}
+\medbreak
 En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras, Intel RealSense SR300 y Microsoft Kinect V2, destacan de las demás cámaras debido  que tiene una mayor resolución del sensor RGB y un campo de visión más amplio, por lo cual para el presente proyecto se seleccionará la cámara Microsoft Kinect V2. 
 \subsubsection{Microsoft Kinect V2}
-Según el libro, Kinect for Windows SDK Programming Guide \cite{jana2012kinect}, menciona que el dispositivo Kinect se desarrolló para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo, a partir de movimientos, gestos y sonidos, esto permitió crear la idea de tecnologías con control de manos libres.
+Según el libro, Kinect for Windows SDK Programming Guide \cite{jana2012kinect}, menciona que el dispositivo Kinect se realizó para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo, a partir de movimientos, gestos y sonidos (Tecnología con control de manos libres).
 \medbreak
 Por otra parte el autor, \citeA{jana2012kinect}, menciona que Microsoft desarrolló un \acrfull{SDK} para distintos lenguajes de programación, sin embargo, antes de empezar a codificar, es importante conocer la arquitectura del Kinect.
-\paragraph{Componentes}
-\begin{figure}[H]
+\paragraph{Componentes}\mbox{} \\
+\begin{figure}[ht]
 	\caption{Componentes del Kinect V2}
 	\label{fig:COMPKINECT}
 	\centering
-	\includegraphics[width=500px,height=200px]{graphics/kinect-parts.PNG} \\
+	\includegraphics[width=400px,height=200px]{graphics/kinect-parts.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
+\medbreak
+En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enlista el autor \citeA{jana2012kinect}, entre ellas se puede observar la cámara a color cuya función es capturar y transmitir los datos de vídeo en color, así mismo se encuentra el sensor de profundidad conformado por el emisor de infrarrojo, que se encarga de escanear el ambiente constantemente  y convertirlo en información a partir del sensor de profundidad infrarroja (Identificando así los objetos), también el Kinect puede rotar la imagen a partir de un pequeño motor que conecta la base y el cuerpo. Por otro lado la matriz de micrófonos permite capturar e identificar la dirección del sonido en el ambiente. Finalmente, se encuentra el  \acrfull{LED}, cuya tarea es identificar si los controladores del Kinect (IR, Seguimiento de objetos, RGB y sonido) están funcionando correctamente a partir de una luz blanca.
+\paragraph{Conexión a la computadora}\mbox{} \\
+\begin{figure}[ht]
+	\caption{Adaptador del Kinect V2}
+	\label{fig:ADAPTERKINECT}
+	\centering
+	\includegraphics[width=400px,height=200px]{graphics/adapter-kinect.jpg} \\
+	\textbf{Fuente:} \citeA{Kinectmanual}
+\end{figure}
+\medbreak
+Tal como se observa en la figura \ref{fig:ADAPTERKINECT}, el cable de conexión esta conformado por 5 partes: (1) el cable de datos del Kinect que se encarga de recibir los datos de entradas y salidas del sensor, así mismo esta (2) al adaptador del Kinect, que permite administrar los datos de entradas y salidas de la computadora y el sensor, a partir del (3) cable de USB 3. Cabe mencionar que dicho adaptador funciona con  un voltaje de 12 voltios y una corriente de 3 amperios que son administrado de una (4-5) fuente de alimentación  que regula una entrada de 100 a 240 voltios y una corriente de 1.6 amperios.
