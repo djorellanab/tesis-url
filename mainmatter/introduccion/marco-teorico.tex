@@ -79,3 +79,60 @@ En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enl
 \end{figure}
 \medbreak
 Tal como se observa en la figura \ref{fig:ADAPTERKINECT}, el cable de conexión esta conformado por 5 partes: (1) el cable de datos del Kinect que se encarga de recibir los datos de entradas y salidas del sensor, así mismo esta (2) al adaptador del Kinect, que permite administrar los datos de entradas y salidas de la computadora y el sensor, a partir del (3) cable de USB 3. Cabe mencionar que dicho adaptador funciona con  un voltaje de 12 voltios y una corriente de 3 amperios que son administrado de una (4-5) fuente de alimentación  que regula una entrada de 100 a 240 voltios y una corriente de 1.6 amperios.
+\paragraph{Kit de desarrollo de Software (SDK)}\mbox{} \\
+Para el presente proyecto, se utilizará el SDK de la empresa  \citeA{SDKKinect}, que permite crear aplicaciones de reconocimientos de gestos y de voz con el sensor Kinect.
+\subparagraph{Kinect v2 configuration verifier}\mbox{} \\
+Dicha aplicación verifica y analiza el dispositivo que se encuentra conectado al sensor Kinect, tomando en cuenta las compatibilidades del hardware y la comunicación del dispositivo al sensor:
+\begin{figure}[ht]
+	\caption{Kinect v2 configuration verifier}
+	\label{fig:KinectConfigurationVerifier}
+	\centering
+	\includegraphics[width=360px,height=360px]{graphics/kinect-configuration-verifier.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure}
+\medbreak
+En la figura \ref{fig:ADAPTERKINECT}, se observa las siguientes validaciones:
+\begin{itemize}
+	\item \textbf{Update Configuration Definitions:} Verifica que tenga la última versión del SDK (2.0.1410.19000).
+		\item \textbf{Operating System:} Verifica si el sistema operativo es compatible (Windows 8 o superior).
+		\item \textbf{Processor Cores:} Detecta si el procesador tiene los suficientes números de core (Procesador rápido, como por ejemplo Intel 5).
+		\item \textbf{Physical Memory (RAM):} Chequea si el dispositivo tiene la suficiente memoria (Mínimo 4GB de RAM).
+		\item \textbf{Graphics Processor:} Verifica si el procesador gráfico es compatible con el SDK. (Directx 11).
+		\item \textbf{USB Controller:} Verifica si el dispositivo reconoce el puerto de entrada (USB 3).	
+		\item \textbf{Kinect Connected:} Detecta si el Sensor Kinect se encuentra conectado con el dispositivo.
+		\item \textbf{Verify Kinect Software Installed:} Verifica las unidades (Drives) del sistema y el sensor (Sonido y cámara).
+		\item \textbf{Verify Kinect Depth and Color Streams:} Verifica los sensores de profundidad y de color (RGB e IR).
+\end{itemize}
+\subparagraph{Kinect Studio}\mbox{} \\
+Según el libro, Beginning Microsoft Kinect for Windows SDK 2.0: Motion and Depth Sensing for Natural User Interfaces \cite{rahman2017beginning}, menciona que Kinect Studio es una aplicación incluida en el SDK, que permite capturar y reproducir datos de kinect en formato de vídeo.\\
+En dicha aplicación se observa la pestaña del monitor, encargada de transmitir los siguientes datos de análisis:
+\begin{itemize}
+	\item \textbf{Monitor NUI Body Frame:} Transmisión que contiene un espacio de almacenamiento para trabajar los datos de articulaciones del cuerpo.
+	\item \textbf{Monitor NUI Body Index:} Transmisión que se encarga de clasificar y determinar los píxeles de cada objeto.
+	\item \textbf{Monitor NUI Depth:} Transmisión que se encarga de trabajar los datos de profundidad (Eje Z).
+	\item \textbf{Monitor NUI IR:} Transmisión que trabaja con una imagen infrarroja a partir de la técnica de \gls{TOF}.
+	\item \textbf{Monitor NUI Title Audio:} Transmisión que suministra el audio capturado en todas las direcciones.
+	\item \textbf{Monitor NUI uncompressed color:} Transmisión encargada de proporcionar los datos de la imagen a color.	
+\end{itemize}
+Así mismo, se encuentra la pestaña para grabar vídeo en formato, \acrfull{XEF},  cabe mencionar que dicho formato genera vídeo de gran tamaño debido a la cantidad de datos que son capturados, por lo cual se recomienda realizar varias repeticiones del movimiento en el menor tiempo posible y de igual manera capturar los siguientes datos, para el análisis del movimiento:
+\medbreak
+\begin{figure}[H]
+	\caption{Diagrama de Venn para identificar la transmisión de datos del Kinect}
+	\label{fig:VennStreaming}
+	\centering
+	\includegraphics[width=250px,height=250px]{graphics/venn-streaming.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+\medbreak
+En la figura \ref{fig:VennStreaming}, se puede concluir que la transmisión, body frame, trabaja independiente y para la identificación de los objetos son necesario las transmisiones: IR, Deep y Body Frame.
+\medbreak
+Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción, así mismo puede indicar el número de repeticiones de la interacción, además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información extra en un punto específico del vídeo.
+\begin{landscape}
+ \begin{figure}[ht]
+	\caption{Visualización del vídeo, Kinect Studio}
+	\label{fig:PlayKinectStudio}
+	\centering
+	\includegraphics[width=660px,height=360px]{graphics/play-kinectstudio.png} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure}
+\end{landscape} 
