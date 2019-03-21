@@ -126,7 +126,7 @@ Así mismo, se encuentra la pestaña para grabar vídeo en formato, \acrfull{XEF}, 
 \medbreak
 En la figura \ref{fig:VennStreaming}, se puede concluir que la transmisión, body frame, trabaja independiente y para la identificación de los objetos son necesario las transmisiones: IR, Deep y Body Frame.
 \medbreak
-Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción, así mismo puede indicar el número de repeticiones de la interacción, además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información extra en un punto específico del vídeo.
+Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo tomado por el Kinect Studio, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción, así mismo puede indicar el número de repeticiones de la interacción, además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información adicional en un punto específico del vídeo.
 \begin{landscape}
  \begin{figure}[ht]
 	\caption{Visualización del vídeo, Kinect Studio}
@@ -136,3 +136,53 @@ Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de u
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \end{landscape} 
+\subparagraph{Visual Gesture Builder}\mbox{} \\
+Según el autor, \citeA{rahman2017beginning}, menciona que la aplicación, \acrfull{VGB}, es una herramienta de aprendizaje automático (i.e. Machine learning), que permite crear una base de datos para reconocer gestos en tiempo de ejecución, cabe mencionar que la herramienta utiliza dos algoritmos para la detección de objetos, \acrfull{RFR} para modelos continuos, y \acrfull{AdaBoost} para modelos discretos. Así mismo, los algoritmos analiza las siguientes variables en función del tiempo:
+\begin{itemize}
+	\item Diferencia de posiciones.
+	\item Ángulos de articulaciones y de movimientos.
+	\item Velocidad de desplazamiento y angular.
+	\item Aceleración de desplazamiento y angular.	
+	\item Fuerza muscular
+	\item Torque muscular
+\end{itemize}
+Por lo que se refiere al modelo AdaBoost el autor,  \citeA{AdaBoosting2018}, explica la técnica de Boosting, cuya funcionalidad es mejorar las predicciones del modelo, a partir de un número de entrenamientos secuenciales, tal como se observa la siguiente figura:
+\begin{figure}[H]
+	\caption{Técnica Boosting}
+	\label{fig:AdaBoost}
+	\centering
+	\includegraphics[width=400px,height=200px]{graphics/AdaBoosting.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+\medbreak
+En la figura \ref{fig:AdaBoost}, se observa que en el entrenamiento \# 1,  los datos de entradas se encuentra muy dispersos, por lo tanto, cada dato de entrada se  debe entrenar a partir de un algoritmo de aprendizaje, que permitirá transformar una nueva función, tal como se observa el entrenamiento \# 2, los datos de entradas están más cercano. Cabe mencionar que se debe establecer los números de entrenamientos y el algoritmo de aprendizaje que utilizará por cada entrenamiento, siguiendo con el ejemplo de la figura \ref{fig:AdaBoost}, tiene un total de 2 entrenamientos, y cada entrenamiento consta de operar el dato de entrada por su respectiva regresión lineal y una constante.
+\medbreak
+Cabe mencionar que el modelo discreto, es recomendable utilizarlo para identificar movimientos estáticos (e.g. Identificar si la persona se encuentra sentada, arrodillada, entre otros movimientos más...), por lo que el software, VGB, permite analizar el vídeo (.xef) y posteriormente etiquetar los momentos que se encuentra realizando dicho movimientos estáticos:
+\begin{figure}[H]
+	\caption{Etiquetas de movimientos estático}
+	\label{fig:modeloDiscreto}
+	\centering
+	\includegraphics[width=400px,height=350px]{graphics/modelo-discreto.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+\medbreak
+En la figura \ref{fig:modeloDiscreto}, se puede observar que en el panel de control puede etiquetar los valores: positivos (Barra azul arriba) y negativos (Barra azul abajo), así mismo se observa el movimiento estático, Manos abajo, que consta en identificar que ambas manos y brazos estén tocando la parte dorsal del cuerpo (i.e. Figura \ref{fig:modeloDiscreto}.B), en caso que este realizando otro movimiento, el valor de la etiqueta será falso (i.e.  Figura \ref{fig:modeloDiscreto}.C).
+\medbreak
+Por lo que se refiere al modelo Random Forest Regression, la autora, \citeA{RandomForestRegression2018}, menciona que este modelo realiza varios conjuntos de técnicas, entre ellas se encuentra las técnicas de regresiones, árboles de decisiones y una técnica llamada, Boostrap Aggregation, que consta en entrenar cada árbol de decisión, a partir de las variables de análisis, tal como se observa en la figura \ref{fig:RandomForestRegression}:
+\begin{figure}[H]
+	\caption{Técnica Random Forest Regression}
+	\label{fig:RandomForestRegression}
+	\centering
+	\includegraphics[width=400px,height=200px]{graphics/random-forest-regression.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+\medbreak
+Finalmente, el modelo continuo es recomendable utilizarlo para identificar movimientos dinámicos (e.g. Sentadillas, abdominales, saltos, entre otros movimientos más...), tal como se observa en la siguiente figura:
+\begin{figure}[H]
+	\caption{Etiquetas de movimientos dinámicos}
+	\label{fig:modeloContinuo}
+	\centering
+	\includegraphics[width=400px,height=350px]{graphics/modelo-continuo.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+En la figura \ref{fig:modeloContinuo}, se esta analizando el movimiento de vuelo, la cual se conforma de tres movimientos estáticos: Brazos abajos (i.e. Figura \ref{fig:modeloContinuo}.B), brazos al medio (i.e. Figura \ref{fig:modeloContinuo}.C)  y brazos arriba (i.e. Figura \ref{fig:modeloContinuo}.D),  por lo tanto para analizar y detectar el movimiento dinámico, se etiqueta con un valor decimal a cada movimiento estático, tal como se observa en la figura, el primer paso del movimiento dinámico esta entre el valor de 0.00 a 0.33. 
