@@ -1,26 +1,26 @@
 \section{MARCO TEÓRICO}
 \subsection{C\'AMARA CON SENSOR DE PROFUNDIDAD}
-Según el estudio, On the performance of the Intel SR300 depth camera: metrological and critical characterization \cite{carfagni2017performance}, menciona que unas de las principales funciones de las \acrfull{RGBD} es adquirir y procesar datos en \acrfull{TRESD}, estas cámaras se han utilizado en el sector industrial y académico en aplicaciones tales como: La localización y mapeo simultáneos, ingeniería inversa y reconocimiento de posiciones y gestos.
+Los autores, \citeA{carfagni2017performance}, realizaron un estudio del rendimiento de la  cámara, Intel SR300, en dicho estudio  señalan las principales funciones de las \acrfull{RGBD}, entre ellas se puede mencionar la adquisición y procesamientos de datos en \acrfull{TRESD}, cabe mencionar que estas cámaras se han utilizado en el sector industrial y académico (e.g. Reconocimiento de posiciones, gestos y objetos).
 \medbreak
-Por otro lado el estudio, RGB-D mapping: Using Kinect-style depth cameras for dense 3D modeling of indoor environments \cite{henry2012rgb}, indica que las cámaras con sensor de profundidad capturan \gls{pixeles} de información de imágenes (RGB) y de profundidad, tal como se muestra en la siguiente figura:
-\begin{figure}[ht]
-	\caption{Captura de datos de una cámara con sensor de profundidad}
+Por otro lado los autores, \citeA{henry2012rgb}, investigaron las variables necesarias para realizar un mapeo del ambiente (i.e. RGB-D mapping), cabe mencionar que las variables son analizado por medio de \gls{pixeles} de información de imágenes a color y de profundidad, tal como se muestra en la siguiente figura:
+\begin{figure}[H]
+	\caption{Captura de datos de una c\'mara con sensor de profundidad}
 	\label{fig:RGBD}
 	\centering
 	\includegraphics[]{graphics/RGB-D.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
-\end{figure}  \\
-La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que los píxeles blancos de la imagen de la derecha, puede determinar variables de profundidad de un objeto tales como: distancia, mapeo, seguimiento (Tracking), sonido, entre otras variables más...
+\end{figure}
+La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que de lado izquierdo se tiene una vista a color, mientras que del lado derecho se tiene una vista de escala de grises (i.e. Datos de profundidad), por lo tanto en ambas imágenes se puede capturar distintas variables de análisis (e.g. Distancia, seguimiento, color, entre otras variables más...).
 \subsubsection{Dispositivos en el mercado}
 A continuación se presentará una lista de cámaras con sensor de profundidad, que se encuentra en el mercado hoy en día:
 \begin{itemize}
-	\item \textbf{ASUS XtionPro Live:} la corporación ASUSTeK Computer \cite{xtionAsus}, desarrolló una cámara con sensor de profundidad e infrarrojo, que permite detectar profundidad adaptativa, imagen en color y flujo de audio. Estas características permite capturar la imagen, el movimiento y la voz en tiempo real de un usuario. 
-	\item \textbf{Structure Sensor:} La empresa, Occipital inc \cite{structureOccipital}, implementa un sensor de estructura, que permite escanear personas, espacios, mapas y objetos en 3D. 
-	\item \textbf{Intel RealSense cameras:} Según la tecnología Intel RealSense \cite{intelRealSense}, permite detectar una alta velocidad de cuadros (píxeles), RGB de calidad y la mejor resolución de profundidad, en soluciones de realidad virtual, realidad aumentada, robótica, drones y otras aplicaciones más..
-	\item \textbf{Microsoft Kinect:} Según el estudio, Microsoft Kinect Sensor and its effect	\cite{zhang2012microsoft}, menciona que el Kinect contiene un sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
+	\item \textbf{ASUS XtionPro Live:} la corporación, 	 ASUSTeK Computer \cite{xtionAsus}, desarrolló una cámara con sensor de profundidad e infrarrojo, que permite detectar profundidad adaptativa, imagen a color y flujo de audio.
+	\item \textbf{Structure Sensor:} La empresa, Occipital inc \cite{structureOccipital}, implementó un sensor de estructura, que permite escanear las personas, los espacios y los objetos en 3D. 
+	\item \textbf{Intel RealSense cameras:} La empresa \citeA{intelRealSense}, desarrolló un producto de cámaras (i.e. Intel RealSense) que permite detectar una alta velocidad de cuadros (i.e. Frames por segundo), RGB de calidad y una resolución de profundidad, cabe mencionar que estas cámaras se han utilizado en soluciones innovadoras (e.g. Róbotica, drones, realidad virtual, entre otras aplicaciones más).
+	\item \textbf{Microsoft Kinect:} El autor	\citeA{zhang2012microsoft}, realizó un análisis de los componentes del Kinect, entre ellos se encuentra el sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
 \end{itemize}
-Tal como se observa en el listado, todas las cámaras con RGB-D, permite detectar características del ambiente, sin embargo se puede diferenciar con las siguientes especificaciones:
-\begin{figure}[ht]
+Tal como se observa en el listado, todas las cámaras con RGB-D tiene características similares que permite detectar elementos en el ambiente, sin embargo a la hora de escoger una cámara se debe tomar en cuenta las siguientes especificaciones:
+\begin{figure}[H]
 	\caption{Especificaciones de una c\'amara con RGB-D}
 	\label{fig:RGBESP}
 	\centering
@@ -28,10 +28,10 @@ Tal como se observa en el listado, todas las cámaras con RGB-D, permite detectar
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \medbreak
-En la figura \ref{fig:RGBESP}, se muestra una vista general de las características de una cámara con RGB-D, entre ellas se puede observar el alcance máximo de profundidad (Alcance del sensor 3D). Así mismo se encuentra el \acrfull{FOV}, cuya finalidad es determinar el ángulo máximo de la cámara, respecto a los ejes: horizontal(H), vertical (V) y profundidad (D). Por otra parte, se encuentra la conexión de la cámara al dispositivo, cuya función es capturar los datos de entradas y salidas, como por ejemplo: la Resolución de colores e infrarrojo (Tal como se observa en la figura \ref{fig:RGBD}).
+En la figura \ref{fig:RGBESP}, se muestra una vista general de las características de una cámara con RGB-D, entre ellas se puede observar el alcance máximo de profundidad (i.e. Alcance del sensor 3D). Así mismo se encuentra el \acrfull{FOV}, cuya finalidad es determinar el ángulo máximo de visión, respecto a los ejes: horizontal(H), vertical (V) y profundidad (D). Por otra parte, se encuentra la conexión de la cámara al dispositivo, cuya función es capturar los datos de entradas y salidas, como por ejemplo: la Resolución de colores e infrarrojo (Tal como se observa en la figura \ref{fig:RGBD}).
 \medbreak
 A continuación se presentará una comparación de las especificaciones entre las cámaras de RGB-D, mencionadas anteriormente:
-\begin{table}[ht]
+\begin{table}[H]
 \begin{center}
 \caption{Comparación de especificaciones entre cámaras de RGB-D }
 \label{tab:RGBD}
@@ -54,13 +54,13 @@ A continuación se presentará una comparación de las especificaciones entre las c
 \textbf{Fuente:} Desarrollo de una aplicación interactiva con Intel RealSense \cite{molero2018desarrollo} y Evaluation of the spatial resolution accuracy of the face tracking system for kinect for windows v1 and v2 \cite{amon2014evaluation}
 \end{table}
 \medbreak
-En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras, Intel RealSense SR300 y Microsoft Kinect V2, destacan de las demás cámaras debido  que tiene una mayor resolución del sensor RGB y un campo de visión más amplio, por lo cual para el presente proyecto se seleccionará la cámara Microsoft Kinect V2. 
+En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras: Intel RealSense SR300 y Microsoft Kinect V2, destacan de las demás cámaras, debido  que tiene una mayor resolución del sensor RGB y un campo de visión más amplio, por lo cual para el presente proyecto se seleccionará la cámara Microsoft Kinect V2. 
 \subsubsection{Microsoft Kinect V2}
-Según el libro, Kinect for Windows SDK Programming Guide \cite{jana2012kinect}, menciona que el dispositivo Kinect se realizó para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo, a partir de movimientos, gestos y sonidos (Tecnología con control de manos libres).
+En la guía de programación de Kinect para Windows SDK \cite{jana2012kinect}, da a conocer característica del sensor Kinect, entre ellas se puede mencionar que el sensor Kinect se desarrolló para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo a partir de movimientos, gestos y sonidos (i. e. Tecnología con control de manos libres).
 \medbreak
-Por otra parte el autor, \citeA{jana2012kinect}, menciona que Microsoft desarrolló un \acrfull{SDK} para distintos lenguajes de programación, sin embargo, antes de empezar a codificar, es importante conocer la arquitectura del Kinect.
+Por otra parte el autor, \citeA{jana2012kinect}, habla sobre el \acrfull{SDK}, cabe mencionar que dicho kit esta desarrollado para distintos lenguajes de programación (e.g. C++, c\#, Python), sin embargo, para entender el funcionamiento del SDK se debe conocer la arquitectura del Kinect.
 \paragraph{Componentes}\mbox{} \\
-\begin{figure}[ht]
+\begin{figure}[H]
 	\caption{Componentes del Kinect V2}
 	\label{fig:COMPKINECT}
 	\centering
@@ -68,9 +68,9 @@ Por otra parte el autor, \citeA{jana2012kinect}, menciona que Microsoft desarrol
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \medbreak
-En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enlista el autor \citeA{jana2012kinect}, entre ellas se puede observar la cámara a color cuya función es capturar y transmitir los datos de vídeo en color, así mismo se encuentra el sensor de profundidad conformado por el emisor de infrarrojo, que se encarga de escanear el ambiente constantemente  y convertirlo en información a partir del sensor de profundidad infrarroja (Identificando así los objetos), también el Kinect puede rotar la imagen a partir de un pequeño motor que conecta la base y el cuerpo. Por otro lado la matriz de micrófonos permite capturar e identificar la dirección del sonido en el ambiente. Finalmente, se encuentra el  \acrfull{LED}, cuya tarea es identificar si los controladores del Kinect (IR, Seguimiento de objetos, RGB y sonido) están funcionando correctamente a partir de una luz blanca.
+En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enlista el autor \citeA{jana2012kinect}, entre ellas se puede observar la cámara a color cuya función es capturar y transmitir los datos de vídeo en color, así mismo se encuentra el sensor de profundidad conformado por el emisor de infrarrojo, que se encarga de escanear el ambiente constantemente  y convertirlo en información a partir del sensor de profundidad infrarroja (i.e. Identificación de objetos), cabe mencionar que la cámara puede rotar la imagen a partir de un pequeño motor que conecta la base y el cuerpo. Por otro lado, la matriz de micrófonos permite capturar e identificar la dirección del sonido en el ambiente. Finalmente, se encuentra el  \acrfull{LED}, cuya tarea es identificar si los controladores del Kinect (e.g. IR, Seguimiento de objetos, RGB y sonido) están funcionando correctamente a partir de una luz blanca.
 \paragraph{Conexión a la computadora}\mbox{} \\
-\begin{figure}[ht]
+\begin{figure}[H]
 	\caption{Adaptador del Kinect V2}
 	\label{fig:ADAPTERKINECT}
 	\centering
@@ -80,10 +80,41 @@ En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enl
 \medbreak
 Tal como se observa en la figura \ref{fig:ADAPTERKINECT}, el cable de conexión esta conformado por 5 partes: (1) el cable de datos del Kinect que se encarga de recibir los datos de entradas y salidas del sensor, así mismo esta (2) al adaptador del Kinect, que permite administrar los datos de entradas y salidas de la computadora y el sensor, a partir del (3) cable de USB 3. Cabe mencionar que dicho adaptador funciona con  un voltaje de 12 voltios y una corriente de 3 amperios que son administrado de una (4-5) fuente de alimentación  que regula una entrada de 100 a 240 voltios y una corriente de 1.6 amperios.
 \paragraph{Kit de desarrollo de Software (SDK)}\mbox{} \\
-Para el presente proyecto, se utilizará el SDK de la empresa  \citeA{SDKKinect}, que permite crear aplicaciones de reconocimientos de gestos y de voz con el sensor Kinect.
-\subparagraph{Kinect v2 configuration verifier}\mbox{} \\
+Para el presente proyecto se utilizará el SDK de la empresa  \citeA{SDKKinect}, este SDK permite crear aplicaciones de reconocimientos de gestos y de voz con el sensor Kinect.
+Cabe mencionar que para realizar estas aplicaciones, es necesario entender la interacción del software y del hardware:
+\begin{figure}[H]
+	\caption{Interacción del software y hardware}
+	\label{fig:interaccionKinect}
+	\centering
+	\includegraphics[width=400px,height=210px]{graphics/interacionKinect.png} \\
+	\textbf{Fuente:} Realizado por el autor de tesis
+\end{figure}
+En la figura \ref{fig:interaccionKinect}, se puede observar que el sensor kinect maneja 3 transmisiones de datos de salida:
+\begin{itemize}
+	\item \textbf{Datos de la imagen a color:} Según el estudio de los códigos de fuentes del SDK del Kinect \cite{hernandez2013analisis}, mencionan que los datos de imagen a color trabajan con un nivel de calidad que determina la velocidad en que los datos son transferidos (i.e. Frames por segundos), por otro lado permite conocer el formato en que se esta enviando dicha información: RGB (i.e. Mapa de bits a color de 32 bits) o YUV (i.e. Mapa de bits a color de 16 bits con corrección de transparencia de imagen).
+	\item \textbf{Datos de cámara de profundidad:} Los autores, \citeA{hernandez2013analisis}, mencionan que dicha transmisión esta conformada por el sensor de profundidad, cuya tarea es almacenar una escala de grises de todo el campo visible en un conjuto de píxeles que representa una distancia de cercanía con la cámara (i.e. Base, altura y profundidad), cabe mencionar que la información es almacenado en 2 Bytes, la cual un Byte corresponde al emisor de IR y el otro Byte corresponde al sensor de profundidad IR.
+	\item \textbf{Datos del sonido:} Según el libro de detección de movimiento y profundidad para NUI \cite{rahman2017beginning}, habla sobre la transmisión de sonido, dicha transmición captura el sonido en un rango máximo de 180 grados, así mismo la información es almacenada en un vector de Byte (e.g. WAVEFORMAT, estructura básica de 16 Bytes).
+\end{itemize}
+Cabe mencionar que todas las transmisiones  interactúan a través del recurso, NUI, dicho recurso esta compuesto por los siguientes elementos:
+\begin{figure}[H]
+	\caption{Arquitectura del Software, Kinect-NUI}
+	\label{fig:architecturesSoftwareKinect}
+	\centering
+	\includegraphics[width=390px,height=300px]{graphics/kinect-software-architecture.PNG} \\
+	\textbf{Fuente:} \cite[p.~14]{giori2013kinect}
+\end{figure}
+En el Libro, Kinect en  movimiento \cite{giori2013kinect}, dar a conocer los elementos que trabajan en el NUI (i.e. figura \ref{fig:interaccionKinect}):
+\begin{enumerate}[1.]
+    \item \textbf{Kinect Sensor:} Elemento que administra la conexión y los componentes del hardware.
+    \item \textbf{Kinect Drivers:} Elemento que administra los drivers necesarios para el funcionamiento del Kinect (e.g. Audio, Arreglos de audio, cámaras, dispositivos y seguridad), cabe mencionar que dichos driver son accesible en el directorio:  \%Windows\%/System32/DriverStore/FileRepository, dentro de la carpeta "kinectsensor.inf".
+    \item \textbf{NUI API:} Elemento que administra los componentes de SDK (i.e. Rastreo de esqueleto, audio, imagen de profundidad y de color), cabe mencionar que dichos componentes son accesible en el directorio: \%Archivos de programa\%/Microsoft SDKs/Kinect
+    \item \textbf{DirectX Media Object (DMO):} Elementos que administra el funcionamiento de la matriz de audio (e.g. Identificar y analizar el origen de la fuente del audio).
+    \item \textbf{Windows Standar API:} Elementos que administra los componentes complementarios del funcionamiento del sensor (e.g. Microsoft.speech, System.media, etc...).
+\end{enumerate}
+\subparagraph{Kinect v2 configuration verifier
+}\mbox{} \\
 Dicha aplicación verifica y analiza el dispositivo que se encuentra conectado al sensor Kinect, tomando en cuenta las compatibilidades del hardware y la comunicación del dispositivo al sensor:
-\begin{figure}[ht]
+\begin{figure}[H]
 	\caption{Kinect v2 configuration verifier}
 	\label{fig:KinectConfigurationVerifier}
 	\centering
@@ -93,42 +124,41 @@ Dicha aplicación verifica y analiza el dispositivo que se encuentra conectado al
 \medbreak
 En la figura \ref{fig:ADAPTERKINECT}, se observa las siguientes validaciones:
 \begin{itemize}
-	\item \textbf{Update Configuration Definitions:} Verifica que tenga la última versión del SDK (2.0.1410.19000).
-		\item \textbf{Operating System:} Verifica si el sistema operativo es compatible (Windows 8 o superior).
-		\item \textbf{Processor Cores:} Detecta si el procesador tiene los suficientes números de core (Procesador rápido, como por ejemplo Intel 5).
-		\item \textbf{Physical Memory (RAM):} Chequea si el dispositivo tiene la suficiente memoria (Mínimo 4GB de RAM).
-		\item \textbf{Graphics Processor:} Verifica si el procesador gráfico es compatible con el SDK. (Directx 11).
-		\item \textbf{USB Controller:} Verifica si el dispositivo reconoce el puerto de entrada (USB 3).	
+	\item \textbf{Update Configuration Definitions:} Verifica que tenga la última versión del SDK (e.g. V.2.0.1410.19000).
+		\item \textbf{Operating System:} Verifica si el sistema operativo es compatible (e.g. Windows 8 o superior).
+		\item \textbf{Processor Cores:} Detecta si el procesador tiene los suficientes números de core (e.g. Intel 5).
+		\item \textbf{Physical Memory (RAM):} Chequea si el dispositivo tiene la suficiente memoria (e.g. Mínimo 4GB de RAM).
+		\item \textbf{Graphics Processor:} Verifica si el procesador gráfico es compatible con el SDK. (e.g. Directx 11).
+		\item \textbf{USB Controller:} Verifica si el dispositivo reconoce el puerto de entrada (i.e. USB 3).	
 		\item \textbf{Kinect Connected:} Detecta si el Sensor Kinect se encuentra conectado con el dispositivo.
-		\item \textbf{Verify Kinect Software Installed:} Verifica las unidades (Drives) del sistema y el sensor (Sonido y cámara).
-		\item \textbf{Verify Kinect Depth and Color Streams:} Verifica los sensores de profundidad y de color (RGB e IR).
+		\item \textbf{Verify Kinect Software Installed:} Verifica las unidades (Drives) del sistema y el sensor.
+		\item \textbf{Verify Kinect Depth and Color Streams:} Verifica los sensores de profundidad y de color (i.e. RGB e IR).
 \end{itemize}
 \subparagraph{Kinect Studio}\mbox{} \\
-Según el libro, Beginning Microsoft Kinect for Windows SDK 2.0: Motion and Depth Sensing for Natural User Interfaces \cite{rahman2017beginning}, menciona que Kinect Studio es una aplicación incluida en el SDK, que permite capturar y reproducir datos de kinect en formato de vídeo.\\
-En dicha aplicación se observa la pestaña del monitor, encargada de transmitir los siguientes datos de análisis:
+En el libro de detección de movimiento y profundidad para NUI \cite{rahman2017beginning}, trabajan con algunas aplicaciones ya implementadas en el SDK, entre ellas se puede mencionar, Kinect Studio, aplicación que permite capturar y reproducir datos del sensor en formato de vídeo, cabe mencionar que los datos son administrados por los siguientes monitores:
 \begin{itemize}
 	\item \textbf{Monitor NUI Body Frame:} Transmisión que contiene un espacio de almacenamiento para trabajar los datos de articulaciones del cuerpo.
 	\item \textbf{Monitor NUI Body Index:} Transmisión que se encarga de clasificar y determinar los píxeles de cada objeto.
-	\item \textbf{Monitor NUI Depth:} Transmisión que se encarga de trabajar los datos de profundidad (Eje Z).
+	\item \textbf{Monitor NUI Depth:} Transmisión que se encarga de trabajar los datos de profundidad (i.e. Eje Z).
 	\item \textbf{Monitor NUI IR:} Transmisión que trabaja con una imagen infrarroja a partir de la técnica de \gls{TOF}.
 	\item \textbf{Monitor NUI Title Audio:} Transmisión que suministra el audio capturado en todas las direcciones.
 	\item \textbf{Monitor NUI uncompressed color:} Transmisión encargada de proporcionar los datos de la imagen a color.	
 \end{itemize}
-Así mismo, se encuentra la pestaña para grabar vídeo en formato, \acrfull{XEF},  cabe mencionar que dicho formato genera vídeo de gran tamaño debido a la cantidad de datos que son capturados, por lo cual se recomienda realizar varias repeticiones del movimiento en el menor tiempo posible y de igual manera capturar los siguientes datos, para el análisis del movimiento:
+Estos datos son almacenados en un archivo con formato, \acrfull{XEF}, dicho formato genera un vídeo de gran tamaño debido a la cantidad de datos que son capturados por los monitores, por lo cual se recomienda realizar varias repeticiones del movimiento en el menor tiempo posible y de igual manera capturar los siguientes datos para el análisis del movimiento:
 \medbreak
 \begin{figure}[H]
-	\caption{Diagrama de Venn para identificar la transmisión de datos del Kinect}
+	\caption{Diagrama de Venn para la identificación del movimiento de un objeto}
 	\label{fig:VennStreaming}
 	\centering
 	\includegraphics[width=250px,height=250px]{graphics/venn-streaming.png} \\
 	\textbf{Fuente:} Realizado por el autor de tesis
 \end{figure}
 \medbreak
-En la figura \ref{fig:VennStreaming}, se puede concluir que la transmisión, body frame, trabaja independiente y para la identificación de los objetos son necesario las transmisiones: IR, Deep y Body Frame.
+En la figura \ref{fig:VennStreaming}, se puede observar que los monitores: Body index, Depth e IR, trabajan conjuntamente para reconocer los objetos, así mismo es importante obtener datos correctos por medio de la calibración de datos y tener disponible los datos en todo momento (i.e. Telemetría).
 \medbreak
-Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo tomado por el Kinect Studio, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción, así mismo puede indicar el número de repeticiones de la interacción, además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información adicional en un punto específico del vídeo.
+Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo tomado por la aplicación Kinect Studio, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción (i.e. Segmento del vídeo), así mismo puede indicar el número de repeticiones de la interacción (i.e. cantidad de veces que desea ver el segmento del vídeo), además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información adicional en un punto específico del vídeo.
 \begin{landscape}
- \begin{figure}[ht]
+ \begin{figure}[H]
 	\caption{Visualización del vídeo, Kinect Studio}
 	\label{fig:PlayKinectStudio}
 	\centering
@@ -137,7 +167,7 @@ Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de u
 \end{figure}
 \end{landscape} 
 \subparagraph{Visual Gesture Builder}\mbox{} \\
-Según el autor, \citeA{rahman2017beginning}, menciona que la aplicación, \acrfull{VGB}, es una herramienta de aprendizaje automático (i.e. Machine learning), que permite crear una base de datos para reconocer gestos en tiempo de ejecución, cabe mencionar que la herramienta utiliza dos algoritmos para la detección de objetos, \acrfull{RFR} para modelos continuos, y \acrfull{AdaBoost} para modelos discretos. Así mismo, los algoritmos analiza las siguientes variables en función del tiempo:
+El libro de detección de movimiento y profundidad para NUI \cite{rahman2017beginning}, trabaja con una aplicación de aprendizaje automático llamada: \acrfull{VGB}, que permite crear una base de datos que reconocen los gestos en tiempo de ejecución (Gesture DataBase, GDB), cabe mencionar que la herramienta utiliza dos algoritmos para la detección de objetos, \acrfull{RFR} para modelos continuos, y \acrfull{AdaBoost} para modelos discretos. Se debe tomar en cuenta que los algoritmos analiza las siguientes variables en función del tiempo:
 \begin{itemize}
 	\item Diferencia de posiciones.
 	\item Ángulos de articulaciones y de movimientos.
@@ -146,7 +176,7 @@ Según el autor, \citeA{rahman2017beginning}, menciona que la aplicación, \acrful
 	\item Fuerza muscular
 	\item Torque muscular
 \end{itemize}
-Por lo que se refiere al modelo AdaBoost el autor,  \citeA{AdaBoosting2018}, explica la técnica de Boosting, cuya funcionalidad es mejorar las predicciones del modelo, a partir de un número de entrenamientos secuenciales, tal como se observa la siguiente figura:
+Por lo que se refiere al modelo AdaBoost el autor, \citeA{AdaBoosting2018}, pública un artículo científico sobre la técnica de Boosting, en la cual consta en mejorar las predicciones del modelo, a partir de un número de entrenamientos secuenciales, tal como se observa la siguiente figura:
 \begin{figure}[H]
 	\caption{Técnica Boosting}
 	\label{fig:AdaBoost}
@@ -157,7 +187,7 @@ Por lo que se refiere al modelo AdaBoost el autor,  \citeA{AdaBoosting2018}, exp
 \medbreak
 En la figura \ref{fig:AdaBoost}, se observa que en el entrenamiento \# 1,  los datos de entradas se encuentra muy dispersos, por lo tanto, cada dato de entrada se  debe entrenar a partir de un algoritmo de aprendizaje, que permitirá transformar una nueva función, tal como se observa el entrenamiento \# 2, los datos de entradas están más cercano. Cabe mencionar que se debe establecer los números de entrenamientos y el algoritmo de aprendizaje que utilizará por cada entrenamiento, siguiendo con el ejemplo de la figura \ref{fig:AdaBoost}, tiene un total de 2 entrenamientos, y cada entrenamiento consta de operar el dato de entrada por su respectiva regresión lineal y una constante.
 \medbreak
-Cabe mencionar que el modelo discreto, es recomendable utilizarlo para identificar movimientos estáticos (e.g. Identificar si la persona se encuentra sentada, arrodillada, entre otros movimientos más...), por lo que el software, VGB, permite analizar el vídeo (.xef) y posteriormente etiquetar los momentos que se encuentra realizando dicho movimientos estáticos:
+Cabe mencionar que el modelo discreto, es recomendable utilizarlo para identificar movimientos estáticos (e.g. Identificar si la persona se encuentra sentada, arrodillada, entre otros movimientos más...), por lo que el software, VGB, permite analizar el vídeo (i.e. xef) y posteriormente etiquetar los momentos que se encuentra realizando dicho movimientos estáticos:
 \begin{figure}[H]
 	\caption{Etiquetas de movimientos estático}
 	\label{fig:modeloDiscreto}
@@ -168,7 +198,7 @@ Cabe mencionar que el modelo discreto, es recomendable utilizarlo para identific
 \medbreak
 En la figura \ref{fig:modeloDiscreto}, se puede observar que en el panel de control puede etiquetar los valores: positivos (Barra azul arriba) y negativos (Barra azul abajo), así mismo se observa el movimiento estático, Manos abajo, que consta en identificar que ambas manos y brazos estén tocando la parte dorsal del cuerpo (i.e. Figura \ref{fig:modeloDiscreto}.B), en caso que este realizando otro movimiento, el valor de la etiqueta será falso (i.e.  Figura \ref{fig:modeloDiscreto}.C).
 \medbreak
-Por lo que se refiere al modelo Random Forest Regression, la autora, \citeA{RandomForestRegression2018}, menciona que este modelo realiza varios conjuntos de técnicas, entre ellas se encuentra las técnicas de regresiones, árboles de decisiones y una técnica llamada, Boostrap Aggregation, que consta en entrenar cada árbol de decisión, a partir de las variables de análisis, tal como se observa en la figura \ref{fig:RandomForestRegression}:
+Por lo que se refiere al modelo Random Forest Regression, la autora, \citeA{RandomForestRegression2018} realizó un artículo científico sobre este modelo, en donde indica que es un algoritmo de varías técnicas de predicciones (i.e. regresiones y árboles de decisiones),cabe mencionar que el entrenamiento se basa en la técnica llamada, Boostrap Aggregation, que consta en entrenar cada árbol de decisión a partir de las variables de análisis, tal como se observa en la figura \ref{fig:RandomForestRegression}:
 \begin{figure}[H]
 	\caption{Técnica Random Forest Regression}
 	\label{fig:RandomForestRegression}
