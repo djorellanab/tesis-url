@@ -7,7 +7,7 @@ Por otro lado los autores, \citeA{henry2012rgb}, investigaron las variables nece
 	\caption{Captura de datos de una c\'mara con sensor de profundidad}
 	\label{fig:RGBD}
 	\centering
-	\includegraphics[]{graphics/RGB-D.PNG} \\
+	\includegraphics[width=220px,height=50px]{graphics/RGB-D.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que de lado izquierdo se tiene una vista a color, mientras que del lado derecho se tiene una vista de escala de grises (i.e. Datos de profundidad), por lo tanto en ambas imágenes se puede capturar distintas variables de análisis (e.g. Distancia, seguimiento, color, entre otras variables más...).
@@ -24,7 +24,7 @@ Tal como se observa en el listado, todas las cámaras con RGB-D tiene característ
 	\caption{Especificaciones de una c\'amara con RGB-D}
 	\label{fig:RGBESP}
 	\centering
-	\includegraphics[width=300px,height=300px]{graphics/RGBFeatures.png} \\
+	\includegraphics[width=300px,height=170px]{graphics/RGBFeatures.png} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \medbreak
@@ -59,12 +59,13 @@ En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras: Intel RealSense 
 En la guía de programación de Kinect para Windows SDK \cite{jana2012kinect}, da a conocer característica del sensor Kinect, entre ellas se puede mencionar que el sensor Kinect se desarrolló para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo a partir de movimientos, gestos y sonidos (i. e. Tecnología con control de manos libres).
 \medbreak
 Por otra parte el autor, \citeA{jana2012kinect}, habla sobre el \acrfull{SDK}, cabe mencionar que dicho kit esta desarrollado para distintos lenguajes de programación (e.g. C++, c\#, Python), sin embargo, para entender el funcionamiento del SDK se debe conocer la arquitectura del Kinect.
+\\
 \paragraph{Componentes}\mbox{} \\
 \begin{figure}[H]
 	\caption{Componentes del Kinect V2}
 	\label{fig:COMPKINECT}
 	\centering
-	\includegraphics[width=400px,height=200px]{graphics/kinect-parts.PNG} \\
+	\includegraphics[width=400px,height=220px]{graphics/kinect-parts.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \medbreak
@@ -74,7 +75,7 @@ En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enl
 	\caption{Adaptador del Kinect V2}
 	\label{fig:ADAPTERKINECT}
 	\centering
-	\includegraphics[width=400px,height=200px]{graphics/adapter-kinect.jpg} \\
+	\includegraphics[width=400px,height=170px]{graphics/adapter-kinect.jpg} \\
 	\textbf{Fuente:} \citeA{Kinectmanual}
 \end{figure}
 \medbreak
@@ -86,7 +87,7 @@ Cabe mencionar que para realizar estas aplicaciones, es necesario entender la in
 	\caption{Interacción del software y hardware}
 	\label{fig:interaccionKinect}
 	\centering
-	\includegraphics[width=400px,height=210px]{graphics/interacionKinect.png} \\
+	\includegraphics[width=400px,height=180px]{graphics/interacionKinect.png} \\
 	\textbf{Fuente:} Realizado por el autor de tesis
 \end{figure}
 En la figura \ref{fig:interaccionKinect}, se puede observar que el sensor kinect maneja 3 transmisiones de datos de salida:
@@ -118,13 +119,13 @@ Dicha aplicación verifica y analiza el dispositivo que se encuentra conectado al
 	\caption{Kinect v2 configuration verifier}
 	\label{fig:KinectConfigurationVerifier}
 	\centering
-	\includegraphics[width=360px,height=360px]{graphics/kinect-configuration-verifier.PNG} \\
+	\includegraphics[width=360px,height=300px]{graphics/kinect-configuration-verifier.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
 \medbreak
-En la figura \ref{fig:ADAPTERKINECT}, se observa las siguientes validaciones:
+En la figura \ref{fig:KinectConfigurationVerifier}, se observa las siguientes validaciones:
 \begin{itemize}
-	\item \textbf{Update Configuration Definitions:} Verifica que tenga la última versión del SDK (e.g. V.2.0.1410.19000).
+	\item \textbf{Update Configuration Definitions:} Verifica que tenga la última versión del SDK (e.g. V.2).
 		\item \textbf{Operating System:} Verifica si el sistema operativo es compatible (e.g. Windows 8 o superior).
 		\item \textbf{Processor Cores:} Detecta si el procesador tiene los suficientes números de core (e.g. Intel 5).
 		\item \textbf{Physical Memory (RAM):} Chequea si el dispositivo tiene la suficiente memoria (e.g. Mínimo 4GB de RAM).
@@ -150,22 +151,20 @@ Estos datos son almacenados en un archivo con formato, \acrfull{XEF}, dicho form
 	\caption{Diagrama de Venn para la identificación del movimiento de un objeto}
 	\label{fig:VennStreaming}
 	\centering
-	\includegraphics[width=250px,height=250px]{graphics/venn-streaming.png} \\
+	\includegraphics[width=220px,height=150px]{graphics/venn-streaming.png} \\
 	\textbf{Fuente:} Realizado por el autor de tesis
 \end{figure}
 \medbreak
 En la figura \ref{fig:VennStreaming}, se puede observar que los monitores: Body index, Depth e IR, trabajan conjuntamente para reconocer los objetos, así mismo es importante obtener datos correctos por medio de la calibración de datos y tener disponible los datos en todo momento (i.e. Telemetría).
 \medbreak
 Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo tomado por la aplicación Kinect Studio, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción (i.e. Segmento del vídeo), así mismo puede indicar el número de repeticiones de la interacción (i.e. cantidad de veces que desea ver el segmento del vídeo), además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información adicional en un punto específico del vídeo.
-\begin{landscape}
  \begin{figure}[H]
 	\caption{Visualización del vídeo, Kinect Studio}
 	\label{fig:PlayKinectStudio}
 	\centering
-	\includegraphics[width=660px,height=360px]{graphics/play-kinectstudio.png} \\
+	\includegraphics[width=400px,height=280px]{graphics/play-kinectstudio.png} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
-\end{landscape} 
 \subparagraph{Visual Gesture Builder}\mbox{} \\
 El libro de detección de movimiento y profundidad para NUI \cite{rahman2017beginning}, trabaja con una aplicación de aprendizaje automático llamada: \acrfull{VGB}, que permite crear una base de datos que reconocen los gestos en tiempo de ejecución (Gesture DataBase, GDB), cabe mencionar que la herramienta utiliza dos algoritmos para la detección de objetos, \acrfull{RFR} para modelos continuos, y \acrfull{AdaBoost} para modelos discretos. Se debe tomar en cuenta que los algoritmos analiza las siguientes variables en función del tiempo:
 \begin{itemize}
@@ -203,7 +202,7 @@ Por lo que se refiere al modelo Random Forest Regression, la autora, \citeA{Rand
 	\caption{Técnica Random Forest Regression}
 	\label{fig:RandomForestRegression}
 	\centering
-	\includegraphics[width=400px,height=200px]{graphics/random-forest-regression.png} \\
+	\includegraphics[width=400px,height=170px]{graphics/random-forest-regression.png} \\
 	\textbf{Fuente:} Realizado por el autor de tesis
 \end{figure}
 \medbreak
@@ -212,7 +211,34 @@ Finalmente, el modelo continuo es recomendable utilizarlo para identificar movim
 	\caption{Etiquetas de movimientos dinámicos}
 	\label{fig:modeloContinuo}
 	\centering
-	\includegraphics[width=400px,height=350px]{graphics/modelo-continuo.png} \\
+	\includegraphics[width=400px,height=250px]{graphics/modelo-continuo.png} \\
 	\textbf{Fuente:} Realizado por el autor de tesis
 \end{figure}
 En la figura \ref{fig:modeloContinuo}, se esta analizando el movimiento de vuelo, la cual se conforma de tres movimientos estáticos: Brazos abajos (i.e. Figura \ref{fig:modeloContinuo}.B), brazos al medio (i.e. Figura \ref{fig:modeloContinuo}.C)  y brazos arriba (i.e. Figura \ref{fig:modeloContinuo}.D),  por lo tanto para analizar y detectar el movimiento dinámico, se etiqueta con un valor decimal a cada movimiento estático, tal como se observa en la figura, el primer paso del movimiento dinámico esta entre el valor de 0.00 a 0.33. 
+\subparagraph{Skeletal Tracking}\mbox{} \\
+En el análisis y estudio de los código de fuente de SDK del Kinect \cite{hernandez2013analisis}, los autores realizaron un análisis del seguimiento del esqueleto, en la cual observaron que genera la figura humana a través de 25 puntos que representa las principales articulaciones del cuerpo, tal como se muestra en la figura \ref{fig:jointsKinect}:
+\begin{figure}[H]
+	\caption{Seguimiento de uniones del Kinect}
+	\label{fig:jointsKinect}
+	\centering
+	\includegraphics[width=360px,height=450px]{graphics/jointKinect.png} \\
+	\textbf{Fuente:} \cite[]{rocha2015kinect}
+\end{figure}
+Asì mismo los autores, \citeA{hernandez2013analisis}, indican que el seguimiento del esqueleto asocia los parámetros del cuerpo humano (e.g. Extremidades superiores, articulaciones, gestos...), dichos parámetros son utilizado por un SkeletonFrame, cuya finalidad es reconocer el borde del cuerpo humano y posteriormente reconocer cada parte del esqueleto humano, a partir del SkeletonData, tal como se muestra en la figura \ref{fig:skeletanTracking}:
+\begin{figure}[H]
+	\caption{Arquitectura del seguimiento del esqueleto}
+	\label{fig:skeletanTracking}
+	\centering
+	\includegraphics[width=450px,height=200px]{graphics/SkeletanTracking.png} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+En la figura \ref{fig:skeletanTracking} se observa que el seguimiento de esqueleto esta conformado por 6 pasos: (1) como primer paso el Kinect escanea el ambiente constantemente, (2) posteriormente se crea el mapa de profundidad,(3) esto permitirá  detectar el suelo y separar los objetos, con el fin de objetivo de identificar el contorno humano de cada jugador, (4) luego por cada jugador se le asigna un identificador y clasifica las partes del cuerpo humano (e.g. Cabeza, brazos, manos, piernas, etc...), (5) seguidamente a cada parte del cuerpo humano se le asigna una unión  y (6) finalmente unifica cada unión en el orden correspondiente, tal como se observa en la figura \ref{fig:jointsKinect}.
+\medbreak
+En cuanto las uniones (Joints), los autores,  \citeA{hernandez2013analisis}, menciona que cada unión se encuentra en un sistema diestro de coordenada en donde cada eje (i.e. X, Y, Z) representa la distancia (En metros) del Kinect al Joint, tal como se representa en la figura \ref{fig:CoordenadaJoint}:
+\begin{figure}[H]
+	\caption{Sistema de coordenada de la unión (Joint)}
+	\label{fig:CoordenadaJoint}
+	\centering
+	\includegraphics[width=450px,height=190px]{graphics/PartsToJoin.png} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
