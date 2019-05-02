@@ -1,8 +1,8 @@
 \section{MARCO TEÓRICO}
 \subsection{C\'AMARA CON SENSOR DE PROFUNDIDAD}
-Los autores, \citeA{carfagni2017performance}, realizaron un estudio del rendimiento de la  cámara, Intel SR300, en dicho estudio  señalan las principales funciones de las \acrfull{RGBD}, entre ellas se puede mencionar la adquisición y procesamientos de datos en \acrfull{TRESD}, cabe mencionar que estas cámaras se han utilizado en el sector industrial y académico (e.g. Reconocimiento de posiciones, gestos y objetos).
+De acuerdo con  \citeA{carfagni2017performance} y su estudio enfocado en el rendimiento de la  cámara Intel SR300, las principales funciones de las \acrfull{RGBD}  son la adquisición y procesamientos de datos en \acrfull{TRESD}, utilizándose tanto en el sector industrial como académico (e.g. Reconocimiento de posiciones, gestos y objetos).
 \medbreak
-Por otro lado los autores, \citeA{henry2012rgb}, investigaron las variables necesarias para realizar un mapeo del ambiente (i.e. RGB-D mapping), cabe mencionar que las variables son analizado por medio de \gls{pixeles} de información de imágenes a color y de profundidad, tal como se muestra en la siguiente figura:
+Por otro lado los autores, \citeA{henry2012rgb}, investigaron las variables necesarias para realizar un mapeo del ambiente (i.e. RGB-D mapping), siendo analizadas por medio de \gls{pixeles} de información de imágenes a color y de profundidad, tal como se muestra en la figura \ref{fig:RGBD}:
 \begin{figure}[H]
 	\caption{Captura de datos de una c\'mara con sensor de profundidad}
 	\label{fig:RGBD}
@@ -10,7 +10,12 @@ Por otro lado los autores, \citeA{henry2012rgb}, investigaron las variables nece
 	\includegraphics[width=220px,height=50px]{graphics/RGB-D.PNG} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure}
-La figura \ref{fig:RGBD}, fue capturado por el dispositivo, Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que de lado izquierdo se tiene una vista a color, mientras que del lado derecho se tiene una vista de escala de grises (i.e. Datos de profundidad), por lo tanto en ambas imágenes se puede capturar distintas variables de análisis (e.g. Distancia, seguimiento, color, entre otras variables más...).
+La figura \ref{fig:RGBD}, fue capturada por el dispositivo Kinect de XBox One, a una velocidad de 28 \acrfull{FPS}, cabe mencionar que de lado izquierdo se tiene una vista a color, mientras que del lado derecho se tiene una vista de escala de grises (i.e. Datos de profundidad), por lo tanto en ambas imágenes se puede capturar distintas variables de análisis (e.g. Distancia, seguimiento, color, entre otras variables más...).
+
+\todo[inline]{hasta aca llevo 5 veces "cabe mencionar", para que el texto sea fluido debes variar los conectores de discurso}
+\todo[inline]{los i.e. y e.g no se combinan con paréntesis -i.e. es una anotación independiente-}
+\todo[inline]{cuando uses e.g no se puede utilizar " y más, entre otros, etc. " se sobre entiende que e.g. es un subconjunto}
+
 \subsubsection{Dispositivos en el mercado}
 A continuación se presentará una lista de cámaras con sensor de profundidad, que se encuentra en el mercado hoy en día:
 \begin{itemize}
@@ -19,7 +24,10 @@ A continuación se presentará una lista de cámaras con sensor de profundidad, que
 	\item \textbf{Intel RealSense cameras:} La empresa \citeA{intelRealSense}, desarrolló un producto de cámaras (i.e. Intel RealSense) que permite detectar una alta velocidad de cuadros (i.e. Frames por segundo), RGB de calidad y una resolución de profundidad, cabe mencionar que estas cámaras se han utilizado en soluciones innovadoras (e.g. Róbotica, drones, realidad virtual, entre otras aplicaciones más).
 	\item \textbf{Microsoft Kinect:} El autor	\citeA{zhang2012microsoft}, realizó un análisis de los componentes del Kinect, entre ellos se encuentra el sensor de profundidad, una cámara a color y una matriz de micrófonos que permite capturar movimientos, reconocer características faciales, construir un modelo del cuerpo en 3D y reconocer sonidos.
 \end{itemize}
-Tal como se observa en el listado, todas las cámaras con RGB-D tiene características similares que permite detectar elementos en el ambiente, sin embargo a la hora de escoger una cámara se debe tomar en cuenta las siguientes especificaciones:
+Como se observa en el listado, todas las cámaras con RGB-D tiene características similares que permite detectar elementos en el ambiente, sin embargo a la hora de escoger una cámara se debe tomar en cuenta las siguientes especificaciones:
+
+\todo[inline]{Aca es un buen lugar para que agreges una pequeña definición de cada especificación/variable importante, un lector poco familizarizado esperaria eso en este momento}
+
 \begin{figure}[H]
 	\caption{Especificaciones de una c\'amara con RGB-D}
 	\label{fig:RGBESP}
@@ -58,7 +66,7 @@ En la tabla \ref{tab:RGBD}, se puede determinar que la cámaras: Intel RealSense 
 \subsubsection{Microsoft Kinect V2}
 En la guía de programación de Kinect para Windows SDK \cite{jana2012kinect}, da a conocer característica del sensor Kinect, entre ellas se puede mencionar que el sensor Kinect se desarrolló para la consola de videojuegos, Xbox 360, además proporciona una \acrfull{NUI}, que permite interactuar con el dispositivo a partir de movimientos, gestos y sonidos (i. e. Tecnología con control de manos libres).
 \medbreak
-Por otra parte el autor, \citeA{jana2012kinect}, habla sobre el \acrfull{SDK}, cabe mencionar que dicho kit esta desarrollado para distintos lenguajes de programación (e.g. C++, c\#, Python), sin embargo, para entender el funcionamiento del SDK se debe conocer la arquitectura del Kinect.
+Por otra parte \citeA{jana2012kinect} describe el \acrfull{SDK} de desarrollo de Kinetic, desarrollado para distintos lenguajes de programación -e.g. C++, c\#, Python-, siendo necesario conocer la arquitectura de Kinect para su uso e implementación.
 \\
 \paragraph{Componentes}\mbox{} \\
 \begin{figure}[H]
@@ -70,6 +78,9 @@ Por otra parte el autor, \citeA{jana2012kinect}, habla sobre el \acrfull{SDK}, c
 \end{figure}
 \medbreak
 En la figura \ref{fig:COMPKINECT}, se muestra los componentes del Kinect que enlista el autor \citeA{jana2012kinect}, entre ellas se puede observar la cámara a color cuya función es capturar y transmitir los datos de vídeo en color, así mismo se encuentra el sensor de profundidad conformado por el emisor de infrarrojo, que se encarga de escanear el ambiente constantemente  y convertirlo en información a partir del sensor de profundidad infrarroja (i.e. Identificación de objetos), cabe mencionar que la cámara puede rotar la imagen a partir de un pequeño motor que conecta la base y el cuerpo. Por otro lado, la matriz de micrófonos permite capturar e identificar la dirección del sonido en el ambiente. Finalmente, se encuentra el  \acrfull{LED}, cuya tarea es identificar si los controladores del Kinect (e.g. IR, Seguimiento de objetos, RGB y sonido) están funcionando correctamente a partir de una luz blanca.
+
+\todo[inline]{Aca nuevamente seria mejor dar una descripción general de cada componente en un listado que permita entender de forma facil cada uno de los elementos}
+
 \paragraph{Conexión a la computadora}\mbox{} \\
 \begin{figure}[H]
 	\caption{Adaptador del Kinect V2}
@@ -112,6 +123,8 @@ En el Libro, Kinect en  movimiento \cite{giori2013kinect}, dar a conocer los ele
     \item \textbf{DirectX Media Object (DMO):} Elementos que administra el funcionamiento de la matriz de audio (e.g. Identificar y analizar el origen de la fuente del audio).
     \item \textbf{Windows Standar API:} Elementos que administra los componentes complementarios del funcionamiento del sensor (e.g. Microsoft.speech, System.media, etc...).
 \end{enumerate}
+
+\todo[inline]{Una vez que mencionaste que son elementos, no vale la pena volver a poner elemento en cada definición}
 \subparagraph{Kinect v2 configuration verifier
 }\mbox{} \\
 Dicha aplicación verifica y analiza el dispositivo que se encuentra conectado al sensor Kinect, tomando en cuenta las compatibilidades del hardware y la comunicación del dispositivo al sensor:
@@ -158,6 +171,8 @@ Estos datos son almacenados en un archivo con formato, \acrfull{XEF}, dicho form
 En la figura \ref{fig:VennStreaming}, se puede observar que los monitores: Body index, Depth e IR, trabajan conjuntamente para reconocer los objetos, así mismo es importante obtener datos correctos por medio de la calibración de datos y tener disponible los datos en todo momento (i.e. Telemetría).
 \medbreak
 Finalmente en la figura \ref{fig:PlayKinectStudio}, puedes ver el resultado de un vídeo tomado por la aplicación Kinect Studio, cabe mencionar que Kinect Studio te proporciona varias herramienta  para analizar el vídeo, tales como: el punto de Inicio y Fin, cuya función es marcar una interacción (i.e. Segmento del vídeo), así mismo puede indicar el número de repeticiones de la interacción (i.e. cantidad de veces que desea ver el segmento del vídeo), además de colocar puntos de pausa y etiquetas de metadatos, que te permitirá almacenar información adicional en un punto específico del vídeo.
+
+\todo[inline]{Escribir siempre en tercera persona}
  \begin{figure}[H]
 	\caption{Visualización del vídeo, Kinect Studio}
 	\label{fig:PlayKinectStudio}
@@ -288,6 +303,9 @@ Se le denomina metabolismo al conjunto de reacciones químicas y biológicas que s
 	\includegraphics[width=450px,height=150px]{graphics/energiaMetabolica.png} \\
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
+
+\todo[inline]{No estoy seguro si las tesis pueden ir a color, verificar}
+
 En la figura \ref{fig:energiaMetabolico}, se puede observar un diagrama distancia versus tiempo, dicho diagrama esta conformado por 3 gráficas, la primera consta de una gráfica de color azul, que representa el sistema de fosfato de creatina, la cual se observa una entidad que corre 100 metros en un período de 10 segundos, cabe mencionar que este tipo de sistema se percibe en competencia de atletismo de corta distancia, debido que el corredor consume la mayor energía posible para finalizar el ejercicio,  por otra parte se encuentra una gráfica de color verde, que representa el sistema glucolítico, en dicho sistema se contempla una entidad que recorre 40 metros por un período de 45 segundos y esta actividad ocurre dos veces, debido que la entidad realiza períodos cortos de descanso para recuperarse y realizar nuevamente la actividad, este fenómeno se puede hallar cuando una persona trota una distancia de 1 kilómetro, ya que el atleta corre una cantidad de distancia y poco a poco disminuye la velocidad para descansar y volver a correr nuevamente. Finalmente esta la gráfica de color morado, la cual se visualiza el sistema oxidativo, en donde una entidad camina constantemente un metro, dicha actividad se puede notar en maratones (e.g. 21 K de la ciudad Guatemala), debido que el corredor mantiene una velocidad constante para finalizar la actividad.
 \subsubsection{Jerarquía teórica de desarrollo}
 El gimnasta, Greg Glassmant, junto con su ex-esposa, Lauren Glassman, fundaron la compañía, CrossFit Inc (2000, Estados Unidos), dicha compañía realizan varias rutinas de ejercicios y de alimentación en base a una jerarquía que refleja  las habilidades y el desarrollo lógico de un atleta \cite{crossfitinc2019}:
@@ -320,6 +338,9 @@ Por lo tanto se puede concluir que los ejercicios funcionales puede realizarse c
 	\item \textbf{Tabata:} Entrenamiento que consta de un tiempo de trabajo y de descanso, la cual el atleta debe realizar la cantidad de repeticiones durante el tiempo de trabajo y posteriormente debe debe recuperarse durante un tiempo corto de descanso (e.g. Tabata de sentadillas durante 1 minuto con tiempo de descanso de 20 segundos)
 \end{itemize} 
 Cabe mencionar que estas rutinas permite quemar la grasa del cuerpo humano, dado que en un estudio realizado sobre la intensidad del ejercicio y el gasto de energía en un entrenamiento de Tabata \cite{emberts2013exercise}, menciona que en el año 1996, el japonés científico, Izumi Tabata, realizó una comparación de una rutina de ejercicio básico de 60 minutos y una rutina de ejercicio de alta intensidad de 4 minutos con período de descanso corto, dicha comparación se realizó en base al volumen de oxígeno que puede procesar el organismo durante un ejercicio (i.e. VO2), esto permitió encontrar que durante el ejercicio básico el atleta consume un 70\% de VO2 mientras que en un ejercicio de alta intensidad llega a consumir hasta 170\% de VO2, lo cual se concluye que el atleta tiene una mejor condición metabólica a la hora de realizar un entrenamiento de alta intensidad.
+
+\todo[inline]{Hasta aca describiste bastante bien como funcionan los ejercicios, sin embargo esperaba una definicion/ampliación del ejercicio funcional y su relación con los conceptos utilizados en estos parrafos}
+
 \subsection{Anatom\'ia y fisiolog\'ia del cuerpo humano}
 Según el libro médico, Anatomía y fisiología humana \cite{marieb2008anatomia}, menciona que la anatomía y la fisiología, trabajan conjuntamente para estudiar el cuerpo humano, debido que una estudia la estructura y la forma del cuerpo (i.e. anatomía), mientras que la otra estudia el funcionamiento del cuerpo humano (i.e. fisiología), cabe mencionar que estas dos ramas investiga la principal unidad de la materia llamada átomo, así mismo los átomos puede combinarse para formar las moléculas (e.g. agua, azúcar...), por otro lado las moléculas se unen para crear la unidad fundamental de un ser vivo llamado célula, al mismo tiempo se le denomina tejido al conjunto de células con una función en común, posteriormente la composición de dos o más tejidos que desempeña una función especifica del cuerpo se le llama órgano (e.g. Corazón, piel, músculos...) y finalmente el grupo de órganos que funciona de forma conjunta con un fin de objetivo del cuerpo humano (e.g. respirar, mover,  hablar...) se le denomina sistema orgánico (e.g. Sistemas: Muscular, nervioso, esquelético...).
 \medbreak
