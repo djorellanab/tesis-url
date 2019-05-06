@@ -1,5 +1,6 @@
 \documentclass[12pt,letterpaper]{book}
 \usepackage{mathptmx}
+\usepackage{todonotes}
 \usepackage[latin1]{inputenc}
 \usepackage[spanish,es-tabla]{babel}
 \usepackage{amsmath}
@@ -26,6 +27,10 @@
 \usepackage{caption,newfloat}
 %\usepackage{natbib}
 \usepackage{apacite}
+\usepackage{pdflscape}
+\usepackage{titlesec}
+\usepackage{enumerate} 
+\usepackage{lipsum}  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Agregar una pagina en blanco
 \newcommand\blankpage{%
@@ -43,7 +48,8 @@
 \pagestyle{plain}% Set page style to plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modificar los niveles de nuemeracionº
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{6}
+\setcounter{tocdepth}{3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modificacion de sangria
 \parindent=0cm 
@@ -91,6 +97,13 @@
 % Estilos de bibliografia
 %\bibliographystyle{apalike} 
 \bibliographystyle{apacite}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% numeracion en letras para parrafos
+\renewcommand{\theparagraph}{\Alph{paragraph}} 
+\renewcommand{\thesubparagraph}{\Alph{paragraph}.\Alph{subparagraph}} 
+
+\titleclass{\subsubparagraph}{straight}[\subparagraph]\newcounter{subsubparagraph}\renewcommand{\thesubsubparagraph}{\Alph{paragraph}.\Alph{subparagraph}.\Alph{subsubparagraph}} 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter
