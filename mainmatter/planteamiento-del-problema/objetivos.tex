@@ -1,14 +1,15 @@
-\section{OBJETIVOS}
-\subsection{OBJETIVO GENERAL}
-Realizar una m\'quina de aprendizaje demostrativa que registre el seguimiento de esqueleto (Skeletan traking) a trav\'es de una c\'amara con sensor de profundidad, seleccionando el mejor modelo matem\'atico, con la finalidad de detectar los pasos que se requiere para realizar un movimiento funcional.
-\subsection{OBJETIVOS ESPECÍFICOS}
+\section{Objetivos}
+\subsection{Objetivo general}
+Implementar un modelo de pronóstico de detección de los pasos que debe seguir para realizar un movimiento, con la ayuda de las herramientas proporcionada por la interfaz de programación de aplicaciones del dispositivo Kinect V2.
+\subsection{Objetivos espec\'ificos}
 \begin{enumerate}[1.]
-    \item Identificar la altura correcta de la c\'amara y la distancia entre el usuario y el dispositivo para detectar el seguimiento del esqueleto humano.
-    \item Analizar los kits de desarrollo de software (SDK) que permite grabar v\'ideos, tomar fotograf\'ias y capturar el seguimiento de esqueleto a trav\'es de una c\'amara con sensor de profundidad.
-    \item Crear una interfaz gr\'afica que capture los datos de los pasos que deben seguir para realizar un movimiento funcional.
-    \item Recolectar y validar los datos de entrenamiento de los movimientos funcionales.
-    \item Identificar y comparar distintos modelos matem\'ticos a partir de los datos recolectado.
-    \item Seleccionar el mejor modelo matem\'atico a partir de su rendimiento algor\'itmico y menor porcentaje de falla.
-    \item Validar el modelo matem\'atico. 
-    \item Crear una interfaz gr\'afica que detecte los pasos que se deben seguir para realizar un movimiento funcional.
+\item Definir el movimiento a analizar, considerando los pasos que se debe seguir para realizar dicho movimiento.
+\item Desarrollar una rutina del movimiento, para la captura de datos.
+\item Identificar la distancia mínima y máxima de profundidad entre el Kinect y el usuario para la detección del seguimiento de esqueleto.
+\item Recolectar los datos de la rutina del movimiento, a partir de la herramienta Kinect Studio.
+\item Crear una base de datos de reconocimiento de gesturas y posturas,  por medio de la herramienta Visual Gesture Builder y los datos recolectado del Kinect Studio.
+\item Calcular los errores del pronostico del reconocimiento de gesturas y posturas.
+\item Crear una interfaz gráfica que detecte las repeticiones realizada del movimiento.
+\item Crear una interfaz gráfica que demuestre los resultados de un entrenamiento.
+\item Comprobar el modelo de reconocimiento de gesturas y posturas del movimiento.
 \end{enumerate}
