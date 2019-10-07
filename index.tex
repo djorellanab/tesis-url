@@ -32,6 +32,7 @@
 \usepackage{titlesec}
 \usepackage{enumerate} 
 \usepackage{lipsum}  
+\usepackage{listings, xcolor} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Agregar una pagina en blanco
 \newcommand\blankpage{%
@@ -77,8 +78,8 @@
 ]{formula}
 
 \addto\captionsspanish{% provide translations for Portuguese
-  \renewcommand{\formulaname}{Ecuaci\'on}%
-  \renewcommand{\listformulaname}{\'Indice de Ecuaciones}%
+  \renewcommand{\formulaname}{F\'ormula}%
+  \renewcommand{\listformulaname}{\'Indice de f\'ormulas}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,6 +96,19 @@
   \renewcommand{\listchartname}{\'Indice de Gr\'aficos}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definicion de codigo
+\DeclareFloatingEnvironment[
+  fileext=locode,
+  listname=Code, % English name
+  name=List of Codes, % English name
+  placement=tbp,
+]{code}
+
+\addto\captionsspanish{% provide translations for Portuguese
+  \renewcommand{\codename}{C\'odigo}%
+  \renewcommand{\listcodename}{\'Indice de c\'odigos}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Estilos de bibliografia
 %\bibliographystyle{apalike} 
 \bibliographystyle{apacite}
@@ -104,7 +118,16 @@
 \renewcommand{\thesubparagraph}{\Alph{paragraph}.\Alph{subparagraph}} 
 
 \titleclass{\subsubparagraph}{straight}[\subparagraph]\newcounter{subsubparagraph}\renewcommand{\thesubsubparagraph}{\Alph{paragraph}.\Alph{subparagraph}.\Alph{subsubparagraph}} 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configracion de codigo lstring
+\lstset{
+    string=[s]{"}{"},
+    stringstyle=\color{gray},
+    comment=[l]{:},
+    commentstyle=\color{black},
+    tabsize=3,
+    frame=single
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \frontmatter

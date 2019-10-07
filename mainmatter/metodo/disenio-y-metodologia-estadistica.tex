@@ -1,4 +1,190 @@
-\section{DISEÑO Y METODOLOGÍA ESTADÍSTICA}
-\subsection{DISEÑO EXPERIMENTAL}
-\subsubsection{EXPERIMENTOS}
-\subsubsection{TRATAMIENTOS Y REPETICIONES EN LOS EXPERIMENTOS}
+\section{DISEÑO DE LA METODOLOGÍA}
+\subsection{C\'alculo de distancia de profundidad m\'inimma y m\'axima}
+Para los siguientes c\'alculos se utiliz\'o la hoja de observaciones de profundidad (Ver anexo, tabla  \ref{tab:obsDepth}), aplicando la siguientes funciones de Microsoft excel (Versi\'on ingl\'es):
+\begin{itemize}
+       \item \textbf{AVERAGE}: funci\'on para determinar la altura promedio.
+\begin{formula}[H]
+	\centering
+	\caption{c\'alculo de altura promedio}
+	\label{frm:avgHeight}
+	\begin{equation}
+	Altura \: promedio =AVERAGE([Altura])
+	\end{equation}
+		\textbf{Fuente:} Elaborado por el autor a partir de funci\'on de excel
+\end{formula}
+       \item \textbf{STDEV}: funci\'on para determinar la desviaci\'on est\'andar de la altura.
+\begin{formula}[H]
+	\centering
+	\caption{c\'alculo de desviaci\'on est\'andar de la altura}
+	\label{frm:stdevHeight}
+	\begin{equation}
+	desviacion \:  de \: altura =STDEV([Altura])
+	\end{equation}
+		\textbf{Fuente:} Elaborado por el autor a partir de funci\'on de excel
+\end{formula}
+       \item \textbf{MAX}: funci\'on para determinar la profundidad m\'axima entre el kinect y el atleta.
+       \begin{formula}[H]
+	\centering
+	\caption{c\'alculo de la profundidad m\'axima}
+	\label{frm:maxDepth}
+	\begin{equation}
+	Profundidad \: Max =MAX([Profundidad])
+	\end{equation}
+		\textbf{Fuente:} Elaborado por el autor a partir de funci\'on de excel
+\end{formula}
+       \item \textbf{MIN}: funci\'on para determinar la profundidad m\'inima entre el kinect y el atleta.
+              \begin{formula}[H]
+	\centering
+	\caption{c\'alculo de la profundidad m\'inima}
+	\label{frm:minDepth}
+	\begin{equation}
+	Profundidad \:  Min =MIN([Profundidad])
+	\end{equation}
+		\textbf{Fuente:} Elaborado por el autor a partir de funci\'on de excel.
+\end{formula}
+\end{itemize}
+\subsection{Dise\~no de los resultados de una rutina tabata}
+En la presente secci\'on se determina los resultados de la rutina de tabata, dichos resultado son encontrados a partir del seguimiento del esqueleto, la cual proporciona informaci\'on de las variables del detalle de paso y repetici\'on (Ver variables independientes \ref{vr:7oi:indep}), con el fin objetivo de encontrar la siguiente informaci\'on:
+\begin{itemize}
+\item \textbf{Volumen de repeticiones:} Sumatoria de las cantidades totales de repeticiones de una serie.  
+\begin{code}[H]
+	\caption{funci\'on para obtener las repeticiones totales de una rutina}
+	\label{code:getRepetitions}
+	\begin{lstlisting}
+public int getRepetitions()
+{
+	int repetitions = 0;
+	foreach(serie _serie in Series)
+	{
+		repetitions += _serie.length;
+	}
+	return repetitions;
+}
+	\end{lstlisting}
+	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+\end{code}
+
+\item \textbf{Duraci\'on:} Tiempo total que se emplea en una rutina, tomando en cuenta todas las series de trabajo y descanso.
+\begin{formula}[H]
+	\centering
+	\caption{c\'alculo de la duraci\'on de tiempo de una rutina}
+	\label{eq:DurationTime}
+	\begin{equation}
+	Duration = \sum_{i=0}^{series}restTime +\sum_{i=0}^{series}workTime = series(restTime+workTime)
+	\end{equation}
+		\textbf{Fuente:} Elaborado por el autor de tesis
+\end{formula}
+\item \textbf{Resistencia:} Construye la estructura de la gr\'afica de trabajo de la rutina a partir del recorrido de todas la series, posteriormente en cada serie se recorre todas las repeticiones y luego en cada repetici\'on se almacena el tiempo acumulado de la rutina y la cantidad de repeticiones que lleva el atleta a ese momento.
+\begin{code}[H]
+	\caption{funci\'on para obtener los resultados del endurance}
+	\label{code:getEndurance}
+	\begin{lstlisting}
+public endurance getEndurance()
+{
+	List<endurance> _endurance = new List<endurance>();
+	for(int i = 0; i < series.length; i++)
+	{
+		List<data> _data = new List<data>();
+		
+		serie _serie = series[i];
+		for(int j = 1; j <= _serie.length; j++)
+		{
+			Repetition repetition = _serie[j-1];
+			int lastStep = repetition.length-1;
+			double tiempoAcumulado = repetition[lastStep].tiempo;
+
+			_data.add(new data(){
+				x = tiempoAcumulado,
+				y = j
+			});
+		}
+		
+		_endurance.add(new endurance(){
+			uid      = $"s{i+1}",
+			label    = $"Serie {i+1}",
+			showLine = true,
+			data     =  _data
+		});
+	}
+	return _endurance;
+}
+	\end{lstlisting}
+	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+\end{code} 
+
+\item \textbf{Potencia:} Resultado que muestra la cantidad m\'axima de repeticiones en el menor tiempo posible, la cual se encuentra a partir del recorrido de las series, luego en cada serie se determina la cantidad de repeticiones totales y el tiempo acumulado de la \'ultima repetici\'on, encontrando: 
+	\begin{itemize}
+	\item Una mayor cantidad de repeticiones almacenada anteriormente
+	\item La misma cantidad repeticiones almacenada anteriormente, pero se verifica si el tiempo acumulado es menor.
+	\end{itemize}
+\begin{code}[H]
+	\caption{funci\'on para obtener la potencia}
+	\label{code:getEndurance}
+	\begin{lstlisting}
+public power getPower()
+{
+	power _power = new power(){repetition = 0, time = 0};
+	foreach(serie _serie in series)
+	{
+		Repetition lastRepetition = _serie[_serie.length-1];
+		int lastStep = lastRepetition.length-1;
+		double tiempoAcumulado = lastRepetition[lastStep].tiempo;
+		
+		if (_serie.length > _power.repetition)
+		{
+			_power.repetition = _serie.length;
+			_power.time = tiempoAcumulado;
+		} 
+		else if (serie.length == _power.repetition)
+		{
+			if(tiempoAcumulado <  _power.time)
+			{
+				_power.repetition = _serie.length;
+				_power.time = tiempoAcumulado;
+			}
+		}
+	}
+	return _power;
+}
+	\end{lstlisting}
+	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+\end{code} 
+
+\item \textbf{Velocidad}: Raz\'on de cambio separado por:
+	\begin{itemize}
+	\item \textbf{Repeticiones por serie:} Variable que se determina a partir del promedio total de repeticiones por serie.
+		\item \textbf{Tiempo por repeticion:} Variable que se determina a partir del promedio de la diferencia entre el tiempo del paso final y tiempo del paso inicial -i.e. Tiempo de una repetici\'on- de cada repetici\'on realizada por el atleta.
+	\end{itemize}
+\end{itemize}
+
+
+\begin{code}[H]
+	\caption{funci\'on para obtener las velocidades de las rutinas}
+	\label{code:getTimeOfRepetitions}
+	\begin{lstlisting}
+public speed getSpeed()
+{
+	speed _speed = new speed();
+	List<double> timeOfRepetitions = new List<double>();
+	List<int> repetitionsOfSerie = new List<double>();
+	
+	foreach(serie _serie in series)
+	{
+		repetitionsOfSerie.add(_serie.length);
+		foreach(Repetition repetition in _serie)
+		{
+			int lastStep = repetition.length-1;
+			double tiempoFinal = repetition[lastStep].tiempo;
+			double tiempoInicial = repetition[0].tiempo;
+			double time = tiempoFinal - tiempoInicial;
+			timeOfRepetitions.add(time);
+		}			
+	}
+	_speed.repetitionBySerie = Convert.toInt32(
+		 repetitionsOfSerie.Average());
+	_speed.timeByRepetition = timeOfRepetitions.Average();
+	return speed;
+}
+	\end{lstlisting}
+	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+\end{code} 
