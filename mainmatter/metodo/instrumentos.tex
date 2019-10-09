@@ -9,7 +9,7 @@ El conjunto de instrumentos se elabor\'o con los  siguientes recursos:
 	\end{itemize}
 \item No humanos
 	\begin{itemize}
-	\item Mesa de soporte de altura de 0.70 metros.
+	\item Mesa de soporte, con una altura de 0.70 metros.
 	\item Cable de extensi\'on el\'ectrico de 2.00 metros. 
 	\item Computadora p\'ortatil
 		\begin{itemize}
@@ -21,7 +21,6 @@ El conjunto de instrumentos se elabor\'o con los  siguientes recursos:
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
-Estos recursos permitier
 \subsection{Formulario de registro de movimiento} \label{ins:frmMov}
 Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual tiene como objetivo describir el movimiento de cada equipo deportivo. Por otra parte, el formulario esta compuesto por las siguientes incisos:
 \begin{itemize}
@@ -100,7 +99,7 @@ Esta interfaz se compone por 5 componentes:
     \item Conjunto de paneles de control, que muestra una imagen en tiempo real del seguimiento del esqueleto, adem\'as de la altura (en metros) del usuario y la distancia de profundidad (en metros) entre el atleta y el sensor.
         \item Bot\'on que permite copiar a una hoja de observaci\'on (ver anexos, cuadro \ref{tab:obsDepth}) los siguientes datos respectivos: N\'umero de identificaci\'on de la articulaci\'on, la distancia de profundidad y la altura del usuario.
 \end{enumerate}
-\paragraph{Evaluaci\'on del movimiento}\mbox{} \\
+\paragraph{Evaluaci\'on del movimiento}\mbox{} \\\label{ins:UI:wpf:evaluate}
 Aplicaci\'on realizada por el autor del usuario, cuya funcionalidad es programar una rutina de tabata a partir de del movimiento de cada equipo deportivo, mostrado en la siguiente imagen:
 \begin{figure}[H]
 	\caption{Interfaz gr\'afica de evaluaci\'on de un movimiento}
@@ -154,7 +153,106 @@ Ya definido los componentes de la interfaz, se debe tomar en cuenta que al final
        \end{itemize}
 \end{itemize} 
 \subsubsection{Web}\mbox{} \\
-\subsubsection{Consola (Windows)}\mbox{} \\
+\label{ins:UI:web}
+Interfaz de usuario que permite capturar la informaci\'on de los formularios de movimiento, a partir de la siguiente arquitectura:
+\begin{figure}[H]
+	\caption{Arquitectura web}
+	\label{fig:architectureWeb}
+	\centering
+	\includegraphics[width=430px,height=220px]{graphics/webArchitecture.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+\begin{itemize}
+\item Front-end
+	\begin{itemize}
+	\item \textbf{Web}: Interfaz agradable para el usuario, cuya finalidad es realizar llamadas a las aplicaciones de negocio y servidor de archivos.
+	\end{itemize}
+\item Back-end
+	\begin{itemize}
+	\item \textbf{Business Api:} Maneja todas funciones l\'ogica del giro de negocios -e.g. Insertar movimiento, Leer movimiento, Resultados de rutina-.
+	\item \textbf{File Sistem:} Interfaz de programaci\'on de aplicaciones que se encarga de almacenar los archivos metadata que define una base de datos del movimiento.
+		\item \textbf{Linux Files:} Servidor encargado de almacenar los archivos de bases de datos del movimiento.
+		\item \textbf{Mongo DB:} Servidor de bases de datos no relacional, que se encarga de almacenar informaci\'on respectiva del movimiento
+	\end{itemize}
+\item Entornos de trabajo
+\begin{itemize}
+\item \textbf{Angular 7:} Framework que facilita la creaci\'on y el mantenimiento de una aplicaci\'on web \cite{angular2019}.
+\item \textbf{Argon Dashboard Angular:} Framework que facilita realizar una aplicaci\'on responsive -i.e. Adaptable a cualquier dispositivo a partir del navegador- \cite{argonDash}.
+\item \textbf{Express js:} Framework encargado de realizar la comunicaci\'on entre aplicaciones, a partir del \acrlong{HTTP} \cite{fileSistem2019}.
+\item \textbf{Mongoose:} Framework encargado de realizar cualquier operaci\'on de la base de datos de Mongo -e.g. Conexi\'on, recuperar datos, modificar- \cite{mongoose2019}.
+\end{itemize}
+\end{itemize}
+As\'i mismo la aplicaci\'on web esta conformado por las siguientes 4 Vistas:
+\paragraph{Vista del listado de movimientos}\mbox{} \\ \label{ins:UI:web:index}
+Vista principal que muestra al usuario todos los movimientos que se han insertado en la base de datos.
+\begin{figure}[H]
+	\caption{Vista de Index de movimientos}
+	\label{fig:viewIndex}
+	\centering
+	\includegraphics[width=440px,height=270px]{graphics/web-index.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+\begin{enumerate}[A.]
+\item Bot\'on que dirige al usuario a la pantalla de insertar un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:create}).
+\item Etiqueta que indica el nombre del movimiento.
+\item Bot\'on que descarga el archivo de base de datos de un movimiento.
+\item Bot\'on que exporta el archivo de metadata de un movimiento (Ver anexos, c\'odigo \ref{code:jsonMeta}), con los siguientes atributos:
+	\begin{itemize}
+	\item \textbf{Steps}: Vector n\'umerico que contiene las etiquetas de cada paso de un movimiento.
+	\item \textbf{anglesOfMovement}: Vector n\'umerico que almacena los \'indices de cada articulaci\'on que interact\'ua en el movimiento.
+	\item \textbf{recognition}: Valor que construye  el rango de confiabilidad para detectar un paso de un movimiento.
+	\item \textbf{id}: c\'odigo \'unico que identifica el movimiento en la base de datos.
+	\item \textbf{height}: Altura del kinect con respecto al suelo (Medida en metros).	
+	\item \textbf{depthMin}: Distancia m\'inima de profundidad del sensor y el atleta (Medida en metros).
+	\item \textbf{depthMax}: Distancia m\'axima de profundidad del sensor y el atleta (Medida en metros).
+	\item \textbf{timestamp}: Fecha en la cual fue insertado el registro del movimiento.
+	\item \textbf{focusJoin}: Articulaci\'on de an\'alisis que permite medir la distancia de profundidad. 
+	\end{itemize}
+\item Bot\'on que dirige al usuario a la pantalla de detalle de un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:read}).
+\item Bot\'on que dirige al usuario a la pantalla de reporte de un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:result}).
+\item Bot\'on que elimina el registro del movimiento de la base de datos.
+\end{enumerate}
+\paragraph{Vista de creaci\'on de un movimiento}\mbox{} \\ \label{ins:UI:web:create}
+Vista que se encarga de insertar toda la informaci\'on del movimiento, recuperada por los formularios.
+\begin{figure}[H]
+	\caption{Vista de crear un movimiento}
+	\label{fig:viewCreate}
+	\centering
+	\includegraphics[width=460px,height=320px]{graphics/web-create.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+\begin{enumerate}[A.]
+\item Bot\'on que dirige al usuario a la pantalla del listado de los movimientos (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:index}).
+\item Textbox para ingresar el nombre del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de nombre).
+\item Textbox para ingresar el detalle del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de descripci\'on).
+\item Selecci\'on de la articulaci\'on de \'analisis (recuperado del formulario  \ref{ins:frmRout}, atributo de articulaci\'on de \'analisis).
+\item Textbox n\'umerico que ingresa la cantidad de pasos del movimiento (recuperado del formulario  \ref{ins:frmMov}, atributo de n\'umero de pasos).
+\item Textbox n\'umerico que ingresa la distancia m\'inima de profundidad (ver formula \ref{frm:maxDepth}).
+\item Textbox n\'umerico que ingresa la distancia m\'axima de profundidad (ver formula \ref{frm:minDepth}).
+\item Textbox n\'umerico que ingresa la altura del Kinect con respecto al suelo (Para el presente proyecto es de 0.70 metros, debido que es la altura de la mesa que daba soporte al sensor, ver secci\'on \ref{ins}).
+\item Listado m\'ultiples de articulaciones que interviene en el movimiento (recuperado del formulario  \ref{ins:frmRout}, atributo de articulaciones no ignoradas).
+\item Bot\'on que almacena toda la informaci\'on respectiva del formulario web.
+\end{enumerate}
+\paragraph{Vista de lectura de un movimiento}\mbox{} \\ \label{ins:UI:web:read}
+Vista que se encarga de mostrar toda la informaci\'on del movimiento, adem\'as de insertar el archivo de base de datos de gesturas y modificar el rango de confiabilidad de reconocimiento de pasos.
+\begin{figure}[H]
+	\caption{Vista de lectura del movimiento}
+	\label{fig:viewRead}
+	\centering
+	\includegraphics[width=460px,height=320px]{graphics/web-read.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+\paragraph{Vista de resultados de un movimiento}\mbox{} \\ \label{ins:UI:web:result}
+Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimiento (Ver instrumento \ref{ins:UI:wpf}.\ref{ins:UI:wpf:evaluate})
+\begin{figure}[H]
+	\caption{Resultados de la rutina tabata de un movimiento}
+	\label{fig:resultsTabata}
+	\centering
+	\includegraphics[width=460px,height=320px]{graphics/web-results.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure}
+
+\subsubsection{Consola (Windows)}\mbox{} \\ \label{ins:cons} 
 
 \subsection{Herramienta para el an\'alisis de datos} \label{ins:toolsAn}
 Se utiliz\'o el software, Microsoft Excel, para la tabulaci\'on y organizaci\'on de los datos.
