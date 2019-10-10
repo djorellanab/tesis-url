@@ -66,10 +66,10 @@ Aplicaciones que interact\'ua con el usuario para la recoleccio\'n de datos, en 
 \label{ins:UI:wpf}
 El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite crear aplicaciones de escritorio con el framework .NET, la cual es soportado desde Windows XP hasta la \'ultima versi\'on de Windows -i.e. Windows 10-. Por lo tanto, en el presente proyecto se utiliz\'o este tipo de interfaz para la construci\'on del seguimiento de esqueleto, generada por los siguientes Kit de desarrollo de software:
 \begin{itemize}
-	\item \textbf{Windows inputs} Herramienta que permite crear elementos de un formulario -e.g. Botones, checkbox, textbox-.
-	\item \textbf{Windows Media} Herramientas que permite renderizar el seguimiento de esqueleto en tiempo real a partir de pinceles, colores, formas y dibujos.
-	\item \textbf{Windows Threading} Herramientas que permite crear temporizadores -i.e timer- para la renderizaci\'on del seguimiento del esqueleto en un per\'iodo del tiempo -i.e. 30 fps-.
-	\item \textbf{Kinect} Herramientas que permite acceder a las funcionalidades del Kinect, tales:
+	\item \textbf{Windows inputs} Herramienta que permite crear elementos de un formulario -e.g. Botones, checkbox, textbox- \cite{wpfWindows2019}.
+	\item \textbf{Windows Media} Herramientas que permite renderizar el seguimiento de esqueleto en tiempo real a partir de pinceles, colores, formas y dibujos \cite{WindowMedia2019}.
+	\item \textbf{Windows Threading} Herramientas que permite crear temporizadores -i.e timer- para la renderizaci\'on del seguimiento del esqueleto en un per\'iodo del tiempo -i.e. 30 fps- \cite{WindowThreading2019}.
+	\item \textbf{Kinect} Herramientas que permite acceder a las funcionalidades del Kinect \cite{WindowKinect2019}, tales:
 	\begin{itemize}
 	\item \textbf{Sensor Kinect:} Accede al API del Kinect para realizar las siguientes tareas:
 		\begin{itemize}
@@ -136,7 +136,7 @@ Interfaz que se divide en 13 componentes:
 \end{enumerate}
 Ya definido los componentes de la interfaz, se debe tomar en cuenta que al finalizar cada rutina tabata, el programa genera un archivo JSON (ver anexos, c\'odigo  \ref{code:tabata}), con los siguientes resultados:
 \begin{itemize}
-	\item \textbf{Analizador de variables:} Indica las variables que fueron configurado el tabata: Tiempo de descanso, tiempo de trabajo y la cantidad de series.
+	\item \textbf{Analizador de variables:} Indica las variables que fueron configurado en un tabata: Tiempo de descanso, tiempo de trabajo y la cantidad de series.
 	\item  \textbf{Resultados generales:} Muestra los resultados del volumen de repeticiones  y el tiempo total empleado en la rutina de tabata.
 	\item  \textbf{Endurance:} Vector de informaci\'on que permite construir la gr\'afica de la rutina tabata, a partir de los siguientes par\'ametros:
 	   \begin{itemize}  
@@ -177,9 +177,9 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 \item Entornos de trabajo
 \begin{itemize}
 \item \textbf{Angular 7:} Framework que facilita la creaci\'on y el mantenimiento de una aplicaci\'on web \cite{angular2019}.
-\item \textbf{Argon Dashboard Angular:} Framework que facilita realizar una aplicaci\'on responsive -i.e. Adaptable a cualquier dispositivo a partir del navegador- \cite{argonDash}.
+\item \textbf{Argon Dashboard Angular:} Framework que facilita realizar una aplicaci\'on responsive -i.e. Adaptable a cualquier dispositivo a partir de un navegador- \cite{argonDash}.
 \item \textbf{Express js:} Framework encargado de realizar la comunicaci\'on entre aplicaciones, a partir del \acrlong{HTTP} \cite{fileSistem2019}.
-\item \textbf{Mongoose:} Framework encargado de realizar cualquier operaci\'on de la base de datos de Mongo -e.g. Conexi\'on, recuperar datos, modificar- \cite{mongoose2019}.
+\item \textbf{Mongoose:} Framework encargado de realizar cualquier operaci\'on de la base de datos de Mongo -e.g. Conexi\'on, recuperar datos, modificar registros- \cite{mongoose2019}.
 \end{itemize}
 \end{itemize}
 As\'i mismo la aplicaci\'on web esta conformado por las siguientes 4 Vistas:
@@ -225,7 +225,7 @@ Vista que se encarga de insertar toda la informaci\'on del movimiento, recuperad
 \item Bot\'on que dirige al usuario a la pantalla del listado de los movimientos (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:index}).
 \item Textbox para ingresar el nombre del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de nombre).
 \item Textbox para ingresar el detalle del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de descripci\'on).
-\item Selecci\'on de la articulaci\'on de \'analisis (recuperado del formulario  \ref{ins:frmRout}, atributo de articulaci\'on de \'analisis).
+\item Selecci\'on de la articulaci\'on de \'analisis (recuperado de la aplicaci\'on de detecci\'on de profundidad \ref{fig:appDepth}, atributo de articulaci\'on de \'analisis).
 \item Textbox n\'umerico que ingresa la cantidad de pasos del movimiento (recuperado del formulario  \ref{ins:frmMov}, atributo de n\'umero de pasos).
 \item Textbox n\'umerico que ingresa la distancia m\'inima de profundidad (ver formula \ref{frm:maxDepth}).
 \item Textbox n\'umerico que ingresa la distancia m\'axima de profundidad (ver formula \ref{frm:minDepth}).
@@ -242,6 +242,11 @@ Vista que se encarga de mostrar toda la informaci\'on del movimiento, adem\'as d
 	\includegraphics[width=460px,height=320px]{graphics/web-read.PNG} \\
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
+\begin{enumerate}[A.]
+\item Ficha de informaci\'on que detalla todas las caracter\'isticas del movimiento -e.g. Nombre, descripci\'on, etiquetas de los pasos, intervalos de confianza de los pasos, articulaciones del movimiento-.
+\item Conjuntos de controladores que permite seleccionar un archivo de base de datos de gesturas y almacenarlo en el servidor de archivos.
+\item Conjunto de controladores que permite cambiar el valor del factor de reconocimiento (Ver ecuaci\'on \ref{frm:rangoConfiabilidad}).
+\end{enumerate}
 \paragraph{Vista de resultados de un movimiento}\mbox{} \\ \label{ins:UI:web:result}
 Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimiento (Ver instrumento \ref{ins:UI:wpf}.\ref{ins:UI:wpf:evaluate})
 \begin{figure}[H]
@@ -251,8 +256,90 @@ Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimie
 	\includegraphics[width=460px,height=320px]{graphics/web-results.PNG} \\
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
-
-\subsubsection{Consola (Windows)}\mbox{} \\ \label{ins:cons} 
-
+\begin{enumerate}[A.]
+\item Conjuntos de controladores que selecciona y lee un archivo de resultados de la rutina tabata (ver anexos, c\'odigo \ref{code:tabata}).
+\item Diagrama de dispersi\'on de la rutina tabata, la cual muestra las repeticiones acumuladas durante un tiempo de trabajo y de descanso.
+\item Ficha informativa que muestra los resultados de la rutina tabata -e.g. Variables que fueron configuradas en el tabata, volumen de repeticiones, duraci\'on de la rutina, repeticiones por serie de trabajo, tiempo promedio por repetici\'on-.
+\end{enumerate}
+\subsubsection{Consola (Windows)}\mbox{} \\ \label{ins:cons}
+\begin{figure}[H]
+	\caption{Aplicaci\'on de extraci\'on de datos en lo v\'ideos (xef)}
+	\label{fig:appConsole}
+	\centering
+	\includegraphics[width=460px,height=50px]{graphics/appConsole.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis
+\end{figure} 
+Aplicaci\'on de consola que permite extraer informaci\'on de los v\'ideos (.xef) y generar una hoja de observaciones del seguimiento de esqueleto (ver anexo, tabla \ref{tab:obsVideoData}) , con la ayuda de las siguientes herramientas:
+\begin{itemize}
+\item \textbf{System console:} Permite utilizar todas las funcionalidades de consola de Windows \cite{windowConsole2019}.
+\item \textbf{System IO:} Proporciona todas funcionalidades de manejo de archivos \cite{windowIO2019}.
+\item \textbf{Kinect XEF Tools:} Librer\'ia que extrae de los v\'ideos (xef), la posici\'on de cada articulaci\'on del seguimiento del tiempo, durante un per\'iodo del tiempo -i.e. Duraci\'on del v\'ideo- \cite{kinectXEFTools}.
+\end{itemize}
+Para el funcionamiento de la aplicaci\'on, es necesario un archivo de lector analizador (ver anexos, c\'odigo \ref{code:jsonVideo}), en donde esta conformado por los siguientes atributos:
+\begin{itemize}
+\item \textbf{pathVideo:} Direcci\'on del archivo  de v\'ideo a analizar (.xef).
+\item \textbf{pathWrite:} Direcci\'on del archivo  resultante (.csv).
+\item \textbf{joints:} vector n\'umerico que muestra los \'indices de las articulaciones que se desea extraer la informaci\'on.
+\item \textbf{Frame data:} Vector de vectores de cadenas, la cual por cada vector de cadena se indica el segmento de v\'ideo de extracci\'on de datos -i.e. Punto de inicio y punto final-.
+\end{itemize}
+\subsection{Kinect Configuration Verifier} \label{ins:KinectCheckt}
+Herramienta del kit de desarrollo de software del sensor del Kinect, que tiene como objetivo  analizar la computadora que se encuentra conectado al sensor, verificando las compatibilidades del hardware -e.g. Procesador, controlador de USB, sistema operativo, conexi\'on del sensor-, adem\'as de chequear la comunicaci\'on con la c\'amara -e.g. canales de color y de profundidad-
+\subsection{Kinect studio} \label{ins:KinectStudio}
+Herramienta del kit de desarrollo de software del sensor del Kinect, que se utiliza para monitorear, grabar (V\'ideos .xef) y reproducir datos de la c\'amara \cite{KinectStudio2019}, a partir de los siguientes canales:
+\begin{figure}[H]
+	\caption{Canales por defecto para grabar un v\'ideo en Kinect Studio }
+	\label{fig:streamDefault}
+	\centering
+	\includegraphics[width=200px,height=360px]{graphics/streamsRecord.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\begin{itemize}
+\item Activos:
+\begin{itemize}
+\item \textbf{NUI Body Frame:} Encargado de lo Datos en relaci\'on al seguimiento esqueleto.
+\item \textbf{NUI Body Index:} Representa Datos que estructura de 1 a 6 esqueletos.
+\item \textbf{NUI Calibration Data:} Responsable de obtener la mayor precisi\'on de datos.
+\item \textbf{NUI Depth:} Controla y obtiene los datos de profundidad.
+\item \textbf{NUI IR:} Monitoreo de los sensores de profundidad.
+\item \textbf{NUI Opaque Data:} Disminuye el ruido de la luz.
+\item \textbf{NUI Sensor telemetry:} Encargado de actualizar y obtener nuevos datos en un per\'iodo de tiempo.
+\end{itemize}
+\item Inactivos:
+\begin{itemize}
+\item \textbf{NUI Color Camera Settings:} Encargado de la conversi\'on de colores -e.g. YUV, RGB-
+\item \textbf{NUI Long Exposure IR:} Identifica  objetos externos al seguimiento de esqueletos -e.g. Mesa, pelota, pesa-.
+\item \textbf{NUI Uncompressed Color:} Responsable de obtener los datos de color -e.g. C\'odigo de colores de un sem\'aforo-.
+\end{itemize}
+\end{itemize}
+As\'i mismo esta herramienta proporciona una interfaz gr\'afica para ver y analizar los v\'ideos a partir de segmentos -i.e. Punto de inicio y fin- y puntos de pausas.
+\begin{figure}[H]
+	\caption{Lectura de v\'ideo .xef }
+	\label{fig:readVideoXEF}
+	\centering
+	\includegraphics[width=460px,height=320px]{graphics/readVideo.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Visual gesture builder} \label{ins:VisualGestureBuilder}
+Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\'on, usando tecnolog\'ias de m\'aquinas de aprendizaje -i.e. AdaBoostTrigger o RFRProgress-, con el fin objetivo de reconocer un gesto -e.g. Saltar, bailar, sentarse- \cite{KinectBuilder2019}, a tr\'aves de la etiquetaci\'on  fotogramas y la configuraci\'on de las siguientes variables:
+ \begin{figure}[H]
+	\caption{Variables de configuraci\'on de visual gesture builder}
+	\label{fig:visualGesture}
+	\centering
+	\includegraphics[width=300px,height=300px]{graphics/settingsGesture.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\begin{itemize}
+\item \textbf{Gesture Name:} Nombre del movimiento  (Recuperado del formulario \ref{ins:frmMov}, atributo de nombre).
+\item \textbf{Body Side:} Valor por defecto, Any, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la replica de una patada lateral izquierda.
+\item \textbf{Gesture type:} El valor por defecto es RFRProgress, debido que se esta analizando movimiento continuos -e.g. Salto, patada, saque-.
+\item \textbf{Duplicate and Mirror Data During Training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario \ref{ins:frmMov}, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
+\item \textbf{User Hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto -e.g. Bal\'on, pesa, raqueta-.
+\item \textbf{Ignore part body:} Se activa aquellas partes del cuerpo que se desea ignorar durante el movimiento (Ver formulario \ref{ins:frmMov}, Articulaciones ignoradas).
+\end{itemize}
+Luego de configurar las variables globales, el proyecto crear\'a una base de datos de gesturas vac\'io, la cual debe adjuntar todos los v\'ideos (.xef)  y por cada v\'ideo se debe etiquetar los valores de fotogramas (Seg\'un los pasos definido en el formulario \ref{ins:frmMov}), con el fin objetivo de: 
+\begin{itemize}
+\item \textbf{Construir:} Acci\'on que entrena y genera el modelo a partir de un archivo de base de datos de gesturas (.gbd).
+\item \textbf{Analizar:} Funci\'on que permite seleccionar archivos de base de datos gesturas y posteriormente compararlo con v\'ideos previamente etiquetados, encontrando el valor real -i.e. Valor de la etiqueta- y el valor pron\'osticado del modelo (Estos valores son usado para completar la hoja de observaci\'on de errores modelo, ver anexos, tabla \ref{tab:obsErrores}).
+\end{itemize}
 \subsection{Herramienta para el an\'alisis de datos} \label{ins:toolsAn}
 Se utiliz\'o el software, Microsoft Excel, para la tabulaci\'on y organizaci\'on de los datos.

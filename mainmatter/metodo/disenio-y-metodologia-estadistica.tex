@@ -1,6 +1,6 @@
-\section{DISEÑO DE LA METODOLOGÍA}
+\section{DISEÑO DE LA METODOLOGÍA}\label{dis}
 Esta secci\'on se presenta todos los dise\~nos y c\'alculos matem\'aticos y estad\'isticos encontrados en los resultados. 
-\subsection{Asignaci\'on de valores de etiquetas y rangos de identificaci\'on}
+\subsection{Asignaci\'on de valores de etiquetas y rangos de identificaci\'on}\label{dis:asig}
 Estos valores permite identificar el paso de cada movimiento a partir de las siguientes variables:
 \begin{itemize}
 \item \textbf{Offset:} Valor de distribuci\'on de etiquetas a cada paso del movimiento sin tomar el paso inicial (Debido que la etiqueta del paso inicial siempre tendr\'a un valor de cero).
@@ -73,7 +73,7 @@ inferior(paso)+identificacion & paso\, no\, final\\
 	\textbf{Fuente:} Propuesto por el autor de tesis
 \end{formula} 
 \end{itemize}
-\subsection{C\'alculo indirecto de la altura del usuario}
+\subsection{C\'alculo indirecto de la altura del usuario} \label{dis:height}
 Para el presente proyecto se midi\'o la altura del usuario, a partir de la diferencia entre la altura de la cabeza y la altura promedio de lo p\'ies.
 	\begin{formula}[H]
 	\centering
@@ -84,7 +84,7 @@ y_{usuario}=y_{cabeza}-\frac{y_{pieDerecho}+y_{pieIzquierdo}}{2}
 	\end{equation}
 			\textbf{Fuente:} Planteado por el autor de tesis
 \end{formula} 
-\subsection{C\'alculo de distancia de profundidad m\'inimma y m\'axima}
+\subsection{C\'alculo de distancia de profundidad m\'inimma y m\'axima} \label{dis:deep}
 Para los siguientes c\'alculos se utiliz\'o la hoja de observaciones de profundidad (Ver anexo, tabla  \ref{tab:obsDepth}), aplicando la siguientes funciones de Microsoft excel (Versi\'on ingl\'es):
 \begin{itemize}
        \item \textbf{AVERAGE}: funci\'on para determinar la altura promedio.
@@ -128,7 +128,7 @@ Para los siguientes c\'alculos se utiliz\'o la hoja de observaciones de profundi
 		\textbf{Fuente:} Elaborado por el autor a partir de funci\'on de excel.
 \end{formula}
 \end{itemize}
-\subsection{Eventos del Kinect}
+\subsection{Eventos del Kinect} \label{dis:even}
 De acuerdo a las hoja de observaciones de extraci\'on de datos de v\'ideos (Ver tabla \ref{tab:obsVideoData}), se recupera las siguiente informaci\'on:
 \begin{itemize}
 \item \textbf{Eventos}: conjunto de datos del seguimiento de esqueleto, durante un intervalo de tiempo.
@@ -172,7 +172,7 @@ Evento_{x}
               \begin{formula}[H]
 	\centering
 	\caption{c\'alculo del tiempo de la repetici\'on}
-	\label{frm:minDepth}
+	\label{frm:relativeTime}
 	\begin{equation}
 	relative \: time = TotalTime_{Evento\: x}-TotalTime_{Evento\: inicial}
 	\end{equation}
@@ -199,7 +199,7 @@ As\'i mismo, con la herramienta de Excel se realiz\'o un an\'alisis de regresi\'
 \item Polinomial de grado 4
 \item Potencia
 \end{itemize}
-\subsection{Captura de datos durante una rutina}
+\subsection{Captura de datos durante una rutina}\label{dis:recognitionMove}
 Durante la rutina, los datos del seguimiento de esqueleto son recuperado a partir del kit de desarrollo de software del kinect, dichos datos son almacenados en la siguiente estructura:
 \begin{formula}[h]
 	\centering
@@ -254,7 +254,7 @@ De igual manera se presenta el algoritmo de captura de datos de la rutina, dicho
 	\includegraphics[width=430px,height=470px]{graphics/algoritmoDeteccion.png} \\
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
-\subsection{Validaci\'on del modelo de reconocimiento de movimiento}
+\subsection{Validaci\'on del modelo de reconocimiento de movimiento}\label{dis:validate}
 El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{perez2015analisis}:
 \begin{itemize}
 \item \textbf{Hold out:} La muestra de datos se separa en dos conjunto, uno para construir y entrenar el modelo -i.e. Build- y otro para realizar pruebas que dan validez al error del modelo.
@@ -310,7 +310,7 @@ El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{p
 \end{table}
 Posteriormente en la etapa de pruebas, se realiz\'o  por cada modelo un hoja de observaciones de valores reales y pron\'onosticados (ver anexo, tabla \ref{tab:obsErrores}), de modo de encontrar los siguientes errores de pron\'osticos \cite{erroresPronostico}:
 \begin{itemize}
-\item \textbf{Error Medio Pron\'osticado (EMP):} Promedio de diferencia entre el valor real y pron\'osticado, la cual puede tener tres interpretaciones distintas:
+\item \textbf{Error Medio Pron\'osticado (\acrshort{EMP}):} Promedio de diferencia entre el valor real y pron\'osticado, la cual puede tener tres interpretaciones distintas:
 	\begin{itemize}
 	\item \textbf{Valor positivo:} En promedio los valores pron\'osticado est\'an por arriba de los valores reales.
 	\item \textbf{Valor negativo:} En promedio los valores pron\'osticado est\'an por debajo de los valores reales.
@@ -325,15 +325,15 @@ EMP=\frac{\sum_{0}^{n}(Real_{x}-Pronostic_{x}\cdot10^{-6})}{n}
 	\end{equation}
 	\textbf{Fuente:} Formula adaptada al proyecto, a partir de la f\'ormula EMP \cite{videoErrores}
 \end{formula}  
-\item \textbf{Desviaci\'on Media absoluta (MAD):} Promedio de diferencia absoluta entre el valor real y pron\'osticado, que muestra la dispersi\'on con respecto al valor real.
+\item \textbf{Desviaci\'on Media absoluta (\acrshort{DMA}):} Promedio de diferencia absoluta entre el valor real y pron\'osticado, que muestra la dispersi\'on con respecto al valor real.
  \begin{formula}[H]
 	\centering
 	\caption{C\'alculo de la desviaci\'on media absoluta}
 	\label{frm:MADMath}
 	\begin{equation}
-MAD=\frac{\sum_{0}^{n}( \left |  Real_{x}-Pronostic_{x}\cdot10^{-6} \right |)}{n}
+DMA=\frac{\sum_{0}^{n}( \left |  Real_{x}-Pronostic_{x}\cdot10^{-6} \right |)}{n}
 	\end{equation}
-	\textbf{Fuente:} Formula adaptada al proyecto, a partir de la f\'ormula MAD \cite{videoErrores}
+	\textbf{Fuente:} Formula adaptada al proyecto, a partir de la f\'ormula DMA \cite{videoErrores}
 \end{formula}  
 \item \textbf{Ra\'iz del error cuadr\'atico medio (RECM):} Es la desviaci\'on est\'andar de los errores de predicci\'on, la cual indica qu\'e tan disperso se encuentra los errores con respecto al error medio pron\'osticado.
  \begin{formula}[H]
@@ -385,8 +385,8 @@ Los errores de la muestra total ayuda aceptar o rechazar el modelo; si el el err
 Finalmente, cada modelos aprobado se debe encontrar el factor de reconocimiento y sus respectivo rango de confiabilidad:
 \begin{formula}[H]
 	\centering
-	\caption{Rango de confiabilidad}
-	\label{frm:RecmAll}
+	\caption{Factor de reconocimiento e intervalos de confianza}
+	\label{frm:rangoConfiabilidad}
 	\begin{equation}
 \begin{matrix}
 recognition=\frac{RECM_{muestra\, total}}{valor\: de\: identificacion}  \\ 
@@ -397,9 +397,13 @@ ic(paso)=\left\{\begin{matrix}
 inferior(paso)=\left\{\begin{matrix}
 0 & si\, es\, el\, primer\, paso\\ \\ 
 etiqueta(paso)-\frac{recognition*valor\, de\, identificacion}{2} & si\: es\: paso\: intermedio \\ 
+\\
+1-(recognition*valor\, de\, identificacion)& si\, es\, el\, ultimo\, paso
 \end{matrix}\right. \\ 
 \\ 
 inferior(paso)=\left\{\begin{matrix}
+recognition*valor\, de\, identificacion& si\, es\, el\, primer\, paso \\
+\\
 etiqueta(paso)+\frac{recognition*valor\, de\, identificacion}{2} & si\: es\: paso\: intermedio \\ \\ 
 1 & si\: es\: el\: ultimo\: paso
 \end{matrix}\right.
@@ -408,7 +412,7 @@ etiqueta(paso)+\frac{recognition*valor\, de\, identificacion}{2} & si\: es\: pas
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis
 \end{formula} 
-\subsection{Dise\~no de los resultados de una rutina tabata}
+\subsection{Dise\~no de los resultados de una rutina tabata} \label{dis:results}
 En la presente secci\'on se determina los resultados de la rutina de tabata, dichos resultado son encontrados a partir del seguimiento del esqueleto, la cual proporciona informaci\'on de las variables del detalle de paso y repetici\'on (Ver f\'ormula \ref{frm:MatrizDatosRepeticion}), con el fin objetivo de encontrar la siguiente informaci\'on:
 \begin{itemize}
 \item \textbf{Volumen de repeticiones:} Sumatoria de las cantidades totales de repeticiones de una serie.  
