@@ -1,4 +1,4 @@
-\section{DISEÑO DE LA METODOLOGÍA}\label{dis}
+\section{Dise\~no de la metodolog\`ia}\label{dis}
 Esta secci\'on se presenta todos los dise\~nos y c\'alculos matem\'aticos y estad\'isticos encontrados en los resultados. 
 \subsection{Asignaci\'on de valores de etiquetas y rangos de identificaci\'on}\label{dis:asig}
 Estos valores permite identificar el paso de cada movimiento a partir de las siguientes variables:
@@ -201,7 +201,21 @@ As\'i mismo, con la herramienta de Excel se realiz\'o un an\'alisis de regresi\'
 \end{itemize}
 \subsection{Captura de datos durante una rutina}\label{dis:recognitionMove}
 Durante la rutina, los datos del seguimiento de esqueleto son recuperado a partir del kit de desarrollo de software del kinect, dichos datos son almacenados en la siguiente estructura:
-\begin{formula}[h]
+\begin{itemize}
+\item \textbf{i:} Valor n\'umerico \'unico que identifica una articulaci\'on.
+\item \textbf{x:} Posici\'on horizontal de la articulaci\'on, dibujado en una imagen de dos dimensiones.
+\item \textbf{y:} Posici\'on vertical de la articulaci\'on, dibujado en una imagen de dos dimensiones.
+\item \textbf{fm:} Factor del movimiento proporcionado por la base de datos de gesturas.
+\item \textbf{p:} Valor n\'umerico que identifica el paso que esta realizando un atleta.
+\item \textbf{tiempo:} Tiempo de captura de datos.
+\item \textbf{joint:} Vector que almacena la posici\'on de una articulaci\'on en una figura de dos dimensiones.
+\item \textbf{Esqueleto:} Vector que almacena todos los vectores de articulaciones del esqueleto humano.
+\item \textbf{step:} Vector que almacena informaci\'on del seguimiento esqueleto, factor del movimiento y el tiempo de un paso.
+\item \textbf{repetici\'on:} Vector que almacena la informaci\'on de cada de paso de un movimiento.
+\item \textbf{serie:} Vector que almacena las repeticiones del movimiento durante una serie.
+\item \textbf{series:} Vector que almacena la informaci\'on de cada serie de la rutina.
+\end{itemize}
+\begin{formula}[H]
 	\centering
 	\caption{Matriz de datos capturados durante una rutina}
 	\label{frm:MatrizDatosRepeticion}
@@ -231,21 +245,7 @@ series & [serie]
 \end{matrix}
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis
-\end{formula}  
-\begin{itemize}
-\item \textbf{i:} Valor n\'umerico \'unico que identifica una articulaci\'on.
-\item \textbf{x:} Posici\'on horizontal de la articulaci\'on, dibujado en una imagen de dos dimensiones.
-\item \textbf{y:} Posici\'on vertical de la articulaci\'on, dibujado en una imagen de dos dimensiones.
-\item \textbf{fm:} Factor del movimiento proporcionado por la base de datos de gesturas.
-\item \textbf{p:} Valor n\'umerico que identifica el paso que esta realizando un atleta.
-\item \textbf{tiempo:} Tiempo de captura de datos.
-\item \textbf{joint:} Vector que almacena la posici\'on de una articulaci\'on en una figura de dos dimensiones.
-\item \textbf{Esqueleto:} Vector que almacena todos los vectores de articulaciones del esqueleto humano.
-\item \textbf{step:} Vector que almacena informaci\'on del seguimiento esqueleto, factor del movimiento y el tiempo de un paso.
-\item \textbf{repetici\'on:} Vector que almacena la informaci\'on de cada de paso de un movimiento.
-\item \textbf{serie:} Vector que almacena las repeticiones del movimiento durante una serie.
-\item \textbf{series:} Vector que almacena la informaci\'on de cada serie de la rutina.
-\end{itemize}
+\end{formula}
 De igual manera se presenta el algoritmo de captura de datos de la rutina, dicho algoritmo se ejecuta durante el tiempo de trabajo de tabata, en donde comienza con una subrutina para obtener el valor de factor de movimiento en tiempo real, posteriormente ese valor se compara a partir de los intervalos de confianza, si el valor no se encuentra en ning\'un intervalo, se debe obtener un nuevo factor de movimiento (Durante un per\'iodo de 0.033 segundos). En caso contrario se obtiene el valor de la etiqueta del paso. Luego se revisa si hay un dato registrado en relaci\'on al paso actual, en caso que haya un registro asociado, se debe eliminar los datos del paso siguiente (Esto ocurre, si el usuario se salta un paso del movimiento) y as\'i mismo se elimina el registro del paso actual, despu\'es se continua con el proceso que no haya ning\'un registro del paso, la cual se debe obtener toda la informaci\'on del seguimiento esqueleto y seguidamente se almacena el registro en el vector de repetici\'on. Finalmente se chequea la cantidad de registro del  vector de repetici\'on, en caso que falte un registro se debe reiniciar nuevamente el algoritmo, por lo contrario, se almacena en el registro de repetici\'on.
 \begin{figure}[H]
 	\caption{Algoritmo de captura de datos durante la rutina}
@@ -346,7 +346,7 @@ RECM=\sqrt{\frac{\sum_{0}^{n}((Real-Pronostic\cdot10^{-6})-EMP)^{2}}{n}}
 	\textbf{Fuente:} Formula adaptada al proyecto, a partir de la f\'ormula RECM \cite{GEORCMETUT}
 \end{formula}  
 \end{itemize}
-Luego de encontrar los errores por cada modelo, se debe seleccionar el modelo que tenga el menor error \acrshort{RECM}, y posteriormente encontrar los errores de la muestra total:
+Luego de encontrar los errores, se debe seleccionar el modelo que tenga el menor error \acrshort{RECM}, y posteriormente encontrar los errores de la muestra total:
  \begin{formula}[H]
 	\centering
 	\caption{EMP de la muestra total}
@@ -382,7 +382,7 @@ Los errores de la muestra total ayuda aceptar o rechazar el modelo; si el el err
 	\includegraphics[width=430px,height=180px]{graphics/aceptacionModelo.png} \\
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
-Finalmente, cada modelos aprobado se debe encontrar el factor de reconocimiento y sus respectivo rango de confiabilidad:
+Finalmente, por cada modelo aprobado se debe encontrar el factor de reconocimiento y sus respectivo rango de confiabilidad:
 \begin{formula}[H]
 	\centering
 	\caption{Factor de reconocimiento e intervalos de confianza}

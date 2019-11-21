@@ -1,4 +1,4 @@
-\chapter{PRESENTACIÓN Y ANÁLISIS DE RESULTADOS}
+\chapter{Presentaci\'on y an\'alisis de resultados}
 \section{Selecci\'on del movimiento de cada equipo deportivo} \label{res:idMov}
 A continuaci\'on se presenta el formulario de registro de movimiento de cada equipo deportivo (ver anexos, Figura \ref{fig:frmWhiteMov}), en ella se describe la informaci\'on del movimiento con el detalle de los pasos que debe realizar para ejecutar dicho movimiento:
 \begin{figure}[H]
@@ -93,8 +93,7 @@ En esta secci\'on se realiz\'o por cada equipo deportivo, un cuadro comparativo,
 \end{figure}
 \begin{landscape}
 \section{Razones de fallo del seguimiento de esqueleto}
-El seguimiento de esqueleto es unos elementos fundamentales para crear el modelo de reconocimiento de movimiento, sin embargo se debe tomar en cuenta que puede fallar por varias razones, entre ellas se encuentra las siguientes fallas: del atleta -i.e. Hombre-, del sensor Kinect -i.e. M\'aquina-, del lugar de trabajo -i.e. Entorno-, de la interacci\'on  con objetos o elementos externos -i.e. Material-, de la preparaci\'on necesaria para realizar una rutina -i.e. M\'etodo- y finalmente el 
-\'area de trabajo para la captura de datos -i.e. Medida-:  
+El seguimiento de esqueleto es unos de los  elementos fundamentales para crear el modelo de reconocimiento de movimiento, sin embargo se debe tomar en cuenta que puede fallar por varias razones, entre ellas se encuentra las siguientes fallas: del atleta -i.e. Hombre-, del sensor Kinect -i.e. M\'aquina-, del lugar de trabajo -i.e. Entorno y  Medida-, de la interacci\'on  con objetos o elementos externos -i.e. Material- y de la preparaci\'on necesaria para realizar una rutina -i.e. M\'etodo-:
 \begin{figure}[H]
 	\caption{diagrama de Ishikawa sobre el fallo del seguimiento de esqueleto}
 	\label{fig:ishikawa}
@@ -216,7 +215,7 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 \end{center}
 \end{table}
 \section{Muestra de regresiones de los movimiento} \label{res:regretions}
-Estos resultados demuestra un ejemplo de las posibles regresiones que puede implementar el modelo de machine learning -i.e. Random Forest Regression-, adem\'as de comprobar que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (Uniformidad con los tiempo de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
+Estos resultados muestra un ejemplo de las posibles regresiones que puede implementar el modelo de machine learning -i.e. Random Forest Regression-, adem\'as de comprobar que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (Uniformidad con los tiempo de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
 \begin{figure}[H]
 	\caption{Regresi\'on distancia vs tiempo, del equipo animaci\'on}
 	\label{fig:regrCheerleader}
@@ -238,7 +237,7 @@ En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del recono
 \item \textbf{Temporizador:} Tiempo de cuenta regresiva, la cual indica cu\'antos segundos le queda al atleta en el estado de trabajo.
 \item \textbf{Serie:} Le indica al atleta, cu\'al n\'umero de serie se esta ejecutando (Los resultados fueron capturado durante la serie \# 1 de trabajo).
 \item \textbf{Repeticiones:} Le muestra al atleta la cantidad de repeticiones que lleva durante las  series de trabajo (Se debe observar que este indicador incrementa en el \'ultimo paso de cada movimiento).
-\item \textbf{Paso:} N\'umero que indica el \'ultimo paso ejecutado (Comenzando desde el valor 0). Se debe tomar en cuenta que dicho valor cambia dependiendo del factor de movimiento -i.e. Progreso-, es decir reconoce cada paso del movimiento, ya que el valor del progreso se encuentra dentro de alg\'un intervalo de confianza (Ver secci\'on \ref{res:chooseModel}).
+\item \textbf{Paso:} N\'umero que indica el \'ultimo paso ejecutado (Comenzando desde el valor 0). Se debe tomar en cuenta que dicho valor cambia dependiendo del factor de movimiento -i.e. Progreso-, es decir, se  reconoce cada paso del movimiento, ya que el valor del progreso se encuentra dentro de alg\'un intervalo de confianza (Ver secci\'on \ref{res:chooseModel}).
 \item \textbf{Progreso:} Factor del movimiento en tiempo real (Obtenido a partir de la base de datos de gesturas), la cual va incrementado por cada paso que avance el atleta.
 \item \textbf{Tiempo Total:} Tiempo total que lleva actualmente el atleta (En los resultados se puede ver que el atleta emplea una repetici\'on en un per\'iodo de d\'ecimas de segundos).
 \end{itemize}
