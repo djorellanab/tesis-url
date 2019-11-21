@@ -1,1 +1,72 @@
-\section{PROCEDIMIENTO}
+\section{Procedimiento}
+Para el presente proyecto, se implement\'o una metodolog\'ia en cascadas con las siguiente activades:
+\begin{figure}[H]
+	\caption{Segmentos de repeticiones de un v\'ideo}
+	\label{fig:segVideo}
+	\centering
+	\includegraphics[width=420px,height=80px]{graphics/cascada.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Selecci\'on del movimiento}
+El investigador visit\'o a cada equipo deportivo durante los d\'ias de entrenamiento -e.g. Lunes de taekwondo, martes de tenis de mesa y mi\'ercoles de animaci\'on-.  Previamente al entrenamiento, el equipo deportivo realizaba series de movimientos que ayudan a calentar y estirar el cuerpo humano.  Luego del calentamiento, el entrenador ense\~naba a los atletas, las t\'ecnicas que ayudan a mejorar el rendimiento deportivo -e.g. Patadas, atrapadas, saques, remates-, y posteriormente cada atleta replicaba los movimientos. Por \'ultimo, el investigador con la ayuda del equipo deportivo, seleccionaron un movimiento de calentamiento -e.g. Jumping Jacks, Patada lateral y derecha-.
+\subsection{Toma de datos}
+El investigador visit\'o nuevamente a cada equipo deportivo y esper\'o que finalizara la rutina de calentamiento (Durante esa actividad, el investigador instal\'o el prototipo de toma de datos en el lugar asignado), posteriormente al calentamiento, el entrenador seleccionaba a un atleta para participar en la toma de datos (En paralelo, los atletas restantes continuaban con su entrenamiento), el atleta llegaba con el investigador y realizaba dos actividades distintas:
+\begin{itemize}
+\item La primera actividad constaba en posicionar correctamente al atleta, dicha posici\'on depende de dos condiciones: La primera se chequeaba que se dibuje completamente el seguimiento de esqueleto y la segunda se verificaba que el seguimiento no falle durante la ejecuci\'on del movimiento, lo cual se le solicitaba al atleta realizar 2 repeticiones de prueba. S\'i se cumple ambas condiciones, el investigador apuntaba las observaciones de la altura del usuario y la distancia de profundidad entre el sensor y la cadera central del atleta (ver instrumento \ref{ins:UI:wpf}.\ref{ins:UI:wpf:depth})
+\item Al encontrar la posici\'on correctamente, el entrenador le programaba al atleta una rutina en base al movimiento seleccionado (La rutina puede ser dos tipos: Por tiempo o por cantidad de repeticiones). Finalizando con la grabaci\'on de la rutina del deportista (Grabada por el investigador, con la ayuda del instrumento \ref{ins:KinectStudio}).
+\end{itemize}
+Se debe tomar en cuenta que estas dos actividades se realizaban por cada atleta del equipo deportivo, durante el tiempo de entrenamiento.
+ \begin{figure}[H]
+	\caption{Fotograf\'ias durante la toma de datos}
+	\label{fig:getDataStep}
+	\centering
+	\includegraphics[width=210px,height=210px]{graphics/tomaDatos.png} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Documentaci\'on del movimiento}
+El investigador realiz\'o una breve entrevista a cada entrenador, con la finalidad de detallar todos los aspectos de los movimientos, adem\'as de separar los pasos de cada movimiento. Posteriormente a la entrevista, el investigador complet\'o todos los formularios respectivos de los movimientos (ver instrumentos \ref{ins:frmMov} y \ref{ins:frmRout}).
+\subsection{Etiquetaci\'on de v\'ideos}
+El investigador cre\'o desde cero, una base de datos de gesturas por movimiento (A partir del instrumento \ref{ins:VisualGestureBuilder}), luego se adjunt\'o a la base de datos, todos los v\'ideos recuperados de la actividad de la toma de datos, y por cada v\'ideo se analiz\'o fotograma por fotograma, asignando un valor a cada paso del movimiento, tal como se muestra en las siguientes figuras:
+ \begin{figure}[H]
+	\caption{Proceso de etiquetaci\'on del movimiento derecha}
+	\label{fig:getTag}
+	\centering
+	\includegraphics[width=250px,height=250px]{graphics/etiquetas.png} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Construcci\'on y pruebas del modelo}
+Por cada modelo, el investigador separ\'o los v\'ideos etiquetados en dos partes:
+\begin{itemize}
+\item \textbf{V\'ideos para el entrenamiento y construcci\'on del modelo:} Elementos que permite entrenar el modelo, generando un archivo de base de datos de gesturas (.gdb), la cual proporciona el valor del factor de movimiento.
+\item \textbf{V\'ideos para an\'alisis:} El investigador seleccion\'o el archivo de bases de datos de gesturas, y posteriormente la herramienta analiz\'o cada v\'ideo, proporcionando el valor real y pr\'onosticado del modelo, tal como se muestra en la siguiente figura, el valor real es de 0.008018661, mientras que el valor pr\'onosticado es de \num{103893e-6}:
+\end{itemize}
+ \begin{figure}[H]
+	\caption{Obtenci\'on del valor real y pron\'osticado}
+	\label{fig:getError}
+	\centering
+	\includegraphics[width=300px,height=300px]{graphics/getError.png} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Selecci\'on y aceptaci\'on del modelo}
+\begin{itemize}
+\item \textbf{Selecci\'on:} El investigador realiz\'o tres modelos distintos por movimiento, con distintos datos de entrenamiento -i.e. Combinaciones de v\'ideos de entrenamientos y an\'alisis-. As\'i mismo por cada modelo se analiz\'o un video de an\'alisis, tabulando los datos reales y pron\'osticado en una hoja de observaciones (Ver anexos, tabla \ref{tab:obsErrores}). Posteriormente al proceso de tabulaci\'on, se calcul\'o los errores correspondiente de cada modelo -i.e. Error medio pron\'osticado, desviaci\'on media absoluta y la ra\'iz del error cuadr\'atico medio-, seleccionando as\'i el modelo que tenga un menor error. 
+\item \textbf{Aceptaci\'on:} El investigador  verifica la media de los errores de cada modelo, en caso que el error sea mayor o igual  al valor de reconocimiento (Valor recuperado por los formularios del paso de documentaci\'on del movimiento) se rechaza el modelo, en caso contrario, se da la aprobaci\'on.
+\end{itemize}
+\subsection{Extracci\'on de datos de los v\'ideos}
+Por cada modelo aceptado, el investigador extraj\'o los datos del tiempo y el recorrido de la mu\~neca derecha de una repetici\'on, con el fin de objetivo de validar que cada modelo fue entrenado con distintos datos, reflejado en una  regresi\'on de tiempo y recorrido. Lo cual para construir dicha regresi\'on, el investigador separ\'o por cada v\'ideo, los renglones de fotogramas de una repetici\'on, enlistando los tiempos iniciales y finales utilizado para la extracci\'on de datos de v\'ideos .xef (Ver instrumento \ref{ins:cons}).
+\begin{figure}[H]
+	\caption{Segmentos de repeticiones de un v\'ideo}
+	\label{fig:segVideo}
+	\centering
+	\includegraphics[width=420px,height=100px]{graphics/separarPuntos.PNG} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
+\subsection{Validaci\'on  del modelo en tiempo real}
+El investigador realiz\'o una \'ultima visita a cada equipo deportivo (Cuyo modelo fue aprobado), en dicha visita instal\'o el prototipo del modelo en lugar asignado (En paralelo, los atletas realizaban el calentamiento), posteriormente a la instalaci\'on, el investigador le ense\~n\'o al entrenador una versi\'on de prueba de una rutina tabata, dicha prueba lo realiz\'o el investigador (Cabe resaltar que el investigador vest\'ia deportivamente y adem\'as ejecut\'o previamente los ejercicios de calentamiento) con una rutina de 1 serie de 10 segundos de descanso y 50 segundos de trabajo. Luego de la prueba, el entrenador seleccion\'o a un grupo de atletas que no participaron en el proceso de toma de datos, y posteriormente se le program\'o a cada atleta del grupo una rutina tabata (Cada deportista se posicion\'o en la distancias de profundidad recomendadas).
+ \begin{figure}[H]
+	\caption{Fotograf\'ias durante la validaci\'on del modelo}
+	\label{fig:getvalidationStep}
+	\centering
+	\includegraphics[width=165px,height=165px]{graphics/tabataResultados.png} \\
+	\textbf{Fuente:} Tomado por el autor de tesis
+\end{figure} 
