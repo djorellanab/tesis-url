@@ -199,7 +199,7 @@ As\'i mismo, con la herramienta de Excel se realiz\'o un an\'alisis de regresi\'
 \item Polinomial de grado 4
 \item Potencia
 \end{itemize}
-\subsection{Captura de datos durante una rutina}\label{dis:recognitionMove}
+\subsection{Captura de datos durante una rutina (Normalizaci\'on de datos)}\label{dis:recognitionMove}
 Durante la rutina, los datos del seguimiento de esqueleto son recuperado a partir del kit de desarrollo de software del kinect, dichos datos son almacenados en la siguiente estructura:
 \begin{itemize}
 \item \textbf{i:} Valor n\'umerico \'unico que identifica una articulaci\'on.
@@ -417,20 +417,22 @@ En la presente secci\'on se determina los resultados de la rutina de tabata, dic
 \begin{itemize}
 \item \textbf{Volumen de repeticiones:} Sumatoria de las cantidades totales de repeticiones de una serie.  
 \begin{code}[H]
-	\caption{funci\'on para obtener las repeticiones totales de una rutina}
+	\caption{Pseudoc\'odigo para obtener las repeticiones totales de una rutina}
 	\label{code:getRepetitions}
 	\begin{lstlisting}
-public int getRepetitions()
-{
-	int repetitions = 0;
-	foreach(serie _serie in Series)
-	{
-		repetitions += _serie.length;
-	}
-	return repetitions;
-}
+Entrada:
+	Series de repeticiones del movimiento
+	Contador de Repeticiones
+
+Proceso:
+	Recorrer cada serie de repeticiones del movimiento:
+		Contar las repeticiones de la serie
+		Sumar al contador de repeticiones
+
+Salida
+	Contador de repeticiones
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{code}
 
 \item \textbf{Duraci\'on:} Tiempo total que se emplea en una rutina, tomando en cuenta todas las series de trabajo y descanso.
@@ -445,40 +447,36 @@ public int getRepetitions()
 \end{formula}
 \item \textbf{Resistencia:} Construye la estructura de la gr\'afica de trabajo de la rutina a partir del recorrido de todas la series, posteriormente en cada serie se recorre todas las repeticiones y luego en cada repetici\'on se almacena el tiempo acumulado de la rutina y la cantidad de repeticiones que lleva el atleta a ese momento.
 \begin{code}[H]
-	\caption{funci\'on para obtener los resultados del endurance}
+	\caption{Pseudoc\'odigo para crear la gr\'afica de resistencia}
 	\label{code:getEndurance}
 	\begin{lstlisting}
-public endurance getEndurance()
-{
-	List<endurance> _endurance = new List<endurance>();
-	for(int i = 0; i < series.length; i++)
-	{
-		List<data> _data = new List<data>();
-		
-		serie _serie = series[i];
-		for(int j = 1; j <= _serie.length; j++)
-		{
-			Repetition repetition = _serie[j-1];
-			int lastStep = repetition.length-1;
-			double tiempoAcumulado = repetition[lastStep].tiempo;
+Entrada:
+	Series de repeticiones del movimiento
+	Grafico, en donde almacena
+		Subgrafico, que esta compuesto
+			Nombre de la serie
+			Listado de puntos, en donde cada punto
+				Guarda el tiempo (Eje x)
+				Guarda el numero de repeticion (Eje Y)
+	
+Proceso:
+	Crear Grafico
+	Recorrer cada serie de repeticiones del movimiento:
+		crear subgrafico
+		Obtener el numero de serie
+		Crear el listado de puntos
+		Recorrer cada repeticion de la serie:
+			Obtener el numero de repeticion acumulado 
+			Obtener el tiempo del paso final de la repeticion (Tiempo)
+			Crear un punto
+			Guardar punto en el listado de puntos
+		Almacenar en el subgrafico el numero de serie y listado de puntos
+		Guardar subgrafico en el listado que tiene grafico
 
-			_data.add(new data(){
-				x = tiempoAcumulado,
-				y = j
-			});
-		}
-		
-		_endurance.add(new endurance(){
-			uid      = $"s{i+1}",
-			label    = $"Serie {i+1}",
-			showLine = true,
-			data     =  _data
-		});
-	}
-	return _endurance;
-}
+Salida
+	Grafico de resistencia
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{code} 
 
 \item \textbf{Potencia:} Resultado que muestra la cantidad m\'axima de repeticiones en el menor tiempo posible, la cual se encuentra a partir del recorrido de las series, luego en cada serie se determina la cantidad de repeticiones totales y el tiempo acumulado de la \'ultima repetici\'on, encontrando: 
@@ -487,36 +485,32 @@ public endurance getEndurance()
 	\item La misma cantidad repeticiones almacenada anteriormente, pero se verifica si el tiempo acumulado es menor.
 	\end{itemize}
 \begin{code}[H]
-	\caption{funci\'on para obtener la potencia}
+	\caption{Pseudoc\'odigo para obtener la potencia}
 	\label{code:getEndurance}
 	\begin{lstlisting}
-public power getPower()
-{
-	power _power = new power(){repetition = 0, time = 0};
-	foreach(serie _serie in series)
-	{
-		Repetition lastRepetition = _serie[_serie.length-1];
-		int lastStep = lastRepetition.length-1;
-		double tiempoAcumulado = lastRepetition[lastStep].tiempo;
+Entrada
+	Series de repeticiones del movimiento
+	Potencia, en donde almacena
+		Cantidad de repeticiones acumulada de una serie
+		Tiempo total de la ultima repeticion de la serie
 		
-		if (_serie.length > _power.repetition)
-		{
-			_power.repetition = _serie.length;
-			_power.time = tiempoAcumulado;
-		} 
-		else if (serie.length == _power.repetition)
-		{
-			if(tiempoAcumulado <  _power.time)
-			{
-				_power.repetition = _serie.length;
-				_power.time = tiempoAcumulado;
-			}
-		}
-	}
-	return _power;
-}
+Proceso:
+	Crear Potencia
+	Recorrer cada serie de repeticiones del movimiento:
+		Obtener la ultima repeticion de la serie:
+			Obtener el numero de repeticion acumulada
+			Obtener el tiempo del paso final de la repeticion
+			El numero de repeticiones acumulada aumento?:
+				Si:
+					Almacenar los datos en potencia
+				Sino si: El numero de repeticiones permanecio constante?:
+					El Tiempo total se redujo?:
+						Almacenar los datos en potencia
+						
+Salida
+	Potencia 
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{code} 
 
 \item \textbf{Velocidad}: Raz\'on de cambio separado por:
@@ -528,32 +522,69 @@ public power getPower()
 
 
 \begin{code}[H]
-	\caption{funci\'on para obtener las velocidades de las rutinas}
+	\caption{Pseudoc\'odigo para obtener las velocidades de las rutinas}
 	\label{code:getTimeOfRepetitions}
 	\begin{lstlisting}
-public speed getSpeed()
-{
-	speed _speed = new speed();
-	List<double> timeOfRepetitions = new List<double>();
-	List<int> repetitionsOfSerie = new List<double>();
+Entrada
+	Series de repeticiones del movimiento
+	Velocidad, en donde almacena
+		Repeticiones por serie
+		Tiempo por serie
+		
+Proceso:
+	Crear Velocidad
+	Crear un listado de tiempos de repeticiones
+	Crear un listado de repeticiones de series
+	Recorrer cada serie de repeticiones del movimiento
+		Obtener el total de repeticiones de la serie
+		Agregar al listado de repeticiones de series
+		Recorrer cada repeticion de la serie
+			Obtener el tiempo del paso inicial de la repeticion
+			Obtener el tiempo del paso final de la repeticion
+			Encontrar la diferencia de tiempos de paso final e inicial
+			Almacenar en el listado de tiempos de repeticiones
+	Encontrar el promedio de repeticiones de series
+	Transformar a numero entero el promedio de repeticiones de series
+	Encontrar el promedio de tiempos de repeticiones
+	Almacenar ambos promedio en velocidad
 	
-	foreach(serie _serie in series)
-	{
-		repetitionsOfSerie.add(_serie.length);
-		foreach(Repetition repetition in _serie)
-		{
-			int lastStep = repetition.length-1;
-			double tiempoFinal = repetition[lastStep].tiempo;
-			double tiempoInicial = repetition[0].tiempo;
-			double time = tiempoFinal - tiempoInicial;
-			timeOfRepetitions.add(time);
-		}			
-	}
-	_speed.repetitionBySerie = Convert.toInt32(
-		 repetitionsOfSerie.Average());
-	_speed.timeByRepetition = timeOfRepetitions.Average();
-	return speed;
-}
+Salida:
+	Velocidad
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor en sintaxis de c\#.
+	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{code} 
+\section{Criterios del proyecto}\label{criter}
+En esta secci\'on se presenta todos los criterios que se siguieron para crear el modelo de reconocimientos de movimientos:
+\subsection{Criterios de selecci\'on de movimiento}
+\begin{itemize}
+	\item El investigador y el entrenador de cada deporte,  seleccionaron aquellos movimientos que se ejecutan dentro del \'area de visi\'on del sensor Kinect.
+	\item El movimiento no debe ser complejo, es decir que cualquier persona pueda realizar dicho movimiento, sin importar su nivel deportivo.
+	\item Debe ser un movimiento que se emplea constantemente en el deporte, para aprender nuevos movimientos complejos.
+\end{itemize}
+\subsection{Criterios de an\'alisis de movimiento}
+\begin{itemize}
+	\item Cada movimiento debe tener una articulaci\'on de an\'alisis.
+	\item El conjunto de articulaciones que interact\'uan en el movimiento, se debe seleccionar en base a la separaci\'on del cuerpo humano, es decir, la parte inferior (Articulaciones abajo de la cadera central) o superior (Articulaciones arriba de la cadera central).
+\end{itemize}
+\subsection{Criterios de etiquetaci\'on de movimiento}
+\begin{itemize}
+	\item Cada repetici\'on del movimiento debe pasar por todos los pasos.
+	\item El rango de etiquetaci\'on debe estar entre valores de 0 (Paso inicial) y 1 (Paso final).
+	\item La curva de aprendizaje de cada repetici\'on, debe ser similar a la funci\'on Sigmoide -i.e. Gr\'afica con forma de S-.
+	\item No se etiqueta los datos de ruidos durante una repetici\'on del movimiento -e.g. Interrupciones, mala ejecuci\'on-.
+\end{itemize}
+\subsection{Criterios de error del modelo}
+\begin{itemize}
+	\item Se debe calcular la dispersi\'on entre los datos de la muestra y su media, a partir de la Ra\'iz del error cuadr\'atico medio (RECM).
+	\item Se debe calcular la dispersi\'on entre los datos reales y pron\'ositcado a partir de la Desviaci\'on media absoluta (DMA). 
+	\item El error se encuentra en un rango de 0 a 1.
+\end{itemize}
+\subsection{Criterios de selecci\'on del modelo}
+\begin{itemize}
+	\item Se selecciona el modelo que contenga el menor RECM, en caso que exista RECM iguales, se escoge el modelo que tenga el menor DMA.
+\end{itemize}
+\subsection{Criterios de aceptaci\'on del modelo}
+\begin{itemize}
+	\item El modelo seleccionado debe considerar los errores de todas las muestras, a partir del promedio de error de los modelos comparados.
+	\item Se aprueba el modelo, s\'i el valor de reconocimiento es menor a 1.
+\end{itemize}
