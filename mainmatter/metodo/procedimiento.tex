@@ -1,7 +1,7 @@
 \section{Procedimiento}
 Para el presente proyecto, se implement\'o una metodolog\'ia en cascadas con las siguiente activades:
 \begin{figure}[H]
-	\caption{Segmentos de repeticiones de un v\'ideo}
+	\caption{Metodolog\'ia de cascada}
 	\label{fig:segVideo}
 	\centering
 	\includegraphics[width=420px,height=80px]{graphics/cascada.PNG} \\
@@ -12,21 +12,60 @@ El investigador visit\'o a cada equipo deportivo durante los d\'ias de entrenami
 \subsection{Toma de datos}
 El investigador visit\'o nuevamente a cada equipo deportivo y esper\'o que finalizara la rutina de calentamiento (Durante esa actividad, el investigador instal\'o el prototipo de toma de datos en el lugar asignado), posteriormente al calentamiento, el entrenador seleccionaba a un atleta para participar en la toma de datos (En paralelo, los atletas restantes continuaban con su entrenamiento), el atleta llegaba con el investigador y realizaba dos actividades distintas:
 \begin{itemize}
-\item La primera actividad constaba en posicionar correctamente al atleta, dicha posici\'on depende de dos condiciones: La primera se chequeaba que se dibuje completamente el seguimiento de esqueleto y la segunda se verificaba que el seguimiento no falle durante la ejecuci\'on del movimiento, lo cual se le solicitaba al atleta realizar 2 repeticiones de prueba. S\'i se cumple ambas condiciones, el investigador apuntaba las observaciones de la altura del usuario y la distancia de profundidad entre el sensor y la cadera central del atleta (ver instrumento \ref{ins:UI:wpf}.\ref{ins:UI:wpf:depth})
-\item Al encontrar la posici\'on correctamente, el entrenador le programaba al atleta una rutina en base al movimiento seleccionado (La rutina puede ser dos tipos: Por tiempo o por cantidad de repeticiones). Finalizando con la grabaci\'on de la rutina del deportista (Grabada por el investigador, con la ayuda del instrumento \ref{ins:KinectStudio}).
+\item La primera actividad constaba en posicionar correctamente al atleta, dicha posici\'on depende de dos condiciones: La primera se chequeaba que se dibuje completamente el seguimiento de esqueleto y la segunda se verificaba que el seguimiento no falle durante la ejecuci\'on del movimiento, lo cual se le solicitaba al atleta realizar 2 repeticiones de prueba. S\'i se cumple ambas condiciones, el investigador apuntaba las observaciones de la altura del usuario y la distancia de profundidad entre el sensor y la cadera central del atleta (Capturadas por el instrumento de detecci\'on de profundidad)
+\item Al encontrar la posici\'on correctamente, el entrenador le programaba al atleta una rutina en base al movimiento seleccionado (La rutina puede ser dos tipos: Por tiempo o por cantidad de repeticiones). Finalizando con la grabaci\'on de la rutina del deportista (grabada por el instrumento Kinect Studio).
 \end{itemize}
 Se debe tomar en cuenta que estas dos actividades se realizaban por cada atleta del equipo deportivo, durante el tiempo de entrenamiento.
  \begin{figure}[H]
 	\caption{Fotograf\'ias durante la toma de datos}
 	\label{fig:getDataStep}
 	\centering
-	\includegraphics[width=210px,height=210px]{graphics/tomaDatos.png} \\
+	\includegraphics[width=280px,height=280px]{graphics/tomaDatos.png} \\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure} 
 \subsection{Documentaci\'on del movimiento}
-El investigador realiz\'o una breve entrevista a cada entrenador, con la finalidad de detallar todos los aspectos de los movimientos, adem\'as de separar los pasos de cada movimiento. Posteriormente a la entrevista, el investigador complet\'o todos los formularios respectivos de los movimientos (ver instrumentos \ref{ins:frmMov} y \ref{ins:frmRout}).
+El investigador realiz\'o una breve entrevista a cada entrenador y algunos atletas (Similar a un grupo focal), con la finalidad de detallar todos los aspectos de los movimientos, adem\'as de separar los pasos de cada movimiento. Posteriormente a la entrevista, el investigador complet\'o todos los formularios respectivos de movimiento -i.e. Formularios de datos de entradas-:
+\subsubsection{Formularios entradas de Tenis de mesa}
+\begin{figure}[H]
+	\caption{Formulario de movimiento de tenis de mesa}
+	\label{fig:frmMovTen}
+	\centering	\includegraphics[width=445px,height=600px]{graphics/resultados/movimientoTenis.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
+\begin{figure}[H]
+	\caption{Formulario de rutina de tenis de mesa}
+	\label{fig:frmRoutTen}
+	\centering	\includegraphics[width=445px,height=600px]{graphics/resultados/rutina-tennis.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
+\subsubsection{Formularios entradas de animaci\'on}
+\begin{figure}[H]
+	\caption{Formulario de movimiento de animaci\'on}
+	\label{fig:frmMovCheer}
+	\centering	\includegraphics[width=445px,height=600px]{graphics/resultados/movimientoCheerleader.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
+\begin{figure}[H]
+	\caption{Formulario de rutina de animaci\'on}
+	\label{fig:frmRoutCher}
+	\centering	\includegraphics[width=400px,height=490px]{graphics/resultados/rutina-cheerleaders.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
+\subsubsection{Formularios entradas de taekwondo}
+\begin{figure}[H]
+	\caption{Formulario de movimiento taekwondo}
+	\label{fig:frmWhiteMov}
+	\centering	\includegraphics[width=445px,height=600px]{graphics/resultados/movimientoTaekwondo.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
+\begin{figure}[H]
+	\caption{Formulario de rutina de taekwondo}
+	\label{fig:frmRoutTaek}
+	\centering	\includegraphics[width=445px,height=600px]{graphics/resultados/rutina-taekwondo.PNG} \\
+	\textbf{Fuente:} Elaborado por el autor de tesis en base a las observaciones del trabajo de campo
+\end{figure}
 \subsection{Etiquetaci\'on de v\'ideos}
-El investigador cre\'o desde cero, una base de datos de gesturas por movimiento (A partir del instrumento \ref{ins:VisualGestureBuilder}), luego se adjunt\'o a la base de datos, todos los v\'ideos recuperados de la actividad de la toma de datos, y por cada v\'ideo se analiz\'o fotograma por fotograma, asignando un valor a cada paso del movimiento, tal como se muestra en las siguientes figuras:
+El investigador cre\'o desde cero, una base de datos de gesturas por movimiento (A partir del instrumento Visual Gesture Builder), luego se adjunt\'o a la base de datos, todos los v\'ideos recuperados de la actividad de la toma de datos, y por cada v\'ideo se analiz\'o fotograma por fotograma, asignando un valor a cada paso del movimiento, tal como se muestra en las siguientes figuras:
  \begin{figure}[H]
 	\caption{Proceso de etiquetaci\'on del movimiento derecha}
 	\label{fig:getTag}
@@ -53,7 +92,7 @@ Por cada modelo, el investigador separ\'o los v\'ideos etiquetados en dos partes
 \item \textbf{Aceptaci\'on:} El investigador  verifica la media de los errores de cada modelo, en caso que el error sea mayor o igual  al valor de reconocimiento (Valor recuperado por los formularios del paso de documentaci\'on del movimiento) se rechaza el modelo, en caso contrario, se da la aprobaci\'on.
 \end{itemize}
 \subsection{Extracci\'on de datos de los v\'ideos}
-Por cada modelo aceptado, el investigador extraj\'o los datos del tiempo y el recorrido de la mu\~neca derecha de una repetici\'on, con el fin de objetivo de validar que cada modelo fue entrenado con distintos datos, reflejado en una  regresi\'on de tiempo y recorrido. Lo cual para construir dicha regresi\'on, el investigador separ\'o por cada v\'ideo, los renglones de fotogramas de una repetici\'on, enlistando los tiempos iniciales y finales utilizado para la extracci\'on de datos de v\'ideos .xef (Ver instrumento \ref{ins:cons}).
+Por cada modelo aceptado, el investigador extraj\'o los datos del tiempo y el recorrido de la mu\~neca derecha de una repetici\'on, con el fin de objetivo de validar que cada modelo fue entrenado con distintos datos, reflejado en una  regresi\'on de tiempo y recorrido. Lo cual para construir dicha regresi\'on, el investigador separ\'o por cada v\'ideo, los renglones de fotogramas de una repetici\'on, enlistando los tiempos iniciales y finales utilizado para la extracci\'on de datos de v\'ideos .xef (recuperado del instrumento, Kinect Studio).
 \begin{figure}[H]
 	\caption{Segmentos de repeticiones de un v\'ideo}
 	\label{fig:segVideo}

@@ -48,12 +48,12 @@ Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual
 Formulario adjuntado en anexos (Ver figura \ref{fig:frmWhiteRout}), tiene como funci\'on identificar los ejercicios de calentamiento  previamente a realizar el movimiento seleccionado por cada equipo deportivo, adem\'as de estandarizar el n\'umero de repeticiones del movimiento por cada atleta, a partir de los siguientes puntos:
 \begin{itemize}
 	\item \textbf{Descripci\'on del calentamiento:} Detalla el tipo de calentamiento -e.g. Calentamiento con tu propio peso, calentamiento dentro de un ambiente, calentamiento a partir de objetos-.
-	\item \textbf{Movimientos:} Enlista los movimientos que se realiza durante el calentamiento (Validado por las unidades de an\'alisis, secci\'on  \ref{sj:ua}).
+	\item \textbf{Movimientos:} Enlista los movimientos que se realiza durante el calentamiento (Validado por el formulario de registro de movimiento).
 	\item \textbf{Series:} Cantidad de veces que debe realizar un atleta, un conjunto de repeticiones del movimiento.
 	\item \textbf{Repeticiones:} Cantidad de repeticiones del movimiento.
 	\item \textbf{Tiempo:} duraci\'on del calentamiento.
 	\item \textbf{Im\'agenes:} Fotograf\'ias tomadas durante el entrenamiento de cada equipo deportivo.
-	\item \textbf{Nombre del movimiento:} Movimiento seleccionado por cada equipo deportivo  (secci\'on  \ref{ins:frmMov}).
+	\item \textbf{Nombre del movimiento:} Movimiento seleccionado por cada equipo deportivo  (Validado por el formulario de registro de movimiento).
 	\item \textbf{Rutina:} Describe el tipo de rutina para la captura de datos:
 	\begin{itemize}
 		\item \textbf{For time:} M\'axima cantidad de repeticiones del movimiento, durante un tiempo establecido.
@@ -193,7 +193,7 @@ Vista principal que muestra al usuario todos los movimientos que se han insertad
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
 \begin{enumerate}[A.]
-\item Bot\'on que dirige al usuario a la pantalla de insertar un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:create}).
+\item Bot\'on que dirige al usuario a la pantalla de insertar un movimiento (Ver vista de creaci\'on de un movimiento).
 \item Etiqueta que indica el nombre del movimiento.
 \item Bot\'on que descarga el archivo de base de datos de un movimiento.
 \item Bot\'on que exporta el archivo de metadata de un movimiento (Ver anexos, c\'odigo \ref{code:jsonMeta}), con los siguientes atributos:
@@ -208,8 +208,8 @@ Vista principal que muestra al usuario todos los movimientos que se han insertad
 	\item \textbf{timestamp}: Fecha en la cual fue insertado el registro del movimiento.
 	\item \textbf{focusJoin}: Articulaci\'on de an\'alisis que permite medir la distancia de profundidad. 
 	\end{itemize}
-\item Bot\'on que dirige al usuario a la pantalla de detalle de un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:read}).
-\item Bot\'on que dirige al usuario a la pantalla de reporte de un movimiento (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:result}).
+\item Bot\'on que dirige al usuario a la pantalla de detalle de un movimiento (Ver vista de lectura de un movimiento).
+\item Bot\'on que dirige al usuario a la pantalla de reporte de un movimiento (Ver vista de resultados de un movimiento).
 \item Bot\'on que elimina el registro del movimiento de la base de datos.
 \end{enumerate}
 \paragraph{Vista de creaci\'on de un movimiento}\mbox{} \\ \label{ins:UI:web:create}
@@ -222,15 +222,15 @@ Vista que se encarga de insertar toda la informaci\'on del movimiento, recuperad
 	\textbf{Fuente:} Elaborado por el autor de tesis
 \end{figure}
 \begin{enumerate}[A.]
-\item Bot\'on que dirige al usuario a la pantalla del listado de los movimientos (Ver vista \ref{ins:UI:web}.\ref{ins:UI:web:index}).
-\item Textbox para ingresar el nombre del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de nombre).
-\item Textbox para ingresar el detalle del movimiento (Recuperado del formulario \ref{ins:frmMov}, atributo de descripci\'on).
-\item Selecci\'on de la articulaci\'on de \'analisis (recuperado de la aplicaci\'on de detecci\'on de profundidad \ref{fig:appDepth}, atributo de articulaci\'on de \'analisis).
-\item Textbox n\'umerico que ingresa la cantidad de pasos del movimiento (recuperado del formulario  \ref{ins:frmMov}, atributo de n\'umero de pasos).
+\item Bot\'on que dirige al usuario a la pantalla del listado de los movimientos (Ver vista de listado de movimientos).
+\item Textbox para ingresar el nombre del movimiento (Recuperado del formulario de registro de movimiento, atributo de nombre).
+\item Textbox para ingresar el detalle del movimiento (Recuperado del formulario de registro de movimiento, atributo de descripci\'on).
+\item Selecci\'on de la articulaci\'on de \'analisis (recuperado de la aplicaci\'on de detecci\'on de profundidad, atributo de articulaci\'on de \'analisis).
+\item Textbox n\'umerico que ingresa la cantidad de pasos del movimiento (Recuperado del formulario de registro de movimiento, atributo de n\'umero de pasos).
 \item Textbox n\'umerico que ingresa la distancia m\'inima de profundidad (ver formula \ref{frm:maxDepth}).
 \item Textbox n\'umerico que ingresa la distancia m\'axima de profundidad (ver formula \ref{frm:minDepth}).
-\item Textbox n\'umerico que ingresa la altura del Kinect con respecto al suelo (Para el presente proyecto es de 0.70 metros, debido que es la altura de la mesa que daba soporte al sensor, ver secci\'on \ref{ins}).
-\item Listado m\'ultiples de articulaciones que interviene en el movimiento (recuperado del formulario  \ref{ins:frmRout}, atributo de articulaciones no ignoradas).
+\item Textbox n\'umerico que ingresa la altura del Kinect con respecto al suelo (Para el presente proyecto es de 0.70 metros, debido que es la altura de la mesa que daba soporte al sensor).
+\item Listado m\'ultiples de articulaciones que interviene en el movimiento (Recuperado del formulario de registro de rutinas, atributo de articulaciones no ignoradas).
 \item Bot\'on que almacena toda la informaci\'on respectiva del formulario web.
 \end{enumerate}
 \paragraph{Vista de lectura de un movimiento}\mbox{} \\ \label{ins:UI:web:read}
@@ -329,14 +329,14 @@ Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\
 	\textbf{Fuente:} Tomado por el autor de tesis
 \end{figure} 
 \begin{itemize}
-\item \textbf{Gesture Name:} Nombre del movimiento  (Recuperado del formulario \ref{ins:frmMov}, atributo de nombre).
+\item \textbf{Gesture Name:} Nombre del movimiento  (Recuperado del formulario de registro de movimiento, atributo de nombre).
 \item \textbf{Body Side:} Valor por defecto, Any, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la replica de una patada lateral izquierda.
 \item \textbf{Gesture type:} El valor por defecto es RFRProgress, debido que se esta analizando movimiento continuos -e.g. Salto, patada, saque-.
-\item \textbf{Duplicate and Mirror Data During Training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario \ref{ins:frmMov}, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
+\item \textbf{Duplicate and Mirror Data During Training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario de registro de movimiento, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
 \item \textbf{User Hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto -e.g. Bal\'on, pesa, raqueta-.
-\item \textbf{Ignore part body:} Se activa aquellas partes del cuerpo que se desea ignorar durante el movimiento (Ver formulario \ref{ins:frmMov}, Articulaciones ignoradas).
+\item \textbf{Ignore part body:} Se activa aquellas partes del cuerpo que se desea ignorar durante el movimiento (Ver formulario de registro de movimiento, Articulaciones ignoradas).
 \end{itemize}
-Luego de configurar las variables globales, el proyecto crear\'a una base de datos de gesturas vac\'io, la cual debe adjuntar todos los v\'ideos (.xef)  y por cada v\'ideo se debe etiquetar los valores de fotogramas (Seg\'un los pasos definido en el formulario \ref{ins:frmMov}), con el fin objetivo de: 
+Luego de configurar las variables globales, el proyecto crear\'a una base de datos de gesturas vac\'io, la cual debe adjuntar todos los v\'ideos (.xef)  y por cada v\'ideo se debe etiquetar los valores de fotogramas (Seg\'un los pasos definido en el formulario de registro de movimiento), con el fin objetivo de: 
 \begin{itemize}
 \item \textbf{Construir:} Acci\'on que entrena y genera el modelo a partir de un archivo de base de datos de gesturas (.gbd).
 \item \textbf{Analizar:} Funci\'on que permite seleccionar archivos de base de datos gesturas y posteriormente compararlo con v\'ideos previamente etiquetados, encontrando el valor real -i.e. Valor de la etiqueta- y el valor pron\'osticado del modelo (Estos valores son usado para completar la hoja de observaci\'on de errores modelo, ver anexos, tabla \ref{tab:obsErrores}).
