@@ -32,7 +32,8 @@
 \usepackage{titlesec}
 \usepackage{enumerate} 
 \usepackage{lipsum}  
-\usepackage{listings, xcolor} 
+\usepackage{listingsutf8, xcolor}
+%\usepackage{listings, xcolor} 
 \usepackage{siunitx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Agregar una pagina en blanco
@@ -41,6 +42,8 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+    
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modificacion de estilos de encabezados y pie de pagina
 \fancypagestyle{plain}{
@@ -127,7 +130,14 @@
     comment=[l]{:},
     commentstyle=\color{black},
     tabsize=2,
-    frame=single
+    frame=single,
+    literate=%
+		{á}{{\'a}}1
+        {í}{{\'i}}1
+        {é}{{\'e}}1
+        {ú}{{\'u}}1
+        {ó}{{\'o}}1
+        {¿}{{?`}}1
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}

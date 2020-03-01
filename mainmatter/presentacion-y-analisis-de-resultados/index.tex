@@ -1,34 +1,38 @@
+\afterpage{\blankpage}
+\newpage
+\afterpage{\blankpage}
+\newpage
 \chapter{Presentaci\'on y an\'alisis de resultados}
-\section{Distancias de profundidad recomendadas entre el atleta y el sensor} \label{res:idMov}
-En la siguiente tabla se muestra un resumen general de las caracter\'isticas de la poblaci\'on de cada equipo deportivo, en ella se describe la altura promedio y la distancia recomendadas para ejecutar correctamente el seguimiento de esqueleto -i.e. Renderizaci\'on completa del esqueleto humano-, dichos datos fueron capturados por el sensor Kinect a una altura de 0.70 metros desde el suelo y tomando como punto de referencia, la cadera central de cada atleta:
+\section{Distancias de profundidades recomendadas entre el atleta y el sensor} \label{res:idMov}
+En la siguiente tabla se muestra un resumen general de las caracter\'isticas de la poblaci\'on de cada equipo deportivo, en ella se describe la altura promedio y las distancias recomendadas para ejecutar correctamente el seguimiento del esqueleto -i.e. Renderizaci\'on completa del esqueleto humano-, dichos datos fueron capturados por el sensor Kinect a una altura de 0.70 metros desde el suelo y tomando como punto de referencia, la cadera central de cada atleta:
 \begin{table}[H]
 \begin{center}
-\caption{Distancias de profundidad recomendadas para el funcionamiento del seguimiento de esqueleto}
+\caption{Distancias de profundidades recomendadas para el funcionamiento del seguimiento del  esqueleto}
 \label{tab:depthCalculation}
 \begin{tabular}{lllll}
 \hline
-\multicolumn{3}{|c|}{Caracter\'isticas generales} & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Distancia de profundidad recomendadas \\ entre el usuario y el sensor\end{tabular}} \\ \hline
-\multicolumn{1}{|l|}{Deporte} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Altura promedio\\ (Metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Desviaci\'on est\'andar\\ de la altura (metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}M\'inima\\ (Metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}M\'axima\\ (Metros)\end{tabular}} \\ \hline
+\multicolumn{3}{|c|}{Caracter\'isticas generales} & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Distancias de profundidades recomendadas \\ entre el usuario y el sensor\end{tabular}} \\ \hline
+\multicolumn{1}{|l|}{Deporte} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Altura promedio\\ (metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Desviaci\'on est\'andar\\ de la altura (metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}M\'inima\\ (metros)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}M\'axima\\ (metros)\end{tabular}} \\ \hline
 \multicolumn{1}{|l|}{Tenis de mesa} & \multicolumn{1}{l|}{1.302435} & \multicolumn{1}{l|}{0.088683} & \multicolumn{1}{l|}{3.505103} & \multicolumn{1}{l|}{3.990376} \\ \hline
 \multicolumn{1}{|l|}{Animaci\'on} & \multicolumn{1}{l|}{1.342471} & \multicolumn{1}{l|}{0.059301} & \multicolumn{1}{l|}{2.763813} & \multicolumn{1}{l|}{3.411942} \\ \hline
 \multicolumn{1}{|l|}{Taekwondo} & \multicolumn{1}{l|}{1.373372} & \multicolumn{1}{l|}{0.098490} & \multicolumn{1}{l|}{2.556640} & \multicolumn{1}{l|}{3.869427} \\ \hline
-\multicolumn{5}{l}{\textbf{Fuente:} Datos capturados por los atletas de construcci\'on y pruebas}
+\multicolumn{5}{l}{\textbf{Fuente:} Datos capturados por los atletas}
 \end{tabular}
 \end{center}
 \end{table}
 \section{Muestras de fotogramas del movimiento} \label{res:fotogramas}
-En esta secci\'on se realiz\'o por cada equipo deportivo, un cuadro comparativo, en donde se compara por fotograf\'ias, el seguimiento de esqueleto de cada atleta durante cada paso de una repetici\'on del movimiento. As\'i mismo por cada fotograf\'ia se muestra cuatros elementos importantes:
+En esta secci\'on se realiz\'o por cada equipo deportivo, un cuadro comparativo, en donde se compara por fotograf\'ias, el seguimiento del  esqueleto de cada atleta durante cada paso de una repetici\'on del movimiento, as\'i mismo por cada fotograf\'ia se muestra cuatros elementos importantes:
 \begin{itemize}
 \item El fondo de color negro.
 \item El piso representado por cuadros de colores grises.
 \item La figura del atleta figurado por una sombra de color gris.
-\item El seguimiento de esqueleto conformado por puntos -i.e. Articulaciones- y lineas de color blanco -i.e. Uni\'on de dos articulaciones-.
+\item El seguimiento del esqueleto conformado por puntos -i.e. Articulaciones- y l\'ineas de color blanco -i.e. Uni\'on de dos articulaciones-.
 \end{itemize}
 \begin{figure}[H]
 	\caption{Fotogramas de 6 sujetos del equipo de tenis de mesa}
 	\label{fig:fotogramaTenis}
 	\centering
-	\includegraphics[width=445px,height=600px]{graphics/resultados/SETenisDeMesa.PNG} \\
+	\includegraphics[width=445px,height=560px]{graphics/resultados/SETenisDeMesa.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos de trabajo de campo (ver instrumento \ref{ins:KinectStudio})
 \end{figure}
 \begin{figure}[H]
@@ -46,24 +50,24 @@ En esta secci\'on se realiz\'o por cada equipo deportivo, un cuadro comparativo,
 	\textbf{Fuente:} Recuperado por los v\'ideos de trabajo de campo (ver instrumento \ref{ins:KinectStudio})
 \end{figure}
 \begin{landscape}
-\section{Razones de fallo del seguimiento de esqueleto}
-El seguimiento de esqueleto es unos de los  elementos fundamentales para crear el modelo de reconocimiento de movimiento, sin embargo se debe tomar en cuenta que puede fallar por varias razones, entre ellas se encuentra las siguientes fallas: del atleta -i.e. Hombre-, del sensor Kinect -i.e. M\'aquina-, del lugar de trabajo -i.e. Entorno y  Medida-, de la interacci\'on  con objetos o elementos externos -i.e. Material- y de la preparaci\'on necesaria para realizar una rutina -i.e. M\'etodo-:
+\section{Razones de fallo del seguimiento del esqueleto}
+El seguimiento del esqueleto es unos de los  elementos fundamentales para crear el modelo de reconocimiento de movimiento, sin embargo se debe tomar en cuenta que puede fallar por varias razones, entre ellas se encuentran las siguientes fallas: del atleta -i.e. Hombre-, del sensor Kinect -i.e. M\'aquina-, del lugar de trabajo -i.e. Entorno y  Medida-, de la interacci\'on  con objetos o elementos externos -i.e. Material- y de la preparaci\'on necesaria para realizar una rutina -i.e. M\'etodo-:
 \begin{figure}[H]
-	\caption{diagrama de Ishikawa sobre el fallo del seguimiento de esqueleto}
+	\caption{Diagrama de ishikawa sobre el fallo del seguimiento del esqueleto}
 	\label{fig:ishikawa}
 	\centering
 	\includegraphics[width=500px,height=290px]{graphics/resultados/Ishi-SeguimientoDeEsqueleto.PNG} \\
-	\textbf{Fuente:} Este diagrama fue realizado en base las observaciones de trabajo de campo, la cual el investigador observ\'o los sucesos en que fallaba el seguimiento de esqueleto, como por ejemplo las interrupciones de personas u objetos externos, adem\'as de la fallas del hardware o software -e.g. Falta de alimentaci\'on de energ\'ia- y finalmente del ambiente que fue instalado el prototipo -e.g. Exceso de calor, espacios cerrados-.
+	\textbf{Fuente:} Este diagrama fue realizado con base a las observaciones de trabajo de campo, la cual el investigador observ\'o los sucesos en que fallaban el seguimiento del esqueleto, como por ejemplo las interrupciones de personas u objetos externos, adem\'as de las fallas del hardware o software -e.g. Falta de alimentaci\'on de energ\'ia- y finalmente las fallas en el ambiente que fue instalado el prototipo -e.g. Exceso de calor, espacios cerrados-.
 \end{figure}
 \end{landscape}
 \section{Proceso de etiquetaci\'on de un movimiento}
-Consta de un conjunto de gr\'aficas de etiquetaci\'on que se utilizaron para el entrenamiento y testeo del modelo de reconocimiento de un  movimiento, cabe mencionar que por cada gr\'afica se encuentra los siguientes elementos:
+Consta de un conjunto de gr\'aficas de etiquetaci\'on que se utilizaron para los entrenamientos y testeos del modelo de reconocimiento de un  movimiento, cabe mencionar que por cada gr\'afica se encuentra los siguientes elementos:
 \begin{itemize}
-\item Una L\'inea recta -i.e. Lectura del fotograma del valor actual-.
-\item Una l\'inea curvada (Con forma de funci\'on de sigmoide) que unifica 2 o m\'as puntos -i.e. Representaci\'on de una repetici\'on que pasa por cada paso del movimiento-.
+\item Una l\'inea recta -i.e. Lectura del fotograma del valor actual-.
+\item Una l\'inea curvada (con forma de funci\'on de sigmoide) que unifica 2 o m\'as puntos -i.e. Representaci\'on de una repetici\'on que pasa por cada paso del movimiento-.
 \item Espacios de color gris -i.e. Ruidos o datos basura que no se utilizaron en el proceso de etiquetaci\'on-.
 \end{itemize}
-Por otro lado se observa que por cada linea curvada, el valor del factor movimiento -i.e. Eje vertical- va aumentado (comenzando con un valor de 0 y finalizando con un valor de 1) por cada fotograma que avanza -i.e. Eje horizontal-, y as\'i mismo se contabiliza todas las lineas curvada para obtener la cantidades de repeticiones totales que se utilizaron para construir y probar el modelo: 
+Por otro lado se observa que por cada l\'inea curvada, el valor del factor movimiento -i.e. Eje vertical- va aumentado (comenzando con un valor de 0 y finalizando con un valor de 1) por cada fotograma que avanza -i.e. Eje horizontal-, y as\'i mismo se contabiliza todas las l\'ineas curvadas para obtener las cantidades de repeticiones totales que se utilizaron para construir y probar el modelo: 
 \begin{chart}[H]
 	\caption{Etiquetaci\'on de fotogramas del equipo de tenis de mesa}
 	\label{fig:etiquetaTenis}
@@ -88,9 +92,9 @@ Por otro lado se observa que por cada linea curvada, el valor del factor movimie
 \section{Selecci\'on y pruebas del modelo} \label{res:chooseModel}
 Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de reconocimiento de un movimiento, la cual se divide en tres partes:
 \begin{itemize}
-\item  La primera parte se encontr\'o los errores de cada modelo -e.g. Error medio pron\'osticado, desviaci\'on media absoluta y la ra\'iz del error cuadr\'atico medio- y posteriormente se calcul\'o la media de cada error, la cual representa el error de toda la muestra de un equipo deportivo.
-\item  La segunda parte se compone en la selecci\'on del modelo que tenga el menor RECM, adem\'as de la aprobaci\'on o el rechazo de cada modelo, dependiendo del valor de identificaci\'on y el RECM promedio de cada movimiento (Ver figura de aprobaci\'on o rechazo de modelo), as\'i mismo se encontr\'o el factor de reconocimiento  -i.e. Valor n\'umerico que representa la proporcionalidad del valor de identificaci\'on-.
-\item Finalmente, la tercera parte se muestra en caso que se apruebe el modelo, la cual detalla los intervalos de confianza de cada modelo -i.e. Intervalo que permite identificar el paso de un movimiento a partir del factor de movimiento-.
+\item  La primera parte se encontr\'o los errores de cada modelo -e.g. Error medio pronosticado, desviaci\'on media absoluta y la ra\'iz del error cuadr\'atico medio- y posteriormente se calcul\'o la media de cada error, la cual representa los  errores de todas las muestras de un equipo deportivo.
+\item  La segunda parte se compone en la selecci\'on del modelo que tenga la menor RECM, adem\'as de la aprobaci\'on o el rechazo de cada modelo, dependiendo del valor de identificaci\'on y la RECM promedio de cada movimiento (ver figura de aprobaci\'on o rechazo del modelo), as\'i mismo se encontr\'o el factor de reconocimiento  -i.e. Valor num\'erico que representa la proporcionalidad del valor de identificaci\'on-.
+\item Finalmente, la tercera parte se muestra en caso que se apruebe el modelo, la cual detalla los intervalos de confianza de cada modelo -i.e. Intervalos que permiten identificar el paso de un movimiento a partir del factor de movimiento-.
 \end{itemize}
 \begin{table}[H]
 \begin{center}
@@ -109,7 +113,7 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 \multicolumn{3}{|c|}{\textbf{Mejor modelo}} & \multicolumn{1}{c|}{3} \\ \hline
 \multicolumn{3}{|c|}{\textbf{Aprueba o rechaza el modelo}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Rechaza\\ 0,31976  \textgreater{}= 0.25\end{tabular}} \\ \hline
 \multicolumn{3}{|c|}{\textbf{Recognition}} & \multicolumn{1}{c|}{1,27904} \\ \hline
-\multicolumn{4}{l}{\textbf{Fuente:} c\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
+\multicolumn{4}{l}{\textbf{Fuente:} C\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
 \end{tabular}
 \end{center}
 \end{table}
@@ -136,7 +140,7 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 \multicolumn{1}{|c|}{Paso} & \multicolumn{1}{c|}{Etiqueta} & \multicolumn{1}{c|}{Inferior} & \multicolumn{1}{c|}{Superior} \\ \hline
 \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0,239612} \\ \hline
 \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,760388} & \multicolumn{1}{c|}{1} \\ \hline
-\multicolumn{4}{l}{\textbf{Fuente:} c\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
+\multicolumn{4}{l}{\textbf{Fuente:} C\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
 \end{tabular}
 \end{center}
 \end{table}
@@ -164,55 +168,55 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{0,056232} \\ \hline
 \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{0.5} & \multicolumn{1}{c|}{0,471884} & \multicolumn{1}{c|}{0,528116} \\ \hline
 \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,943768} & \multicolumn{1}{c|}{1} \\ \hline
-\multicolumn{4}{l}{\textbf{Fuente:} c\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
+\multicolumn{4}{l}{\textbf{Fuente:} C\'alculo de intervalos de confianza (ver f\'ormula \ref{frm:rangoConfiabilidad})}
 \end{tabular}
 \end{center}
 \end{table}
-\section{Muestra de regresiones de los movimiento} \label{res:regretions}
-Estos resultados muestra un ejemplo de las posibles regresiones que puede implementar el modelo de machine learning -i.e. Random Forest Regression-, adem\'as de comprobar que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (Uniformidad con los tiempo de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
+\section{Muestras de regresiones de los movimientos} \label{res:regretions}
+Estos resultados muestran un ejemplo de las posibles regresiones que pueden implementar el modelo de m\'aquina de aprendizaje -i.e. Bosques de regresiones aleatorios-, adem\'as de comprobar que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (uniformidad con los tiempos de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
 \begin{figure}[H]
-	\caption{Regresi\'on distancia vs tiempo, del equipo animaci\'on}
+	\caption{Regresi\'on distancia versus tiempo, del equipo animaci\'on}
 	\label{fig:regrCheerleader}
 	\centering
 	\includegraphics[width=445px,height=200px]{graphics/resultados/cluster-cheerleaders.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo.
 \end{figure}
 \begin{figure}[H]
-	\caption{Regresi\'on distancia vs tiempo, del equipo de tenis de mesa}
+	\caption{Regresi\'on distancia versus tiempo  del equipo de tenis de mesa}
 	\label{fig:regrTennisDeMesa}
 	\centering
 	\includegraphics[width=445px,height=200px]{graphics/resultados/cluster-tennis.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo.
 \end{figure}
 \section{Reconocimiento de movimiento}
-En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del reconocimiento de repeticiones de un movimiento, la cual esta conformado por un conjunto de im\'agenes que muestran el seguimiento de esqueleto durante la ejecuci\'on de una repetici\'on, as\'i mismo en cada imagen se muestran los siguientes detalles:
+En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del reconocimiento de repeticiones de un movimiento, la cual est\'a conformado por un conjunto de im\'agenes que muestran el seguimiento del esqueleto durante la ejecuci\'on de una repetici\'on, as\'i mismo en cada imagen se muestra los siguientes detalles:
 \begin{itemize}
-\item \textbf{Estado:} Tiene el valor de TRABAJO, debido que fue capturado durante el tiempo de trabajo en una rutina de tabata.
-\item \textbf{Temporizador:} Tiempo de cuenta regresiva, la cual indica cu\'antos segundos le queda al atleta en el estado de trabajo.
-\item \textbf{Serie:} Le indica al atleta, cu\'al n\'umero de serie se esta ejecutando (Los resultados fueron capturado durante la serie No. 1 de trabajo).
-\item \textbf{Repeticiones:} Le muestra al atleta la cantidad de repeticiones que lleva durante las  series de trabajo (Se debe observar que este indicador incrementa en el \'ultimo paso de cada movimiento).
+\item \textbf{Estado:} Tiene el valor de trabajo, debido que fue capturado durante el tiempo de trabajo en una rutina de tabata.
+\item \textbf{Temporizador:} Tiempo de cuenta regresiva, la cual indica cu\'antos segundos le quedan al atleta en el estado de trabajo.
+\item \textbf{Serie:} Le indica al atleta, cu\'al n\'umero de serie se est\'a ejecutando (Los resultados fueron capturado durante la serie No. 1 de trabajo).
+\item \textbf{Repeticiones:} Le muestra al atleta la cantidad de repeticiones que lleva durante una   serie de trabajo (Se debe observar que este indicador incrementa en el \'ultimo paso de cada movimiento).
 \item \textbf{Paso:} N\'umero que indica el \'ultimo paso ejecutado (Comenzando desde el valor 0). Se debe tomar en cuenta que dicho valor cambia dependiendo del factor de movimiento -i.e. Progreso-, es decir, se  reconoce cada paso del movimiento, ya que el valor del progreso se encuentra dentro de alg\'un intervalo de confianza (Ver las tablas de resultados de selecci\'on y pruebas del modelo).
-\item \textbf{Progreso:} Factor del movimiento en tiempo real (Obtenido a partir de la base de datos de gesturas), la cual va incrementado por cada paso que avance el atleta.
-\item \textbf{Tiempo Total:} Tiempo total que lleva actualmente el atleta (En los resultados se puede ver que el atleta emplea una repetici\'on en un per\'iodo de d\'ecimas de segundos).
+\item \textbf{Progreso:} Factor del movimiento en tiempo real (obtenido a partir de la base de datos de gesturas), la cual va incrementado por cada paso que avance el atleta.
+\item \textbf{Tiempo total:} Tiempo total que lleva actualmente el atleta (en los resultados se pueden ver que el atleta emplea una repetici\'on en un per\'iodo de d\'ecimas de segundos).
 \end{itemize}
 \begin{figure}[H]
-	\caption{Reconocimiento del movimiento Derecha}
+	\caption{Reconocimiento del movimiento derecha}
 	\label{fig:recognitionTenis}
 	\centering
 	\includegraphics[width=420px,height=250px]{graphics/resultados/recognitionTennis.png} \\
 	\textbf{Fuente:} sujeto de validaci\'on del modelo en tiempo real.
 \end{figure}
 \begin{figure}[H]
-	\caption{Reconocimiento del movimiento Jumping Jacks}
+	\caption{Reconocimiento del movimiento jumping jacks}
 	\label{fig:recognitionCheerleader}
 	\centering
 	\includegraphics[width=430px,height=320px]{graphics/resultados/recognitionCheerleader.png} \\
 	\textbf{Fuente:} sujeto de validaci\'on del modelo en tiempo real.
 \end{figure}
 \section{Validaci\'on del movimiento} \label{res:valResults}
-A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutina tabata por equipo deportivo, se debe considerar que para estos resultados se utiliz\'o atletas que no participaron en la toma de datos iniciales -i.e. Construcci\'on y testeo del modelo-, adem\'as de interpretar en dos partes los elementos del archivo de resultados de una rutina tabata (Ver anexos, c\'odigo \ref{code:tabata}):
+A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutina tabata por equipo deportivo, se debe considerar que para estos resultados se utilizaron atletas que no participaron en la toma de datos iniciales -i.e. Construcci\'on y testeo del modelo-, adem\'as de interpretar en dos partes los elementos del archivo de resultados de una rutina tabata (Ver anexos, c\'odigo \ref{code:tabata}):
 \begin{itemize}
-\item La primera parte consta de un conjunto de gr\'aficas que muestra de manera visual, el esfuerzo -i.e. Endurance- de cada atleta durante la rutina Tabata.
+\item La primera parte consta de un conjunto de gr\'aficas que muestra de manera visual, el esfuerzo  de cada atleta durante la rutina tabata.
 \item La segunda parte es un cuadro que detalla el  resumen ejecutivo de los resultados de la rutina tabata.
 \end{itemize}
 \begin{landscape}
@@ -221,7 +225,7 @@ A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutin
 	\label{fig:resTabTennis}
 	\centering
 	\includegraphics[width=610px,height=200px]{graphics/resultados/ResultRecognitionTenis.png} \\
-	\textbf{Fuente:} Realizado en base a las observaciones del proceso de validaci\'on.
+	\textbf{Fuente:} Realizado con base a las observaciones del proceso de validaci\'on.
 \end{chart}
 \begin{table}[H]
 \begin{center}
@@ -229,11 +233,11 @@ A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutin
 \label{tab:detailResultsTennis}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
-\textbf{Series} & \textbf{\begin{tabular}[c]{@{}l@{}}Trabajo\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Descanso\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Duraci\'on\\ (segs)\end{tabular}} & \textbf{Sujeto} & \textbf{\begin{tabular}[c]{@{}l@{}}Volumen de\\ repeticiones\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones\\ M\'aximas en una\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo m\'inimo\\ en una serie\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones \\ promedio por\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo \\ promedio por\\ repetici\'on (segs)\end{tabular}} \\ \hline
+\textbf{Series} & \textbf{\begin{tabular}[c]{@{}l@{}}Trabajo\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Descanso\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Duraci\'on\\ (segs)\end{tabular}} & \textbf{Sujeto} & \textbf{\begin{tabular}[c]{@{}l@{}}Volumen de\\ repeticiones\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones\\ m\'aximas en una\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo m\'inimo\\ en una serie\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones \\ promedio por\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo \\ promedio por\\ repetici\'on (segs)\end{tabular}} \\ \hline
 \multirow{3}{*}{4} & \multirow{3}{*}{40} & \multirow{3}{*}{20} & \multirow{3}{*}{240} & 1 & 150 & 39 & 38.5440 & 38 & 0.7106 \\ \cline{5-10} 
  &  &  &  & 2 & 141 & 42 & 39.1050 & 35 & 0.7869 \\ \cline{5-10} 
  &  &  &  & 3 & 180 & 50 & 39.7980 & 45 & 0.3599 \\ \hline
- \multicolumn{10}{l}{\textbf{Fuente:} gr\'afica de resultados del tabata del equipo de tenis de mesa}
+ \multicolumn{10}{l}{\textbf{Fuente:} Gr\'afica de resultados del tabata del equipo de tenis de mesa}
 \end{tabular}
 \end{center}
 \end{table}
@@ -242,7 +246,7 @@ A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutin
 	\label{fig:resTabCheerleader}
 	\centering
 	\includegraphics[width=610px,height=200px]{graphics/resultados/ResultRecognitionCheerleader.png} \\
-	\textbf{Fuente:} Realizado en base a las observaciones del proceso de validaci\'on.
+	\textbf{Fuente:} Realizado con base a las observaciones del proceso de validaci\'on.
 \end{chart}
 \begin{table}[H]
 \begin{center}
@@ -250,10 +254,10 @@ A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutin
 \label{tab:detailResultsCheerleader}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
-\textbf{Series} & \textbf{\begin{tabular}[c]{@{}l@{}}Trabajo\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Descanso\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Duraci\'on\\ (segs)\end{tabular}} & \textbf{Sujeto} & \textbf{\begin{tabular}[c]{@{}l@{}}Volumen de\\ repeticiones\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones\\ M\'aximas en una\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo m\'inimo\\ en una serie\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones \\ promedio por\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo \\ promedio por\\ repetici\'on (segs)\end{tabular}} \\ \hline
+\textbf{Series} & \textbf{\begin{tabular}[c]{@{}l@{}}Trabajo\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Descanso\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Duraci\'on\\ (segs)\end{tabular}} & \textbf{Sujeto} & \textbf{\begin{tabular}[c]{@{}l@{}}Volumen de\\ repeticiones\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones\\ m\'aximas en una\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo m\'inimo\\ en una serie\\ (segs)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Repeticiones \\ promedio por\\ serie\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Tiempo \\ promedio por\\ repetici\'on (segs)\end{tabular}} \\ \hline
 \multirow{2}{*}{2} & \multirow{2}{*}{40} & \multirow{2}{*}{20} & \multirow{2}{*}{120} & 1 & 59 & 31 & 38.3130 & 30 & 0.8284 \\ \cline{5-10} 
  &  &  &  & 2 & 54 & 31 & 37.5210 & 27 & 0.9301 \\ \hline
- \multicolumn{10}{l}{\textbf{Fuente} gr\'afica de resultados del tabata del equipo de animaci\'on}
+ \multicolumn{10}{l}{\textbf{Fuente} Gr\'afica de resultados del tabata del equipo de animaci\'on}
 \end{tabular}
 \end{center}
 \end{table}
