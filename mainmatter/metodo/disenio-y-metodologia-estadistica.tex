@@ -3,7 +3,7 @@ Esta secci\'on se presenta todos los dise\~nos y c\'alculos matem\'aticos y esta
 \subsection{Asignaci\'on de valores de etiquetas y rangos de identificaci\'on}\label{dis:asig}
 Estos valores permiten identificar el paso de cada movimiento a partir de las siguientes variables:
 \begin{itemize}
-\item \textbf{Offset:} Valor de distribuci\'on de etiquetas a cada paso del movimiento, sin tomar el paso inicial (Debido que la etiqueta del paso inicial siempre tendr\'a un valor de cero).
+\item \textbf{Offset:} Valor de distribuci\'on de etiquetas de cada paso del movimiento, por partes iguales.
 \begin{formula}[H]
 	\centering
 	\caption{Offset de etiquetas}
@@ -189,16 +189,7 @@ Evento_{x}
 	\textbf{Fuente:} Distancia euclidiana \cite[p.~423]{ayres2001calculo}
 \end{formula}  
 \end{itemize}
-As\'i mismo, con la herramienta de excel se realiz\'o un an\'alisis de regresi\'on  de los movimientos de animaci\'on y tenis de mesa, tomando en cuenta  la distancia recorrida de la mu\~neca -i.e. Variable independiente- y su respectivo tiempo -i.e. Variable dependiente-, a partir de una muestra de 10 a 15 repeticiones, con la finalidad de comparar los coeficientes de determinaci\'on de las siguientes l\'ineas de tendencias:
-\begin{itemize}
-\item Exponencial
-\item Lineal
-\item Logar\'itmica
-\item Polinomial de grado 2
-\item Polinomial de grado 3
-\item Polinomial de grado 4
-\item Potencia
-\end{itemize}
+As\'i mismo, con la herramienta de excel se realiz\'o un an\'alisis de regresi\'on  de los movimientos de animaci\'on y tenis de mesa, tomando en cuenta  la distancia recorrida de la mu\~neca -i.e. Variable independiente- y su respectivo tiempo -i.e. Variable dependiente-, a partir de una muestra de 10 a 15 repeticiones, con la finalidad de mostrar la uniformidad de los tiempos de capturas, la dispersi\'on de los datos de la muestra (diferentes desplazamientos) y calcular el tiempo de la repetici\'on m\'as larga (identifica el peor de los casos).
 \subsection{Captura de datos durante una rutina (normalizaci\'on de datos)}\label{dis:recognitionMove}
 Durante la rutina, los datos del seguimiento del esqueleto son recuperados a partir del kit de desarrollo de software del Kinect, dichos datos son almacenados en la siguiente estructura:
 \begin{itemize}
@@ -246,14 +237,6 @@ series & [serie]
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis
 \end{formula}
-De igual manera se presenta el algoritmo de captura de datos de la rutina, dicho algoritmo se ejecuta durante el tiempo de trabajo de tabata, en donde comienza con una subrutina para obtener el valor de factor de movimiento en tiempo real, posteriormente ese valor se compara a partir de los intervalos de confianza, si el valor no se encuentra en ning\'un intervalo, se debe obtener un nuevo factor de movimiento (durante un per\'iodo de 0.033 segundos). En caso contrario se obtiene el valor de la etiqueta del paso. Luego se revisa si hay un dato registrado con relaci\'on al paso actual, en caso que haya un registro asociado, se debe eliminar los datos del paso siguiente (esto ocurre, si el usuario se salta un paso del movimiento) y as\'i mismo se elimina el registro del paso actual, despu\'es se continua con el proceso que no haya ning\'un registro del paso, la cual se debe obtener toda la informaci\'on del seguimiento del esqueleto y seguidamente se almacena el registro en el vector de repetici\'on. Finalmente se chequea la cantidad de registros del  vector de repetici\'on, en caso que falte un registro se debe reiniciar nuevamente el algoritmo, por lo contrario, se almacena en el registro de repetici\'on.
-\begin{figure}[H]
-	\caption{Algoritmo de captura de datos durante la rutina}
-	\label{fig:capturaDatos}
-	\centering
-	\includegraphics[width=430px,height=470px]{graphics/algoritmoDeteccion.png} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
-\end{figure}
 \subsection{Validaci\'on del modelo de reconocimiento de movimiento}\label{dis:validate}
 El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{perez2015analisis}:
 \begin{itemize}
@@ -272,7 +255,7 @@ El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{p
 1 & 1, 2, 3, 4, 5 & 6 \\ \hline
 2 & 1, 2, 4, 5, 6 & 3 \\ \hline
 3 & 2, 3, 4, 5, 6 & 1 \\ \hline
-\multicolumn{3}{l}{\textbf{Fuente:} Elaborado por el autor de tesis}
+\multicolumn{3}{l}{\textbf{Fuente:} Propia}
 \end{tabular}
 \end{center}
 \end{table}
@@ -288,7 +271,7 @@ El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{p
 1 & 1, 2, 3, 4, 5, 6 & 1 \\ \hline
 2 & 1, 2, 3, 5, 6, 7 & 4 \\ \hline
 3 & 1, 2, 3, 4, 5, 6 & 7 \\ \hline
-\multicolumn{3}{l}{\textbf{Fuente:} Elaborado por el autor de tesis}
+\multicolumn{3}{l}{\textbf{Fuente:} Propia}
 \end{tabular}
 \end{center}
 \end{table}
@@ -304,7 +287,7 @@ El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{p
 1 & 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16 & 10 \\ \hline
 2 & 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16 & 11 \\ \hline
 3 & 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16 & 12 \\ \hline
-\multicolumn{3}{l}{\textbf{Fuente:} Elaborado por el autor de tesis}
+\multicolumn{3}{l}{\textbf{Fuente:} Propia}
 \end{tabular}
 \end{center}
 \end{table}
@@ -374,37 +357,42 @@ RECM_{muestra\, total}=AVERAGE([RECM_{modelo}])
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis, con base a las f\'ormulas de excel (versi\'on en ingl\'es)
 \end{formula} 
-Los errores de la muestra total ayudan aceptar o rechazar el modelo; si la \acrshort{RECM} es menor al valor de identificaci\'on (ver f\'ormula \ref{frm:idenStep}), se aprueba. En caso que sea mayor o igual, se rechaza, debido que existe secciones que no podr\'a identificar el paso, tal como se muestra en la figura de aprobaci\'on o rechazo del modelo:
+Los errores de la muestra total ayudan aceptar o rechazar el modelo; si la \acrshort{RECM} promedio  es menor a un medio del valor de identificaci\'on se aprueba (se divide entre dos, debido que las etiquetas de los pasos intermedio se encuentra a la mitad de cada rango de identificaci\'on respectiva). En caso que sea mayor o igual, se rechaza, debido que los intervalos de confianza colisiona con otros intervalos de confianza (Intervalos que se utiliza para la detecci\'on de un paso):
 \begin{figure}[H]
-	\caption{Aprobaci\'on o rechazo del modelo}
+	\caption{Criterios de aceptaci\'on de un modelo de detecci\'on de los pasos requeridos de un movimiento}
 	\label{fig:AproveOrDennie}
 	\centering
-	\includegraphics[width=430px,height=180px]{graphics/aceptacionModelo.png} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\includegraphics[width=430px,height=360px]{graphics/CriterioAceptacion.png} \\
+	\textbf{Fuente:} Propia
 \end{figure}
-Finalmente, por cada modelo aprobado se debe encontrar el factor de reconocimiento y su respectivo rango de confiabilidad:
+En la figura \ref{fig:AproveOrDennie}, se separa en tres partes:
+\begin{itemize}
+\item \textbf{Detalles generales del movimiento:} Muestra las variables num\'ericas de un movimiento.
+\item \textbf{Caso aprobado:} Al construir los intervalos de confianza, se observa que no colisiona entre s\'i.
+\item \textbf{Caso rechazado:} Al construir los intervalos de confianza, se observa que los intervalos del paso 1 colisiona con el paso 2 (debido que el intervalo de confianza inferior del paso 2 se encuentra dentro del intervalo de confianza del paso 1), y los intervalos del paso 2 colisiona con el paso 3 (debido que el intervalo de confianza inferior del paso 3 se encuentra dentro del intervalo de confianza del paso 2).
+\end{itemize}
+Adem\'as, por cada modelo aprobado se debe encontrar los intervalos de confianza  que permite detectar los pasos de un movimiento v\'alido:
 \begin{formula}[H]
 	\centering
-	\caption{Factor de reconocimiento e intervalos de confianza}
+	\caption{Intervalos de confianza de reconocimiento de un paso}
 	\label{frm:rangoConfiabilidad}
 	\begin{equation}
 \begin{matrix}
-recognition=\frac{RECM_{muestra\, total}}{valor\: de\: identificaci\acute{o}n}  \\ 
-\\
+
 intervalo\: de\: confianza = ic =[[inferior,superior]] \\
 \\
 ic(paso)=\left\{\begin{matrix}
 inferior(paso)=\left\{\begin{matrix}
 0 & si\, es\, el\, primer\, paso\\ \\ 
-etiqueta(paso)-\frac{recognition*valor\, de\, identificaci\acute{o}n}{2} & si\: es\: paso\: intermedio \\ 
+etiqueta(paso)- RECM_{muestra\, total} & si\: es\: paso\: intermedio \\ 
 \\
-1-(recognition*valor\, de\, identificaci\acute{o}n)& si\, es\, el\, \acute{u}ltimo\, paso
+1-RECM_{muestra\, total}& si\, es\, el\, \acute{u}ltimo\, paso
 \end{matrix}\right. \\ 
 \\ 
 inferior(paso)=\left\{\begin{matrix}
-recognition*valor\, de\, identificaci\acute{o}n& si\, es\, el\, primer\, paso \\
+RECM_{muestra\, total}& si\, es\, el\, primer\, paso \\
 \\
-etiqueta(paso)+\frac{recognition*valor\, de\, identificaci\acute{o}n}{2} & si\: es\: paso\: intermedio \\ \\ 
+etiqueta(paso)+RECM_{muestra\, total} & si\: es\: paso\: intermedio \\ \\ 
 1 & si\: es\: el\: \acute{u}ltimo\: paso
 \end{matrix}\right.
 \end{matrix}\right.
@@ -412,6 +400,109 @@ etiqueta(paso)+\frac{recognition*valor\, de\, identificaci\acute{o}n}{2} & si\: 
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis
 \end{formula} 
+Por otro lado, se debe determinar el valor de recognition, n\'umero porcentual que determina el porcentaje de detecci\'on similar al fotograma de cada paso respectivo, es decir:
+ \begin{itemize}
+\item \textbf{Porcentaje mayor a cero:} Entre m\'as cercano al 100\%, el factor de movimiento es similar al valor de etiquetado (menor error).
+\item \textbf{Porcentaje menor o igual a cero:} Son modelos rechazado, debido que el error es grande y adem\'as no detecta los pasos de un movimiento (por colisiones de los intervalos de confianza).
+\end{itemize}
+\begin{formula}[H]
+	\centering
+	\caption{Valor de recognition}
+	\label{frm:Recognitiona}
+	\begin{equation}
+recognition=1-no\,v\acute{a}lidos=1-\frac{RECM_{muestra\, total}}{valor\: de\: identificaci\acute{o}n}  
+	\end{equation}
+	\textbf{Fuente:} Propuesto por el autor de tesis
+\end{formula}
+\subsection{Algoritmo clasificador de un movimiento v\'alido}\label{dis:algoritmoDet}
+Se presenta el algoritmo clasificador de repetici\'on de un movimiento v\'alido:
+\begin{itemize}
+\item Entradas:
+\begin{itemize}
+\item \textbf{Paso siguiente:} Variable que lleva el control del orden de todos los pasos detectados.
+\item \textbf{Factor del movimiento:} Variable que indica la transici\'on del movimiento a partir del algoritmo Random Forest Regression.
+\item \textbf{Paso detectado:} Variable que indica el paso actual del factor del movimiento.
+\item \textbf{Paso no detectado:} Variable que no tiene un valor al inicio, la cual se asigna un valor en el caso que sea una repetici\'on inv\'alida (indica el paso del fallo del movimiento).
+\end{itemize}
+\item Procesos:
+\begin{enumerate}[1.]
+\item Asignar el paso siguiente como paso inicial (paso No.1), debido que marca el inicio de la repetici\'on. %1
+\item Capturar un nuevo fotograma del Kinect, y obtiene el factor del movimiento del respectivo fotograma, a partir del algoritmo Random Forest Regression y la herramienta, Visual Gesture Builder. %2
+\item Verificar si el factor del movimiento se encuentra en alg\'un intervalo de confianza para obtener el paso detectado, en caso que no se encuentre, no devolver\'a ning\'un valor.  %3
+\item Verificar si el paso detectado tiene un valor y que no sea un valor anterior (valor anterior del paso siguiente), en caso que no sea, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
+\item Verificar si el paso detectado es igual al paso siguiente, en caso que sea diferente se detect\'o una repetici\'on inv\'alida (saltar al proceso No. 9). %5
+\item Verificar si el paso detectado es el \'ultimo paso, en caso contrario (saltar al proceso No. 8) %6
+\item Finalizar algoritmo con repetici\'on v\'alida. %7 
+\item Incrementar el paso siguiente y volver a obtener un nuevo fotograma del Kinect (saltar al proceso No. 2). %8
+\item Asignar el paso no detectado como paso siguiente.
+\item Finalizar el algoritmo con repetici\'on inv\'alida.
+\end{enumerate}
+\item Salidas:
+\begin{itemize}
+\item \textbf{Repetici\'on v\'alida:} El usuario pas\'o por todos los pasos de un movimiento v\'alido de forma ordenada.
+\item \textbf{Repetici\'on inv\'alida y su paso no detectado:} El usuario se salt\'o el paso no detectado, lo cual genera un movimiento inv\'alido.
+\end{itemize}
+\end{itemize}
+\begin{figure}[H]
+	\caption{Algoritmo clasificador de repetici\'on de un movimiento v\'alido }
+	\label{fig:capturaDatos}
+	\centering
+	\includegraphics[width=430px,height=630px]{graphics/flujoGramaRepiticion.png} \\
+	\textbf{Fuente:} Propia.
+\end{figure}
+Este algoritmo es aplicado para analizar los v\'ideos de testeos, debido que se etiquetaron  repeticiones de movimientos v\'alidos.  Sin embargo, al comparar los factores del movimiento de los fotogramas (de los v\'ideos de testeos), pueden ocurrir que no reconozca un paso, por lo tanto la repetici\'on del movimiento v\'alido se convierte en inv\'alido:
+ \begin{figure}[H]
+	\caption{Clasificaci\'on de repeticiones de movimiento v\'alido o inv\'alido  en un v\'ideo de testeo}
+	\label{fig:detValido}
+	\centering
+	\includegraphics[width=430px,height=450px]{graphics/reconocimientoDePasos.png} \\
+	\textbf{Fuente:} Propia.
+\end{figure}
+En la figura \ref{fig:detValido}, se divide en tres partes:
+\begin{itemize}
+\item \textbf{Intervalos de confianza:} Tabla que permite reconocer los pasos del movimiento, si el factor del movimiento se encuentra dentro del intervalo de confianza.
+\item \textbf{Repetici\'on v\'alida:} Es v\'alido,  ya que detecta todos los pasos de manera ordenada  durante los fotogramas: Uno, tres y seis (Observe que los factores del movimiento se encuentran dentro del alg\'un intervalo de confianza). 
+\item \textbf{Repetici\'on inv\'alida:} Es inv\'alido, debido que para el fotograma 6, se esperaba detectar el paso 2 (paso siguiente), pero se detect\'o el paso 3, por lo tanto el algoritmo determina que es una repetici\'on inv\'alida.
+\end{itemize}
+Este procedimiento permite completar la tabla de observaciones de clasificaci\'on de cada v\'ideo de testeo (Tabla \ref{tab:DetectarPasoCorrecto}), en donde por cada repetici\'on etiquetada se verifica todos los pasos, por medio de tres valores:
+\begin{itemize}
+\item \textbf{Verdadero:} Si se detect\'o el paso correspondiente (de manera ordenada).
+\item \textbf{Falso:} Repetici\'on invalida debido que no se detect\'o el paso correspondiente. 
+\item \textbf{Sin valor:} El algoritmo no determin\'o ning\'un valor, debido que finaliz\'o al momento  que detect\'o una repetici\'on inv\'alida.
+\end{itemize}
+Por otra parte, se puede determinar el porcentaje de v\'alido e inv\'alidos del modelo de clasificador de repeticiones, adem\'as de determinar el porcentaje de cada paso no detectado:
+\begin{formula}[H]
+	\centering
+	\caption{Porcentajes del modelo de clasificador}
+	\label{frm:porcentajeClasificador}
+	\begin{equation}
+\begin{matrix}
+repeticiones\: v\acute{a}lidas = contarSi(\acute{u}ltimo\: paso\: es\: verdadero) \\ 
+ \\ 
+repeticiones\: inv\acute{a}lidas = repeticiones\; totales\: del\: video - repeticiones\: v\acute{a}lidas\\ 
+ \\ 
+\%_{v\acute{a}lidos}=\frac{repeticiones\: v\acute{a}lidas}{repeticiones\; totales\: del\: video}\\ 
+\\
+\%_{inv\acute{a}lidos}=\frac{repeticiones\: inv\acute{a}lidas}{repeticiones\; totales\: del\: video}\\ 
+\\ 
+\%_{paso\; no\; detectado}=\frac{contarSi(paso\: es\: falso)}{repeticiones\: inv\acute{a}lidas}\\ 
+\end{matrix}
+	\end{equation}
+	\textbf{Fuente:} Propuesto por el autor de tesis
+\end{formula}
+Es importante saber si el modelo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las permutaciones de las  repeticiones inv\'alidas): 
+ \begin{figure}[H]
+	\caption{Porcentajes de referencias v\'alidos e inv\'alidos }
+	\label{fig:porcValido}
+	\centering
+	\includegraphics[width=430px,height=300px]{graphics/porceRef.png} \\
+	\textbf{Fuente:} Propia.
+\end{figure}
+A partir de los porcentajes de referencias de clasificaci\'on, se pueden presentar dos casos:
+\begin{itemize}
+\item \textbf{Clasificaci\'on Aceptable:} Si el porcentaje de detecci\'on v\'alida es mayor al porcentaje de referencia v\'alida (Por consiguiente el porcentaje de detecci\'on inv\'alida es menor al porcentaje de referencia inv\'alida).
+\item \textbf{Clasificaci\'on no aceptable:} Si el porcentaje de detecci\'on v\'alida es menor o igual al porcentaje de referencia v\'alida (Por consiguiente el porcentaje de detecci\'on inv\'alida es mayor o igual al porcentaje de referencia inv\'alida). 
+\end{itemize}
 \subsection{Dise\~no de los resultados de una rutina tabata} \label{dis:results}
 En esta secci\'on se determina los resultados de la rutina de tabata, dichos resultados son encontrados a partir del seguimiento del esqueleto, la cual proporciona informaci\'on de las variables de los detalles del paso y repetici\'on (Ver f\'ormula \ref{frm:MatrizDatosRepeticion}), con el fin objetivo de encontrar la siguiente informaci\'on:
 \begin{itemize}
@@ -429,10 +520,10 @@ Procesos:
 		Contar las repeticiones de la serie
 		Sumar al contador de repeticiones
 
-Salida
+Salida:
 	Contador de repeticiones
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code}
 
 \item \textbf{Duraci\'on:} Tiempo total que se emplea en una rutina, tomando en cuenta todas las series de trabajos y descansos.
@@ -473,10 +564,10 @@ Proceso:
 		Almacenar en el subgráfico el número de serie y listado de puntos
 		Guardar subgráfico en el listado que tiene el gráfico
 
-Salida
+Salida:
 	Gráfico de resistencia
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code} 
 
 \item \textbf{Potencia:} Resultado que muestra la cantidad m\'axima de repeticiones en el menor tiempo posible, la cual se encuentra a partir del recorrido de las series, luego en cada serie se determina la cantidad de repeticiones totales y el tiempo acumulado de la \'ultima repetici\'on, encontrando: 
@@ -488,7 +579,7 @@ Salida
 	\caption{Pseudoc\'odigo para obtener la potencia}
 	\label{code:getEndurance}
 	\begin{lstlisting}
-Entradas
+Entradas:
 	Series de repeticiones del movimiento
 	Potencia en donde almacena
 		Cantidad de repeticiones acumuladas de una serie
@@ -508,10 +599,10 @@ Procesos:
 						Si
 							Almacenar los datos en potencia
 						
-Salida
+Salida:
 	Potencia 
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code} 
 
 \item \textbf{Velocidad}: Raz\'on de cambio separado por:
@@ -526,7 +617,7 @@ Salida
 	\caption{Pseudoc\'odigo para obtener las velocidades de las rutinas}
 	\label{code:getTimeOfRepetitions}
 	\begin{lstlisting}
-Entradas
+Entradas:
 	Series de repeticiones del movimiento
 	Velocidad en donde almacena
 		Repeticiones por serie
@@ -552,7 +643,7 @@ Proceso:
 Salida:
 	Velocidad
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code} 
 \section{Criterios del proyecto}\label{criter}
 En esta secci\'on se presenta todos los criterios que se siguieron para crear el modelo de reconocimientos de movimientos:
@@ -582,10 +673,10 @@ En esta secci\'on se presenta todos los criterios que se siguieron para crear el
 \end{itemize}
 \subsection{Criterios de selecci\'on del modelo}
 \begin{itemize}
-	\item Se selecciona el modelo que contenga la  menor RECM, en caso que exista RECM iguales, se escoge el modelo que tenga la menor DMA.
+	\item Se selecciona el submodelo que contenga la  menor RECM, en caso que exista RECM iguales, se escoge el modelo que tenga la menor DMA.
 \end{itemize}
 \subsection{Criterios de aceptaci\'on del modelo}
 \begin{itemize}
 	\item El modelo seleccionado debe considerar los errores de todas las muestras, a partir del promedio de errores de los submodelos comparados.
-	\item Se aprueba el modelo, s\'i el valor promedio de la RECM es menor al valor de  identificaci\'on.
+	\item Se aprueba el modelo, s\'i el valor promedio de la RECM es menor a un medio del valor de  identificaci\'on.
 \end{itemize}

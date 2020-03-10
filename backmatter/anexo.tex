@@ -79,7 +79,7 @@ Real & Pronostic \\ \hline
 0,05810547 & 4127 \\ \hline
 0,2032776 & 187443 \\ \hline
 0,6875 & 241461 \\ \hline
-\multicolumn{2}{l}{\textbf{Fuente:} Elaborado por el autor de tesis}
+\multicolumn{2}{l}{\textbf{Fuente:} Propia.}
 \end{tabular}
 \end{center}
 \end{table}
@@ -94,10 +94,27 @@ EventIndex & TotalTime & RelativeTime  & SkeletonId & Joint & Status & Euclidean
 88 & 5,5949193 & 0,067087 & 72057594037 & WristRight & TRACKED & 0,007819525\\ \hline
 91 & 5,8620251 & 0,3341928 & 72057594037 & WristRight & INFERRED & 0,4801024\\ \hline
 114 & 5,8557661 & 0,1000566 & 72057594037 & WristRight & TRACKED & 0,07899966\\ \hline
-\multicolumn{7}{l}{\textbf{Fuente:} Elaborado por el autor de tesis}
+\multicolumn{7}{l}{\textbf{Fuente:} Propia}
 \end{tabular}
 \end{center}
 \end{table}
+
+\begin{table}[H]
+\begin{center}
+\caption{Ejemplo de clasificar repeticiones v\'alidas o invalidas del movimiento Jumping Jacks en un v\'ideo de testeo}
+\label{tab:DetectarPasoCorrecto}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Repetici\'on & Paso 1 & Paso 2 & Paso 3 \\ \hline
+2 & TRUE & TRUE & TRUE \\ \hline
+52 & TRUE & FALSE &  \\ \hline
+58 & TRUE & TRUE & FALSE \\ \hline
+52 & FALSE &   &  \\ \hline
+\multicolumn{4}{l}{\textbf{Fuente:} Propia}
+\end{tabular}
+\end{center}
+\end{table}
+
 
 \section{Archivos de json de informaci\'on}
 \begin{code}[h]
@@ -120,7 +137,7 @@ EventIndex & TotalTime & RelativeTime  & SkeletonId & Joint & Status & Euclidean
 	"focusJoin":0
 }
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code}
 
 \begin{code}[h]
@@ -139,7 +156,7 @@ EventIndex & TotalTime & RelativeTime  & SkeletonId & Joint & Status & Euclidean
 	]
 }
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code}
 
 \begin{code}[h]
@@ -190,5 +207,5 @@ EventIndex & TotalTime & RelativeTime  & SkeletonId & Joint & Status & Euclidean
 	}
 }
 	\end{lstlisting}
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{code}

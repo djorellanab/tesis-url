@@ -1,15 +1,12 @@
 \section{Objetivos}
 \subsection{Objetivo general}
-Implementar un modelo de pronóstico de detección de los pasos que debe seguir para realizar un movimiento, con la ayuda de las herramientas proporcionada por la interfaz de programación de aplicaciones del dispositivo Kinect V2.
+Implementar un algoritmo clasificador de movimiento v\'alido o inv\'alido a partir del modelo de  detección de los pasos requeridos del movimiento,  con la ayuda del algoritmo de Random Forest Regression y la utilizaci\'on del dispositivo Kinect V2.
 \subsection{Objetivos espec\'ificos}
 \begin{enumerate}[1.]
-\item Definir el movimiento a analizar, considerando los pasos que se debe seguir para realizar dicho movimiento.
-\item Desarrollar una rutina del movimiento, para la captura de datos.
-\item Identificar la distancia mínima y máxima de profundidad entre el Kinect y el usuario para la detección del seguimiento de esqueleto.
-\item Recolectar los datos de la rutina del movimiento, a partir de la herramienta Kinect Studio.
-\item Crear una base de datos de reconocimiento de gesturas y posturas,  por medio de la herramienta Visual Gesture Builder y los datos recolectados del Kinect Studio.
-\item Calcular los m\'argenes de los errores del pron\'ostico del reconocimiento de gesturas y posturas.
-\item Crear una interfaz gráfica que detecte las repeticiones realizadas del movimiento.
-\item Crear una interfaz gráfica que demuestre los resultados de un entrenamiento.
-\item Comprobar el modelo de reconocimiento de gesturas y posturas del movimiento.
+\item Definir el movimiento a analizar, estableciendo los pasos requeridos para realizar un movimiento v\'alido.
+\item Identificar la distancia mínima y máxima de profundidad entre el Kinect y el usuario para ejecutar el movimiento v\'alido.
+\item Grabar los v\'ideos de atletas realizando repeticiones del movimiento v\'alido a partir de la herramienta, Kinect studio.
+\item Crear el modelo de detecci\'on de los pasos requeridos de un movimiento v\'alido, aplicando el algoritmo de Random Forest Regression y la etiquetaci\'on de fotogramas de los v\'ideos de repeticiones del movimiento v\'alido.
+\item Detectar los m\'argenes de los errores del modelo de detecci\'on de los pasos requeridos de un movimiento v\'alido.
+\item Crear un algoritmo clasificador que clasifique la repetici\'on de un movimiento v\'alido, a partir de la detecci\'on de todos los pasos de manera ordenada.
 \end{enumerate}

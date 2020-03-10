@@ -1,14 +1,22 @@
 \chapter{Planteamiento del problema}
-El sedentarismo es una de las principales causas de la obesidad y sobrepeso en Guatemala, as\'i mismo constituyen un factor determinante para el desarrollo de enfermedades cr\'onicas no transmisibles, concretamente la diabetes, tal como se muestra en el estudio m\'edico sobre el riesgo de desarrollar diabetes tipo 2 en Guatemala  \cite{castro2017risk}, menciona que el 47\% de los guatemaltecos con diabetes tienen problemas de obesidad y el 31\%  sufren de problemas de sobrepeso, por lo cual refleja la inactividad f\'isica en una gran parte de la poblaci\'on guatemalteca.
+Dentro del \'area deportiva, las personas realizan entrenamiento de alta intensidad de un movimiento, con el fin objetivo de mejorar las habilidades f\'isicas. Sin embargo, al momento de que una persona est\'a realizando un movimiento, se est\'a desarrollando su coordinaci\'on (habilidad f\'isica), la cual consta en combinar varios pasos de manera ordenada para ejecutar el movimiento, sin embargo esta habilidad f\'isica puede llegar a presentar 2 problemas:
+\begin{itemize}
+	\item El primer problema consta de un usuario nuevo que desconoce como ejecutar el movimiento.
+	\item El segundo problema se compone de un usuario que conoce el movimiento, pero lo ejecuta de distinta manera.
+\end{itemize} 
+La primera problem\'atica se resuelve si los atletas y los entrenadores les ense\~nan al nuevo usuario los pasos requeridos para ejecutar un movimiento v\'alido, con la finalidad de que el nuevo usuario lo aprenda y lo entrene constantemente.
 \medbreak
-Por otra parte, se ha reducido el nivel de actividad f\'isica en las personas guatemaltecas, de acuerdo con la encuesta de diabetes, hipertensi\'on y factores de riesgo de enfermedades cr\'onicas \cite{orellana2006organizacion}, el 27.68\% de los guatemaltecos presentan sedentarismo, debido que no realizan actividades f\'isicas o lo hacen por menos de 30 minutos al d\'ia.
+El segundo problema surge cuando el usuario cambia de lugar de entrenamiento, debido que puede presentar nuevos criterios para ejecutar los movimientos que ha aprendido hacer, y esto puede conlleva a crear una discusi\'on: ?`Cu\'al movimiento es v\'alido?
 \medbreak
-Igualmente, se realiz\'o un estudio a 392 ni\~nos y adolescentes en escuelas rulares y urbanas de Guatemala \cite{muros2016doble}, en donde indica que alrededor del 62\% de los ni\~nos del  \'area urbana presentan problemas de sobrepeso y un 13.8\% de obesidad, de modo que los autores concluyeron que el sobrepeso y la obesidad coexisten en los ni\~nos y adolescentes guatemaltecos.
 \medbreak
-En resumen, el presente proyecto busca detectar que un usuario se mueva a partir de repeticiones de un movimiento, de tal modo de responder la siguiente pregunta:
+As\'i mismo el segundo problema se ha encontrado en eventos deportivos en Guatemala, por ejemplo el evento unleash your fitness \cite{unleash}, competencia que presenta la modalidad de conteos de repeticiones de movimientos, en donde ha surgido conflictos de contabilizaciones de repeticiones de  movimientos v\'alidos entre jueces y atletas.
+\medbreak
+\medbreak
+En resumen, el presente proyecto implementa la tecnolog\'ia de Visual Gesture Builder (etiquetador de fotogramas del seguimiento del esqueleto) con la finalidad de aplicar el algoritmo Random Forest Regression, para determinar la coordinaci\'on en un valor num\'erico llamado factor del movimiento y al mismo tiempo responder la siguiente pregunta:
+\medbreak
 \medbreak
 \begin{center}
-\textbf{?`Ser\'a posible detectar el movimiento de una persona durante una actividad f\'isica?}
+\textbf{?`Es posible clasificar el movimiento de una persona durante una actividad f\'isica como v\'alido o inv\'alido?}
 \end{center}
 \input{mainmatter/planteamiento-del-problema/objetivos}
 \input{mainmatter/planteamiento-del-problema/hipotesis}

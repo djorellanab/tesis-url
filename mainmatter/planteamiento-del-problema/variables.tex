@@ -13,12 +13,11 @@
 \begin{tabular}[c]{@{}l@{}} Articulaci\'on \\ de an\'alisis \end{tabular} & \begin{tabular}[c]{@{}l@{}} Articulaci\'on que ayuda \\ a determinar las distancias \\ m\'aximas y m\'inimas \\ de profundidad \end{tabular} & \begin{tabular}[c]{@{}l@{}} Articulaci\'on del seguimiento \\ del esqueleto \end{tabular} \\ \hline
 \begin{tabular}[c]{@{}l@{}} Altura del \\ usuario \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable \\ calculada a partir del \\ seguimiento del esqueleto \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable que puede afectar \\ en los movimientos cinem\'aticos, \\ dado que altera  en las dimensiones \\ del seguimiento del esqueleto \end{tabular} \\ \hline
 \begin{tabular}[c]{@{}l@{}} Altura del Kinect \\  respecto al suelo \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable que permanece constante \\ por movimiento, adem\'as de ser \\ el punto central de \\ captura de datos del Kinect \end{tabular} & \begin{tabular}[c]{@{}l@{}} La transmisi\'on de datos del Kinect \\ reduce el error del \\ seguimiento del esqueleto, \\ dado que mejora el \\ campo de visi\'on del sensor \end{tabular} \\ \hline
-\begin{tabular}[c]{@{}l@{}} Tiempo de captura \\ de dato \end{tabular} & \begin{tabular}[c]{@{}l@{}} Unidad de tiempo \\ con respecto al \\ movimiento de an\'alisis \end{tabular} & \begin{tabular}[c]{@{}l@{}} De acuerdo a la resoluci\'on de 3D \\ y del color, \\ el Kinect percibe un total \\ de 30 fotogramas por segundos, \\ es decir que cada dato \\ se captura cada 0.033 segundos. \end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}} Tiempo de trabajo \end{tabular} & \begin{tabular}[c]{@{}l@{}} Unidad de tiempo \\ donde se realiza la \\ actividad f\'isica \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable utilizada en \\ los entrenamientos de \\ alta intensidad\end{tabular} \\ \hline
 \begin{tabular}[c]{@{}l@{}} Etiqueta \end{tabular} & \begin{tabular}[c]{@{}l@{}} Valor que identifica \\ el paso de un movimiento. \end{tabular} & \begin{tabular}[c]{@{}l@{}} Identifica la \\ coordinaci\'on de un movimiento \end{tabular} \\ \hline
-\begin{tabular}[c]{@{}l@{}} Rango m\'aximo \\ de identificaci\'on \end{tabular} & \begin{tabular}[c]{@{}l@{}} Rango que identifica el \\ paso de un movimiento \end{tabular} & \begin{tabular}[c]{@{}l@{}} Equivale a la precisi\'on \\ de un movimiento \end{tabular} \\ \hline
 \end{tabular}
 \end{center}
-\textbf{Fuente:} Elaborado por el autor de tesis
+\textbf{Fuente:} Propia
 \end{table}
 \subsection{Variables independientes} \label{vr:indep}
 
@@ -31,10 +30,9 @@
 \multirow{2}{*}{Nombre} & \multicolumn{2}{c|}{Definiciones} \\ \cline{2-3} 
  & Operacional & Conceptual \\ \hline
 \begin{tabular}[c]{@{}l@{}} Distancia m\'inima \\ y m\'axima de profundidad \end{tabular} & \begin{tabular}[c]{@{}l@{}} Rango ideal para detectar \\ el seguimiento del esqueleto \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variables que se determinan \\ a partir del campo de visi\'on \\ y alcance de profundidad \\ del sensor Kinect \end{tabular} \\ \hline
-\begin{tabular}[c]{@{}l@{}} Desplazamiento de \\ articulaciones \end{tabular} & \begin{tabular}[c]{@{}l@{}} Muestra el movimiento \\ de cada articulaci\'on \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable del movimiento cinem\'atico \end{tabular} \\ \hline
-\begin{tabular}[c]{@{}l@{}} Factor del movimiento \end{tabular} & \begin{tabular}[c]{@{}l@{}} Valor que identifica \\ el seguimiento del esqueleto \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable calculada a \\ partir del algoritmo \\ bosques de regresiones aleatorios \end{tabular} \\ \hline
-\begin{tabular}[c]{@{}l@{}} Repetici\'on \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable que almacena toda \\ la informaci\'on \\ del movimiento \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable de la Organizaci\'on Mundial  \\ de la Salud que se utiliza  \\ para contabilizar la \\ actividad f\'isica \end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}} Factor del movimiento \end{tabular} & \begin{tabular}[c]{@{}l@{}} Valor que identifica \\ la transici\'on de un movimiento \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable calculada a \\ partir del algoritmo \\ Random Forest Regression \end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}} Repetici\'on \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable que contabiliza \\ un movimiento \\ v\'alido \end{tabular} & \begin{tabular}[c]{@{}l@{}} Variable de la Organizaci\'on Mundial  \\ de la Salud que se utiliza  \\ para contabilizar la \\ actividad f\'isica \end{tabular} \\ \hline
 \end{tabular}
 \end{center}
-\textbf{Fuente:} Elaborado por el autor de tesis
+\textbf{Fuente:} Propia
 \end{table}

@@ -22,7 +22,7 @@ El conjunto de instrumentos se elabor\'o con los  siguientes recursos:
 	\end{itemize}
 \end{itemize}
 \subsection{Formulario de registro de movimiento} \label{ins:frmMov}
-Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual tiene como objetivo describir el movimiento de cada equipo deportivo. Por otra parte, el formulario est\'a compuesto por los siguientes incisos:
+Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual tiene como objetivo describir el movimiento v\'alido de cada equipo deportivo. Por otra parte, el formulario est\'a compuesto por los siguientes incisos:
 \begin{itemize}
 	\item \textbf{Nombre del movimiento:} Nombre que se identifica en gu\'ias deportivas o de salud.
 	\item \textbf{Descripci\'on del movimiento: } Contesta la pregunta: ?`Qu\'e es el movimiento?
@@ -35,7 +35,7 @@ Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual
 		\item \textbf{N\'umero de pasos:} Cantidad de pasos del movimiento.
 		\item \textbf{Offset del paso:} Valor que separa las etiquetas por partes iguales.
 		\item \textbf{Valor de identificaci\'on:} Valor que reconoce las etiquetas por partes iguales.
-		\item \textbf{Detalle por paso:} Es  importante conocer:
+		\item \textbf{Detalle por paso:} Muestra los pasos establecidos por el profesional, para ejecutar un movimiento v\'alido:
 			\begin{itemize}
 		\item \textbf{Paso:} N\'umero \'unico que identifica el paso.
 		\item \textbf{Diagrama:} Imagen visual del paso -i.e. Seguimiento del esqueleto-.
@@ -75,7 +75,7 @@ El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite cr
 				\item \textbf{Estado del sensor:} Activo, pausa, no detectado e inactivo.
 				\item \textbf{Datos del Visual Gesture Builder:} Normalizaci\'on de datos del sensor del Kinect para el uso del modelo de reconocimiento de movimiento.
 			\item \textbf{Joint type:} Enumeradores que listan las articulaciones del seguimiento del esqueleto -e.g. Manos, codos, hombros-.
-			\item \textbf{Visualizaci\'on de los recursos de los fotogramas para Visual Gesture Builder:} Interpreta la base de datos de gesturas y posiciones de un movimiento.
+			\item \textbf{Visualizaci\'on de los recursos de los fotogramas para Visual Gesture Builder:} Interpreta la base de datos de gesturas y posiciones de un movimiento (.gdb), a partir del algoritmo Random Forest Regression.
 	\end{itemize}	 
 \end{itemize}
 A partir de los kits de desarrollo se crearon 2 aplicaciones para la captura de informaci\'on.
@@ -86,7 +86,7 @@ Esta aplicaci\'on tiene como objetivo recolectar la distancia correcta de profun
 	\label{fig:appDepth}
 	\centering
 	\includegraphics[width=380px,height=200px]{graphics/appProfundidad.png} \\
-	\textbf{Fuente:} Aplicaci\'on elaborada por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 Esta interfaz se compone por 5 componentes:
 \begin{enumerate}[A.]
@@ -103,7 +103,7 @@ Aplicaci\'on realizada por el autor del usuario, cuya funcionalidad es programar
 	\label{fig:appEvaluate}
 	\centering
 	\includegraphics[width=380px,height=250px]{graphics/appEvaluacion.png} \\
-	\textbf{Fuente:} Aplicaci\'on elaborada por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 Dicha interfaz se divide en 13 componentes:
 \begin{enumerate}[A.]
@@ -157,7 +157,7 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 	\label{fig:architectureWeb}
 	\centering
 	\includegraphics[width=430px,height=220px]{graphics/webArchitecture.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{itemize}
 \item Frontend
@@ -168,8 +168,8 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 	\begin{itemize}
 	\item \textbf{Business api:} Maneja todas las  funciones l\'ogicas del giro de negocios -e.g. Insertar movimiento, leer movimiento, resultados de rutina-.
 	\item \textbf{File sistem:} Interfaz de programaci\'on de aplicaciones que se encarga de almacenar los archivos de metadata que define una base de datos del movimiento.
-		\item \textbf{Linux files:} Servidor encargado de almacenar los archivos de bases de datos del movimiento.
-		\item \textbf{Mongo DB:} Servidor de bases de datos no relacional, que se encarga de almacenar informaci\'on respectiva del movimiento.
+		\item \textbf{Server files:} Servidor encargado de almacenar los archivos de bases de datos del movimiento v\'alido (.gdb) y sus respectivos v\'ideos (.xef).
+		\item \textbf{Mongo DB:} Servidor de bases de datos no relacional, que se encarga de almacenar informaci\'on de la metadata del movimiento.
 	\end{itemize}
 \item Entornos de trabajo
 \begin{itemize}
@@ -187,7 +187,7 @@ Vista principal que muestra al usuario todos los movimientos que se han insertad
 	\label{fig:viewIndex}
 	\centering
 	\includegraphics[width=440px,height=270px]{graphics/web-index.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{enumerate}[A.]
 \item Bot\'on que dirige al usuario a la pantalla de insertar un movimiento (Ver vista de creaci\'on de un movimiento).
@@ -216,7 +216,7 @@ Vista que se encarga de insertar toda la informaci\'on del movimiento, recuperad
 	\label{fig:viewCreate}
 	\centering
 	\includegraphics[width=460px,height=320px]{graphics/web-create.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{enumerate}[A.]
 \item Bot\'on que dirige al usuario a la pantalla del listado de los movimientos (ver vista de listado de movimientos).
@@ -237,7 +237,7 @@ Vista que se encarga de mostrar toda la informaci\'on del movimiento, adem\'as d
 	\label{fig:viewRead}
 	\centering
 	\includegraphics[width=460px,height=320px]{graphics/web-read.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{enumerate}[A.]
 \item Ficha de informaci\'on que detalla todas las caracter\'isticas del movimiento -e.g. Nombre, descripci\'on, etiquetas de los pasos, intervalos de confianza de los pasos, articulaciones del movimiento-.
@@ -251,7 +251,7 @@ Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimie
 	\label{fig:resultsTabata}
 	\centering
 	\includegraphics[width=460px,height=320px]{graphics/web-results.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{enumerate}[A.]
 \item Conjuntos de controladores que seleccionan y leen un archivo de resultados de la rutina tabata (ver anexos, c\'odigo \ref{code:tabata}).
@@ -264,7 +264,7 @@ Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimie
 	\label{fig:appConsole}
 	\centering
 	\includegraphics[width=460px,height=50px]{graphics/appConsole.PNG} \\
-	\textbf{Fuente:} Elaborado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure} 
 Aplicaci\'on de consola que permite extraer informaci\'on de los v\'ideos (.xef) y generar una hoja de observaciones del seguimiento de esqueleto (ver anexo, tabla \ref{tab:obsVideoData}), con la ayuda de las siguientes herramientas:
 \begin{itemize}
@@ -288,7 +288,7 @@ Herramienta del kit de desarrollo de software del sensor del Kinect que se utili
 	\label{fig:streamDefault}
 	\centering
 	\includegraphics[width=200px,height=360px]{graphics/streamsRecord.PNG} \\
-	\textbf{Fuente:} Tomado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure} 
 \begin{itemize}
 \item Activos:
@@ -314,21 +314,21 @@ As\'i mismo esta herramienta proporciona una interfaz gr\'afica para ver y anali
 	\label{fig:readVideoXEF}
 	\centering
 	\includegraphics[width=460px,height=320px]{graphics/readVideo.PNG} \\
-	\textbf{Fuente:} Tomado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure} 
 \subsection{Visual Gesture Builder} \label{ins:VisualGestureBuilder}
-Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\'on, usando tecnolog\'ias de m\'aquinas de aprendizaje -i.e. AdaBoostTrigger o RFRProgress-, con el fin objetivo de reconocer un gesto -e.g. Saltar, bailar, sentarse- \cite{KinectBuilder2019}, a trav\'es de la etiquetaci\'on de fotogramas y la configuraci\'on de las siguientes variables:
+Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\'on, usando tecnolog\'ias de m\'aquinas de aprendizaje (Random Forest Regression), con el fin objetivo de reconocer un gesto -e.g. Saltar, bailar, sentarse- \cite{KinectBuilder2019}, a trav\'es de la etiquetaci\'on de fotogramas y la configuraci\'on de las siguientes variables:
  \begin{figure}[H]
 	\caption{Variables de configuraci\'on de Visual Gesture Builder}
 	\label{fig:visualGesture}
 	\centering
 	\includegraphics[width=300px,height=300px]{graphics/settingsGesture.PNG} \\
-	\textbf{Fuente:} Tomado por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{figure} 
 \begin{itemize}
 \item \textbf{Gesture name:} Nombre del movimiento  (Recuperado del formulario de registro de movimiento, atributo de nombre).
 \item \textbf{Body side:} Valor por defecto es  ninguno, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la replica de una patada lateral izquierda.
-\item \textbf{Gesture type:} El valor por defecto es RFRProgress, debido que est\'a analizando movimiento continuos -e.g. Salto, patada, saque-.
+\item \textbf{Gesture type:} El valor por defecto es RFRProgress (Algoritmo de Random Forest Regression), debido que est\'a analizando movimiento continuos -e.g. Salto, patada, saque-.
 \item \textbf{Duplicate and mirror data during training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario de registro de movimiento, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
 \item \textbf{User hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto -e.g. Bal\'on, pesa, raqueta-.
 \item \textbf{Ignore part body:} Se activan  aquellas partes del cuerpo que se desean ignorar durante el movimiento (Ver formulario de registro de movimiento, articulaciones ignoradas).
