@@ -189,7 +189,6 @@ Evento_{x}
 	\textbf{Fuente:} Distancia euclidiana \cite[p.~423]{ayres2001calculo}
 \end{formula}  
 \end{itemize}
-As\'i mismo, con la herramienta de excel se realiz\'o un an\'alisis de regresi\'on  de los movimientos de animaci\'on y tenis de mesa, tomando en cuenta  la distancia recorrida de la mu\~neca -i.e. Variable independiente- y su respectivo tiempo -i.e. Variable dependiente-, a partir de una muestra de 10 a 15 repeticiones, con la finalidad de mostrar la uniformidad de los tiempos de capturas, la dispersi\'on de los datos de la muestra (diferentes desplazamientos) y calcular el tiempo de la repetici\'on m\'as larga (identifica el peor de los casos).
 \subsection{Captura de datos durante una rutina (normalizaci\'on de datos)}\label{dis:recognitionMove}
 Durante la rutina, los datos del seguimiento del esqueleto son recuperados a partir del kit de desarrollo de software del Kinect, dichos datos son almacenados en la siguiente estructura:
 \begin{itemize}
@@ -429,7 +428,7 @@ Se presenta el algoritmo clasificador de repetici\'on de un movimiento v\'alido:
 \item Asignar el paso siguiente como paso inicial (paso No.1), debido que marca el inicio de la repetici\'on. %1
 \item Capturar un nuevo fotograma del Kinect, y obtiene el factor del movimiento del respectivo fotograma, a partir del algoritmo Random Forest Regression y la herramienta, Visual Gesture Builder. %2
 \item Verificar si el factor del movimiento se encuentra en alg\'un intervalo de confianza para obtener el paso detectado, en caso que no se encuentre, no devolver\'a ning\'un valor.  %3
-\item Verificar si el paso detectado tiene un valor y que no sea un valor anterior (valor anterior del paso siguiente), en caso que no sea, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
+\item Verificar si el paso detectado tiene un valor, adem\'as de chequear que no sea un valor anterior (valor anterior del paso siguiente), en caso que no cumpla ambas condiciones, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
 \item Verificar si el paso detectado es igual al paso siguiente, en caso que sea diferente se detect\'o una repetici\'on inv\'alida (saltar al proceso No. 9). %5
 \item Verificar si el paso detectado es el \'ultimo paso, en caso contrario (saltar al proceso No. 8) %6
 \item Finalizar algoritmo con repetici\'on v\'alida. %7 
@@ -461,10 +460,10 @@ Este algoritmo es aplicado para analizar los v\'ideos de testeos, debido que se 
 En la figura \ref{fig:detValido}, se divide en tres partes:
 \begin{itemize}
 \item \textbf{Intervalos de confianza:} Tabla que permite reconocer los pasos del movimiento, si el factor del movimiento se encuentra dentro del intervalo de confianza.
-\item \textbf{Repetici\'on v\'alida:} Es v\'alido,  ya que detecta todos los pasos de manera ordenada  durante los fotogramas: Uno, tres y seis (Observe que los factores del movimiento se encuentran dentro del alg\'un intervalo de confianza). 
-\item \textbf{Repetici\'on inv\'alida:} Es inv\'alido, debido que para el fotograma 6, se esperaba detectar el paso 2 (paso siguiente), pero se detect\'o el paso 3, por lo tanto el algoritmo determina que es una repetici\'on inv\'alida.
+\item \textbf{Repetici\'on v\'alida:} Es v\'alido,  ya que detecta todos los pasos de manera ordenada  durante los fotogramas: Uno, tres y seis (observe que los factores del movimiento se encuentran dentro del alg\'un intervalo de confianza). 
+\item \textbf{Repetici\'on inv\'alida:} Es inv\'alido, debido que para el fotograma 6, se esperaba detectar el paso dos (paso siguiente), pero se detect\'o el paso tres, por lo tanto el algoritmo determina que es una repetici\'on inv\'alida.
 \end{itemize}
-Este procedimiento permite completar la tabla de observaciones de clasificaci\'on de cada v\'ideo de testeo (Tabla \ref{tab:DetectarPasoCorrecto}), en donde por cada repetici\'on etiquetada se verifica todos los pasos, por medio de tres valores:
+Este procedimiento permite completar la tabla de observaciones de clasificaci\'on de cada v\'ideo de testeo (ver anexos, tabla \ref{tab:DetectarPasoCorrecto}), en donde por cada repetici\'on etiquetada se verifica todos los pasos, por medio de tres valores:
 \begin{itemize}
 \item \textbf{Verdadero:} Si se detect\'o el paso correspondiente (de manera ordenada).
 \item \textbf{Falso:} Repetici\'on invalida debido que no se detect\'o el paso correspondiente. 
@@ -490,7 +489,7 @@ repeticiones\: inv\acute{a}lidas = repeticiones\; totales\: del\: video - repeti
 	\end{equation}
 	\textbf{Fuente:} Propuesto por el autor de tesis
 \end{formula}
-Es importante saber si el modelo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las permutaciones de las  repeticiones inv\'alidas): 
+Es importante saber si el modelo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las posibles combinaciones de una  repetici\'on inv\'alida): 
  \begin{figure}[H]
 	\caption{Porcentajes de referencias v\'alidos e inv\'alidos }
 	\label{fig:porcValido}
