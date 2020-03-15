@@ -3,7 +3,7 @@ El conjunto de instrumentos se elabor\'o con los  siguientes recursos:
 \begin{itemize}
 \item Humanos
 	\begin{itemize}
-	\item Profesionales -i.e. Entrenadores-.
+	\item Profesionales (entrenadores deportivos).
 	\item Atletas
 	\item Investigador
 	\end{itemize}
@@ -27,7 +27,7 @@ Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual
 	\item \textbf{Nombre del movimiento:} Nombre que se identifica en gu\'ias deportivas o de salud.
 	\item \textbf{Descripci\'on del movimiento: } Contesta la pregunta: ?`Qu\'e es el movimiento?
 	\item \textbf{Movimiento unilateral:} Si es afirmativo, el movimiento trabaja con solo una parte del cuerpo (izquierda o derecha, ejemplo una patada), en caso contrario, se considera todas las partes del cuerpo (izquierda y derecha, ejemplo un salto).
-	\item \textbf{Partes del cuerpo ignorada:} M\'ultiples respuestas que identifican las articulaciones ignoradas -i.e. Debido que no es informaci\'on relevante para el movimiento-:
+	\item \textbf{Partes del cuerpo ignorada:} M\'ultiples respuestas que identifican las articulaciones ignoradas (debido que no es informaci\'on relevante para el movimiento):
 	\begin{itemize}
 		\item \textbf{Brazo derecho o izquierdo:} Ignora las siguientes articulaciones (seg\'un su lado): Pulgar, dedo del medio, mano, codo, hombro, centro de los hombros, cuello, cabeza y espalda.
 		\item \textbf{Cuerpo inferior:} Ignora las siguientes articulaciones (en ambos lados): Centro de cadera, caderas, rodillas, tobillos y pies.
@@ -38,7 +38,7 @@ Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual
 		\item \textbf{Detalle por paso:} Muestra los pasos establecidos por el profesional, para ejecutar un movimiento v\'alido:
 			\begin{itemize}
 		\item \textbf{Paso:} N\'umero \'unico que identifica el paso.
-		\item \textbf{Diagrama:} Imagen visual del paso -i.e. Seguimiento del esqueleto-.
+		\item \textbf{Diagrama:} Imagen visual del paso (seguimiento del esqueleto).
 		\item \textbf{Descripci\'on del paso:} Responde la pregunta: ?`Cu\'al es la postura del cuerpo durante ese paso?
 		\item \textbf{Etiqueta:} N\'umero \'unico que identifica el paso a partir de la probabilidad de movimiento.
 	\item \textbf{Rango de identificaci\'on:} Rango m\'aximo que identifica el paso dentro de la probabilidad del movimiento.
@@ -47,7 +47,7 @@ Este formulario se adjunta en anexos (ver figura \ref{fig:frmWhiteMov}), la cual
 \subsection{Formulario de registro de rutina} \label{ins:frmRout}
 Formulario adjuntado en anexos (Ver figura \ref{fig:frmWhiteRout}), tiene como funci\'on identificar los ejercicios de calentamiento  previamente a realizar el movimiento seleccionado por cada equipo deportivo, adem\'as de estandarizar el n\'umero de repeticiones del movimiento por cada atleta, a partir de los siguientes puntos:
 \begin{itemize}
-	\item \textbf{Descripci\'on del calentamiento:} Detalla el tipo de calentamiento -e.g. Calentamiento con tu propio peso, calentamiento dentro de un ambiente, calentamiento a partir de objetos-.
+	\item \textbf{Descripci\'on del calentamiento:} Detalla el tipo de calentamiento (calentamiento con tu propio peso, calentamiento dentro de un ambiente, calentamiento a partir de objetos).
 	\item \textbf{Movimientos:} Lista los movimientos que se realizan durante el calentamiento (Validado por el formulario de registro de movimiento).
 	\item \textbf{Series:} Cantidad de veces que debe realizar un atleta, un conjunto de repeticiones del movimiento.
 	\item \textbf{Repeticiones:} Cantidad de repeticiones del movimiento.
@@ -56,7 +56,7 @@ Formulario adjuntado en anexos (Ver figura \ref{fig:frmWhiteRout}), tiene como f
 	\item \textbf{Nombre del movimiento:} Movimiento seleccionado por cada equipo deportivo  (validado por el formulario de registro de movimiento).
 	\item \textbf{Rutina:} Describe el tipo de rutina para la captura de datos:
 	\begin{itemize}
-		\item \textbf{For time:} M\'axima cantidad de repeticiones del movimiento, durante un tiempo establecido.
+		\item \textbf{Por tiempo:} M\'axima cantidad de repeticiones del movimiento, durante un tiempo establecido.
 		\item \textbf{Escaleras:} N\'umeros de repeticiones establecidas, separadas por series.
 	\end{itemize}	
 \end{itemize}
@@ -64,9 +64,9 @@ Formulario adjuntado en anexos (Ver figura \ref{fig:frmWhiteRout}), tiene como f
 Aplicaciones que interact\'uan con el usuario para la recolecci\'on de datos, en donde se trabajan con  tres tipos:
 \subsubsection{Windows presentation foundation (WPF)}
 \label{ins:UI:wpf}
-El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite crear aplicaciones de escritorio con la tecnolog\'ia .NET, la cual es soportado desde windows XP hasta la \'ultima versi\'on de windows -i.e. windows 10-. Por lo tanto, en el presente proyecto se utiliz\'o este tipo de interfaz para la construcci\'on del seguimiento del esqueleto, generado por los siguientes kits de desarrollo de software:
+El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite crear aplicaciones de escritorio con la tecnolog\'ia .NET, la cual es soportado desde Windows XP hasta la \'ultima versi\'on de Windows (Windows 10). Por lo tanto, en el presente proyecto se utiliz\'o este tipo de interfaz para la construcci\'on del seguimiento del esqueleto, generado por los siguientes kits de desarrollo de software:
 \begin{itemize}
-	\item \textbf{Windows inputs:} Herramienta que permite crear elementos de un formulario -e.g. Botones, cajas de textos- \cite{wpfWindows2019}.
+	\item \textbf{Windows inputs:} Herramienta que permite crear elementos de un formulario (e.g. botones, cajas de textos) \cite{wpfWindows2019}.
 	\item \textbf{Windows media:} Herramientas que permiten renderizar el seguimiento del esqueleto en tiempo real a partir de pinceles, colores, formas y dibujos \cite{WindowMedia2019}.
 	\item \textbf{Windows threading:} Herramientas que permiten crear temporizadores para la renderizaci\'on del seguimiento del esqueleto en un per\'iodo del tiempo (30 fotogramas por segundos) \cite{WindowThreading2019}.
 	\item \textbf{Kinect:} Herramientas que permiten acceder a las funcionalidades del sensor \cite{WindowKinect2019}, tales:
@@ -74,7 +74,7 @@ El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite cr
 					\item \textbf{Body frame reader:} Obtiene la informaci\'on del seguimiento del esqueleto.
 				\item \textbf{Estado del sensor:} Activo, pausa, no detectado e inactivo.
 				\item \textbf{Datos del Visual Gesture Builder:} Normalizaci\'on de datos del sensor del Kinect para el uso del modelo de reconocimiento de movimiento.
-			\item \textbf{Joint type:} Enumeradores que listan las articulaciones del seguimiento del esqueleto -e.g. Manos, codos, hombros-.
+			\item \textbf{Joint type:} Enumeradores que listan las articulaciones del seguimiento del esqueleto (e.g. manos, codos, hombros).
 			\item \textbf{Visualizaci\'on de los recursos de los fotogramas para Visual Gesture Builder:} Interpreta la base de datos de gesturas y posiciones de un movimiento (.gdb), a partir del algoritmo Random Forest Regression.
 	\end{itemize}	 
 \end{itemize}
@@ -115,7 +115,7 @@ Dicha interfaz se divide en 13 componentes:
     \item Bot\'on que permite comenzar la rutina de tabata (en tiempo real).
    \item  Caja de texto num\'erica que indica la cantidad de tiempos de trabajos y descansos del atleta durante su rutina de tabata.
    \item  Caja de texto num\'erica que se\~nala el tiempo de descanso durante una rutina.
-   \item  Caja de texto n\'umerica que muestra el tiempo de trabajo durante una rutina -i.e. Durante este tiempo, el atleta debe realizar la cantidad m\'axima de repeticiones-.
+   \item  Caja de texto n\'umerica que muestra el tiempo de trabajo durante una rutina (durante este tiempo, el atleta debe realizar la cantidad m\'axima de repeticiones).
    \item  Etiqueta de articulaci\'on de an\'alisis para medir la distancia de profundidad entre el atleta y el sensor.
    \item  Etiqueta de la altura  recomendada (en metros)  del sensor y el suelo.
       \item  Etiqueta de la distancia m\'inima y m\'axima de profundidad del atleta con respecto al sensor, y por otra parte indica la distancia profundidad actual del usuario y el sensor.
@@ -127,7 +127,7 @@ Dicha interfaz se divide en 13 componentes:
              \item  Serie actual que est\'a trabajando el atleta.
              \item  Contador de repeticiones de la serie actual.
               \item \'Ultimo paso ejecutado por el atleta (comenzando desde 0).   
-             \item  Valor de probabilidad del movimiento -i.e. Factor del movimiento-.
+             \item  Valor de probabilidad del movimiento (factor del movimiento).
              \item  Temporizador que mide el tiempo    empleado en la rutina (en segundos).
       \end{itemize}
 \end{enumerate}
@@ -139,7 +139,7 @@ Ya definido los componentes de la interfaz, se debe tomar en cuenta que al final
 	   \begin{itemize}  
    	\item \textbf{Uid:} C\'odigo \'unico de identificaci\'on de la gr\'afica.
    	\item \textbf{Label:} Nombre de la gr\'afica.
-   	\item \textbf{ShowLine:} Condici\'on que permite dibujar la l\'inea de la tendencia de la gr\'afica.
+   	\item \textbf{Show line:} Condici\'on que permite dibujar la l\'inea de la tendencia de la gr\'afica.
     \item \textbf{Data:} Vector de datos que conforma la gr\'afica, en donde los datos del eje x, representan el tiempo de rutina (en segundos), y los datos del eje y, significan las repeticiones acumulada durante ese tiempo de rutina.
    \end{itemize}     
     \item \textbf{Potencia:} Cantidad de repeticiones m\'axima del movimiento, en el menor tiempo posible.
@@ -166,7 +166,7 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 	\end{itemize}
 \item Backend
 	\begin{itemize}
-	\item \textbf{Business api:} Maneja todas las  funciones l\'ogicas del giro de negocios -e.g. Insertar movimiento, leer movimiento, resultados de rutina-.
+	\item \textbf{Business api:} Maneja todas las  funciones l\'ogicas del giro de negocios (e.g. Insertar movimiento, leer movimiento, resultados de rutina).
 	\item \textbf{File sistem:} Interfaz de programaci\'on de aplicaciones que se encarga de almacenar los archivos de metadata que define una base de datos del movimiento.
 		\item \textbf{Server files:} Servidor encargado de almacenar los archivos de bases de datos del movimiento v\'alido (.gdb) y sus respectivos v\'ideos (.xef).
 		\item \textbf{Mongo DB:} Servidor de bases de datos no relacional, que se encarga de almacenar informaci\'on de la metadata del movimiento.
@@ -174,9 +174,9 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 \item Entornos de trabajo
 \begin{itemize}
 \item \textbf{Angular 7:} Herramienta que facilita la creaci\'on y el mantenimiento de una aplicaci\'on web \cite{angular2019}.
-\item \textbf{Argon dashboard angular:} Herramienta  que facilita realizar una aplicaci\'on responsiva -i.e. Adaptable a cualquier dispositivo a partir de un navegador web- \cite{argonDash}.
+\item \textbf{Argon dashboard angular:} Herramienta  que facilita realizar una aplicaci\'on responsiva (adaptable a cualquier dispositivo a partir de un navegador web) \cite{argonDash}.
 \item \textbf{Express js:} Herramienta encargada de realizar la comunicaci\'on entre aplicaciones, a partir del \acrlong{HTTP} \cite{fileSistem2019}.
-\item \textbf{Mongoose:} Herramienta encargada de realizar cualquier operaci\'on de la base de datos de mongo -e.g. Conexi\'on, recuperar datos, modificar registros- \cite{mongoose2019}.
+\item \textbf{Mongoose:} Herramienta encargada de realizar cualquier operaci\'on de la base de datos de mongo (e.g. conexi\'on, recuperar datos, modificar registros) \cite{mongoose2019}.
 \end{itemize}
 \end{itemize}
 As\'i mismo la aplicaci\'on web est\'a conformada por 4 vistas:
@@ -240,7 +240,7 @@ Vista que se encarga de mostrar toda la informaci\'on del movimiento, adem\'as d
 	\textbf{Fuente:} Propia.
 \end{figure}
 \begin{enumerate}[A.]
-\item Ficha de informaci\'on que detalla todas las caracter\'isticas del movimiento -e.g. Nombre, descripci\'on, etiquetas de los pasos, intervalos de confianza de los pasos, articulaciones del movimiento-.
+\item Ficha de informaci\'on que detalla todas las caracter\'isticas del movimiento (e.g. Nombre, descripci\'on, etiquetas de los pasos, intervalos de confianza de los pasos, articulaciones del movimiento).
 \item Conjuntos de controladores que permiten seleccionar un archivo de base de datos de gesturas y almacenarlo en el servidor de archivos.
 \item Conjunto de controladores que permiten cambiar el valor del factor de reconocimiento (Ver ecuaci\'on \ref{frm:rangoConfiabilidad}).
 \end{enumerate}
@@ -256,7 +256,7 @@ Vista que expone los resultados de la aplicaci\'on de evaluaci\'on de un movimie
 \begin{enumerate}[A.]
 \item Conjuntos de controladores que seleccionan y leen un archivo de resultados de la rutina tabata (ver anexos, c\'odigo \ref{code:tabata}).
 \item Diagrama de dispersi\'on de la rutina tabata, la cual muestra las repeticiones acumuladas durante tiempos de trabajos y de descansos.
-\item Ficha informativa que muestra los resultados de la rutina tabata -e.g. Variables que fueron configuradas en el tabata, volumen de repeticiones, duraci\'on de la rutina, repeticiones por serie de trabajo, tiempo promedio por repetici\'on-.
+\item Ficha informativa que muestra los resultados de la rutina tabata (e.g. Variables que fueron configuradas en el tabata, volumen de repeticiones, duraci\'on de la rutina, repeticiones por serie de trabajo, tiempo promedio por repetici\'on).
 \end{enumerate}
 \subsubsection{Consola (Windows)}\mbox{} \\ \label{ins:cons}
 \begin{figure}[H]
@@ -277,10 +277,10 @@ Para el funcionamiento de la aplicaci\'on, es necesario un archivo de lector ana
 \item \textbf{Path video:} Direcci\'on del archivo  de v\'ideo a analizar (.xef).
 \item \textbf{Path write:} Direcci\'on del archivo  resultante (.csv).
 \item \textbf{Joints:} Vector num\'erico que muestra los \'indices de las articulaciones que se desean extraer la informaci\'on.
-\item \textbf{Frame data:} Vector de vectores de cadenas, la cual por cada vector de cadena se indica el segmento de v\'ideo de extracci\'on de datos -i.e. Punto de inicio y punto final-.
+\item \textbf{Frame data:} Vector de vectores de cadenas, la cual por cada vector de cadena se indica el segmento de v\'ideo de extracci\'on de datos (punto de inicio y punto final).
 \end{itemize}
 \subsection{Kinect configuration verifier} \label{ins:KinectCheckt}
-Herramienta del kit de desarrollo de software del sensor del Kinect, que tiene como objetivo  analizar la computadora que se encuentra conectado al sensor, verificando las compatibilidades del hardware -e.g. Procesador, controlador de usb, sistema operativo, conexi\'on del sensor-, adem\'as de chequear la comunicaci\'on con la c\'amara -e.g. canales de color y de profundidad-.
+Herramienta del kit de desarrollo de software del sensor del Kinect, que tiene como objetivo  analizar la computadora que se encuentra conectado al sensor, verificando las compatibilidades del hardware (e.g. procesador, controlador de usb, sistema operativo, conexi\'on del sensor), adem\'as de chequear la comunicaci\'on con la c\'amara (e.g. canales de color y de profundidad).
 \subsection{Kinect studio} \label{ins:KinectStudio}
 Herramienta del kit de desarrollo de software del sensor del Kinect que se utiliza para monitorear, grabar (V\'ideos .xef) y reproducir datos de la c\'amara \cite{KinectStudio2019}, a partir de los siguientes canales:
 \begin{figure}[H]
@@ -303,12 +303,12 @@ Herramienta del kit de desarrollo de software del sensor del Kinect que se utili
 \end{itemize}
 \item Inactivos:
 \begin{itemize}
-\item \textbf{NUI color camera settings:} Encargado de la conversi\'on de colores -e.g. YUV o RGB-
-\item \textbf{NUI long exposure ir:} Identifica  objetos externos al seguimiento del esqueleto -e.g. Mesa, pelota, pesa-.
-\item \textbf{NUI uncompressed color:} Responsable de obtener los datos de color -e.g. C\'odigo de colores de un sem\'aforo-.
+\item \textbf{NUI color camera settings:} Encargado de la conversi\'on de colores (e.g. YUV o RGB)
+\item \textbf{NUI long exposure ir:} Identifica  objetos externos al seguimiento del esqueleto (e.g. mesa, pelota, pesa).
+\item \textbf{NUI uncompressed color:} Responsable de obtener los datos de color (e.g. c\'odigo de colores de un sem\'aforo).
 \end{itemize}
 \end{itemize}
-As\'i mismo esta herramienta proporciona una interfaz gr\'afica para ver y analizar los v\'ideos a partir de segmentos -i.e. parte de inicio y fin- y puntos de pausas.
+As\'i mismo esta herramienta proporciona una interfaz gr\'afica para ver y analizar los v\'ideos a partir de segmentos (parte de inicio y fin) y puntos de pausas.
 \begin{figure}[H]
 	\caption{Lectura de v\'ideo .xef }
 	\label{fig:readVideoXEF}
@@ -317,7 +317,7 @@ As\'i mismo esta herramienta proporciona una interfaz gr\'afica para ver y anali
 	\textbf{Fuente:} Propia.
 \end{figure} 
 \subsection{Visual Gesture Builder} \label{ins:VisualGestureBuilder}
-Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\'on, usando tecnolog\'ias de m\'aquinas de aprendizaje (Random Forest Regression), con el fin objetivo de reconocer un gesto -e.g. Saltar, bailar, sentarse- \cite{KinectBuilder2019}, a trav\'es de la etiquetaci\'on de fotogramas y la configuraci\'on de las siguientes variables:
+Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\'on, usando tecnolog\'ias de m\'aquinas de aprendizaje (Random Forest Regression), con el fin objetivo de reconocer un gesto (e.g. saltar, bailar, sentarse) \cite{KinectBuilder2019}, a trav\'es de la etiquetaci\'on de fotogramas y la configuraci\'on de las siguientes variables:
  \begin{figure}[H]
 	\caption{Variables de configuraci\'on de Visual Gesture Builder}
 	\label{fig:visualGesture}
@@ -328,15 +328,15 @@ Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\
 \begin{itemize}
 \item \textbf{Gesture name:} Nombre del movimiento  (Recuperado del formulario de registro de movimiento, atributo de nombre).
 \item \textbf{Body side:} Valor por defecto es  ninguno, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la replica de una patada lateral izquierda.
-\item \textbf{Gesture type:} El valor por defecto es RFRProgress (Algoritmo de Random Forest Regression), debido que est\'a analizando movimiento continuos -e.g. Salto, patada, saque-.
+\item \textbf{Gesture type:} El valor por defecto es RFRProgress (Algoritmo de Random Forest Regression), debido que est\'a analizando movimiento continuos (e.g. salto, patada, saque).
 \item \textbf{Duplicate and mirror data during training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario de registro de movimiento, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
-\item \textbf{User hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto -e.g. Bal\'on, pesa, raqueta-.
+\item \textbf{User hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto (e.g. bal\'on, pesa, raqueta).
 \item \textbf{Ignore part body:} Se activan  aquellas partes del cuerpo que se desean ignorar durante el movimiento (Ver formulario de registro de movimiento, articulaciones ignoradas).
 \end{itemize}
 Luego de configurar las variables globales, el proyecto crear\'a una base de datos de gesturas vac\'io, la cual debe adjuntar todos los v\'ideos (.xef)  y por cada v\'ideo se debe etiquetar los valores de fotogramas (Seg\'un los pasos definido en el formulario de registro de movimiento), con el fin objetivo de: 
 \begin{itemize}
 \item \textbf{Construir:} Acci\'on que entrena y genera el modelo a partir de un archivo de base de datos de gesturas (.gbd).
-\item \textbf{Analizar:} Funci\'on que permite seleccionar archivos de base de datos de gesturas y posteriormente compararlo con v\'ideos previamente etiquetados, encontrando el valor real -i.e. Valor de la etiqueta- y el valor pron\'osticado del modelo (estos valores son usado para completar la hoja de observaci\'on de errores modelo, ver anexos, tabla \ref{tab:obsErrores}).
+\item \textbf{Analizar:} Funci\'on que permite seleccionar archivos de base de datos de gesturas y posteriormente compararlo con v\'ideos previamente etiquetados, encontrando el valor real (valor de la etiqueta) y el valor pron\'osticado del modelo (estos valores son usado para completar la hoja de observaci\'on de errores modelo, ver anexos, tabla \ref{tab:obsErrores}).
 \end{itemize}
 \subsection{Herramienta para el an\'alisis de datos} \label{ins:toolsAn}
 Se utiliz\'o el software microsoft excel, para la tabulaci\'on y organizaci\'on de los datos.

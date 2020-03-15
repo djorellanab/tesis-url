@@ -11,7 +11,7 @@ Estos valores permiten identificar el paso de cada movimiento a partir de las si
 	\begin{equation}
 offset = \frac{1}{pasos-1}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia
 \end{formula}
 \item \textbf{Vector de etiquetas:} A cada paso se le distribuye un valor \'unico, cuyo valor se calcula a partir del offset de la etiqueta anterior.
 \begin{formula}[H]
@@ -33,7 +33,7 @@ etiqueta(paso-1)+offset & Si\; es\; un\; paso\; intermedio
 \end{matrix}\right.
 \end{matrix}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia
 \end{formula} 
 
 \item \textbf{Valor de identificaci\'on:} N\'umero que representa la distribuci\'on de reconocimiento  de pasos por partes iguales:
@@ -44,7 +44,7 @@ etiqueta(paso-1)+offset & Si\; es\; un\; paso\; intermedio
 	\begin{equation}
 valor \: de \: identificaci\acute{o}n = \frac{1}{pasos}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia
 \end{formula} 
 
 \item \textbf{Rango de identificaci\'on:} Rango m\'aximo num\'erico para identificar un paso.
@@ -70,7 +70,7 @@ inferior(paso)+identificaci\acute{o}n & paso\, no\, final\\
 \end{matrix}\right.
 \end{matrix}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia
 \end{formula} 
 \end{itemize}
 \subsection{C\'alculo indirecto de la altura del usuario} \label{dis:height}
@@ -105,7 +105,7 @@ Para los siguientes c\'alculos se utilizaron la hoja de observaciones de profund
 	\begin{equation}
 	desviaci\acute{o}n \:  de \: altura =STDEV([Altura])
 	\end{equation}
-		\textbf{Fuente:} Elaborado por el autor, a partir de funci\'on de excel
+		\textbf{Fuente:} Funci\'on de excel
 \end{formula}
        \item \textbf{Max}: Funci\'on para determinar la profundidad m\'axima entre el Kinect y el atleta.
        \begin{formula}[H]
@@ -115,7 +115,7 @@ Para los siguientes c\'alculos se utilizaron la hoja de observaciones de profund
 	\begin{equation}
 	Profundidad \: Max =MAX([Profundidad])
 	\end{equation}
-		\textbf{Fuente:} Elaborado por el autor, a partir de funci\'on de excel
+		\textbf{Fuente:} Funci\'on de excel
 \end{formula}
        \item \textbf{Min}: Funci\'on para determinar la profundidad m\'inima entre el Kinect y el atleta.
               \begin{formula}[H]
@@ -125,7 +125,7 @@ Para los siguientes c\'alculos se utilizaron la hoja de observaciones de profund
 	\begin{equation}
 	Profundidad \:  Min =MIN([Profundidad])
 	\end{equation}
-		\textbf{Fuente:} Elaborado por el autor, a partir de funci\'on de excel.
+		\textbf{Fuente:} Funci\'on de excel
 \end{formula}
 \end{itemize}
 \subsection{Eventos del Kinect} \label{dis:even}
@@ -166,7 +166,7 @@ Evento_{x}
 \end{bmatrix}
 \end{matrix}
 	\end{equation}
-		\textbf{Fuente:} Propuesto por el autor de tesis.
+		\textbf{Fuente:} Propia.
 \end{formula}
 \item \textbf{Tiempo relativo}: Describe el tiempo de la repetici\'on, cuyo valor significa la diferencia entre el tiempo total de un evento no inicial y el tiempo total del primer evento.
               \begin{formula}[H]
@@ -176,7 +176,7 @@ Evento_{x}
 	\begin{equation}
 	relative \: time = TotalTime_{Evento\: x}-TotalTime_{Evento\: inicial}
 	\end{equation}
-		\textbf{Fuente:} Propuesto por el autor de tesis.
+		\textbf{Fuente:} Propia.
 \end{formula}
 \item \textbf{Distancia euclidiana}: Describe el desplazamiento de una articulaci\'on, bas\'andose en la posici\'on del primer evento inicial y la posici\'on de un evento no inicial:
 \begin{formula}[H]
@@ -234,12 +234,12 @@ serie & [repeticion] \\
 series & [serie]
 \end{matrix}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{formula}
 \subsection{Validaci\'on del modelo de reconocimiento de movimiento}\label{dis:validate}
 El presente proyecto se utiliz\'o dos m\'etodos de validaciones cruzadas \cite{perez2015analisis}:
 \begin{itemize}
-\item \textbf{Hold out:} Las muestras de datos se separan en dos conjunto, uno para construir y entrenar el modelo -i.e. Build- y otro para realizar pruebas que dan validez a los m\'argenes  de errores del modelo.
+\item \textbf{Hold out:} Las muestras de datos se separan en dos conjunto, uno para construir y entrenar el modelo (build) y otro para realizar pruebas que dan validez a los m\'argenes  de errores del modelo.
 \item \textbf{K-fold:} Las muestras se dividen en K subconjuntos, y en cada subconjunto se aplica el m\'etodo hold out.
 \end{itemize}  
 \begin{table}[H]
@@ -336,7 +336,7 @@ Luego de encontrar los errores, se debe seleccionar el modelo que tenga la menor
 	\begin{equation}
 EMP_{muestra\, total}=AVERAGE([EMP_{modelo}])
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis, con base a las f\'ormulas de excel (versi\'on en ingl\'es)
+	\textbf{Fuente:} F\'ormula de Excel.
 \end{formula}  
  \begin{formula}[H]
 	\centering
@@ -345,7 +345,7 @@ EMP_{muestra\, total}=AVERAGE([EMP_{modelo}])
 	\begin{equation}
 MAD_{muestra\, total}=AVERAGE([MAD_{modelo}])
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis, con base a las f\'ormulas de excel (versi\'on en ingl\'es)
+	\textbf{Fuente:} F\'ormula de Excel.
 \end{formula}  
 	 \begin{formula}[H]
 	\centering
@@ -354,7 +354,7 @@ MAD_{muestra\, total}=AVERAGE([MAD_{modelo}])
 	\begin{equation}
 RECM_{muestra\, total}=AVERAGE([RECM_{modelo}])
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis, con base a las f\'ormulas de excel (versi\'on en ingl\'es)
+	\textbf{Fuente:} F\'ormula de Excel.
 \end{formula} 
 Los errores de la muestra total ayudan aceptar o rechazar el modelo; si la \acrshort{RECM} promedio  es menor a un medio del valor de identificaci\'on se aprueba (se divide entre dos, debido que las etiquetas de los pasos intermedio se encuentra a la mitad de cada rango de identificaci\'on respectiva). En caso que sea mayor o igual, se rechaza, debido que los intervalos de confianza colisiona con otros intervalos de confianza (Intervalos que se utiliza para la detecci\'on de un paso):
 \begin{figure}[H]
@@ -397,7 +397,7 @@ etiqueta(paso)+RECM_{muestra\, total} & si\: es\: paso\: intermedio \\ \\
 \end{matrix}\right.
 \end{matrix}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{formula} 
 Por otro lado, se debe determinar el valor de recognition, n\'umero porcentual que determina el porcentaje de detecci\'on similar al fotograma de cada paso respectivo, es decir:
  \begin{itemize}
@@ -411,7 +411,7 @@ Por otro lado, se debe determinar el valor de recognition, n\'umero porcentual q
 	\begin{equation}
 recognition=1-no\,v\acute{a}lidos=1-\frac{RECM_{muestra\, total}}{valor\: de\: identificaci\acute{o}n}  
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{formula}
 \subsection{Algoritmo clasificador de un movimiento v\'alido}\label{dis:algoritmoDet}
 Se presenta el algoritmo clasificador de repetici\'on de un movimiento v\'alido:
@@ -487,7 +487,7 @@ repeticiones\: inv\acute{a}lidas = repeticiones\; totales\: del\: video - repeti
 \%_{paso\; no\; detectado}=\frac{contarSi(paso\: es\: falso)}{repeticiones\: inv\acute{a}lidas}\\ 
 \end{matrix}
 	\end{equation}
-	\textbf{Fuente:} Propuesto por el autor de tesis
+	\textbf{Fuente:} Propia.
 \end{formula}
 Es importante saber si el modelo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las posibles combinaciones de una  repetici\'on inv\'alida): 
  \begin{figure}[H]
@@ -607,7 +607,7 @@ Salida:
 \item \textbf{Velocidad}: Raz\'on de cambio separado por:
 	\begin{itemize}
 	\item \textbf{Repeticiones por serie:} Variable que se determina a partir del promedio total de repeticiones por serie.
-		\item \textbf{Tiempo por repetici\'on:} Variable que se determina a partir del promedio de la diferencia entre el tiempo del paso final y tiempo del paso inicial -i.e. Tiempo de una repetici\'on- de cada repetici\'on realizada por el atleta.
+		\item \textbf{Tiempo por repetici\'on:} Variable que se determina a partir del promedio de la diferencia entre el tiempo del paso final y tiempo del paso inicial (tiempo de una repetici\'on) de cada repetici\'on realizada por el atleta.
 	\end{itemize}
 \end{itemize}
 
@@ -661,8 +661,8 @@ En esta secci\'on se presenta todos los criterios que se siguieron para crear el
 \begin{itemize}
 	\item Cada repetici\'on del movimiento debe pasar por todos los pasos.
 	\item El rango de etiquetaci\'on debe estar entre valores de 0 (paso inicial) y 1 (paso final).
-	\item La curva de aprendizaje de cada repetici\'on, debe ser similar a la funci\'on sigmoide -i.e. gr\'afica con forma de ese (s)-.
-	\item No se etiqueta los datos de ruidos durante una repetici\'on del movimiento -e.g. Interrupciones, errores en el seguimiento del esqueleto-.
+	\item La curva de aprendizaje de cada repetici\'on, debe ser similar a una gr\'afica de forma en ese "s".
+	\item No se etiqueta los datos de ruidos durante una repetici\'on del movimiento (e.g. Interrupciones, errores en el seguimiento del esqueleto).
 \end{itemize}
 \subsection{Criterios de error del modelo}
 \begin{itemize}

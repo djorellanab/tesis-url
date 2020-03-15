@@ -12,7 +12,7 @@ En la siguiente tabla se muestra un resumen general de las caracter\'isticas de 
 \multicolumn{1}{|l|}{Tenis de mesa} & \multicolumn{1}{l|}{1.302435} & \multicolumn{1}{l|}{+/- 0.088683} & \multicolumn{1}{l|}{3.505103} & \multicolumn{1}{l|}{3.990376} \\ \hline
 \multicolumn{1}{|l|}{Animaci\'on} & \multicolumn{1}{l|}{1.342471} & \multicolumn{1}{l|}{+/-0.059301} & \multicolumn{1}{l|}{2.763813} & \multicolumn{1}{l|}{3.411942} \\ \hline
 \multicolumn{1}{|l|}{Taekwondo} & \multicolumn{1}{l|}{1.373372} & \multicolumn{1}{l|}{+/-0.098490} & \multicolumn{1}{l|}{2.556640} & \multicolumn{1}{l|}{3.869427} \\ \hline
-\multicolumn{5}{l}{\textbf{Fuente:} Datos capturados por los atletas}
+\multicolumn{5}{l}{\textbf{Fuente:} Propia}
 \end{tabular}
 \end{center}
 \end{table}
@@ -89,11 +89,11 @@ As\'i mismo, estos resultados demuestran dos caracter\'isticas de la muestra de 
 	\includegraphics[width=445px,height=350px]{graphics/resultados/GraSegTaekwondo.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo (ver instrumento \ref{ins:VisualGestureBuilder})
 \end{table}
-\section{Selecci\'on y pruebas del modelo} \label{res:chooseModel}
+\section{Selecci\'on y pruebas del modelo de reconocimiento de pasos v\'alidos} \label{res:chooseModel}
 Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de reconocimiento de los pasos de un movimiento v\'alido, la cual se divide en tres partes:
 \begin{itemize}
-\item  La primera parte se encontr\'o los errores del factor del movimiento de cada modelo y posteriormente se calcul\'o la media de cada error, la cual representa una \'idea de los  errores de todas las muestras de un equipo deportivo.
-\item  La segunda parte se compone en la selecci\'on del submodelo que tenga la menor RECM (prioridad) y la menor DMA (se verifica en caso que exista dos o m\'as submodelos que tenga el mismo valor RECM), adem\'as de la aprobaci\'on o el rechazo de cada modelo (chequeando si el promedio RECM es menor a un medio del valor de identificaci\'on, con el fin objetivo de evitar colisiones de intervalos de confianzas en los pasos intermedios),  adem\'as de encontrar el porcentaje de recognition.
+\item  La primera parte se encontr\'o la desviaci\'on de factor de movimiento con respecto a una etiqueta  (RECM) y la menor dispersi\'on del factor del movimiento (MAD) posteriormente se calcul\'o la media de cada error, la cual representa una \'idea de los  errores de todas las muestras de un equipo deportivo.
+\item  La segunda parte se compone en la selecci\'on del submodelo que tenga la menor desviaci\'on de factor de movimiento con respecto a una etiqueta  (prioridad) y la menor dispersi\'on del factor del movimiento  (se verifica en caso que exista desviaciones de factores de movimientos iguales), adem\'as de la aprobaci\'on o el rechazo de cada modelo (chequeando si el promedio RECM es menor a un medio del valor de identificaci\'on, con el fin objetivo de evitar colisiones de intervalos de confianzas en los pasos intermedios),  adem\'as de encontrar el porcentaje de recognition.
 \item Finalmente, la tercera parte se muestra en caso que se apruebe el modelo, la cual detalla los intervalos de confianza para reconocer los pasos requeridos  de un movimiento.
 \end{itemize}
 \begin{table}[H]
@@ -176,8 +176,8 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 Estos resultados demuestran lo siguiente:
 \begin{itemize}
 \item  Cada submodelo fue entrenado con distintos datos de entrenamientos y testeos (adem\'as de mostrar los porcentajes de datos de entrenamientos y testeos).
-\item Por cada v\'ideo de entrenamiento de cada submodelo, se determin\'o  las repeticiones v\'alidas e inv\'alidas (de acuerdo a los intervalos de confianza  y el algoritmo clasificador de repetici\'on de un movimiento v\'alido), as\'i mismo se observa que el mejor submodelo (submodelo que tiene la menor RECM y DMA) es el que tiene una mayor cantidad de volumen de repeticiones v\'alidas y una menor cantidad de volumen de repeticiones inv\'alidas.
-\item A partir de las repeticiones inv\'alidas se pueden calcular el n\'umero de repeticiones inv\'alidas por no detectar el paso correspondiente (Es un par\'ametro que le puede ayudar al usuario a saber en cu\'al paso ha fallado los atletas de testeos). 
+\item Por cada v\'ideo de entrenamiento de cada submodelo, se determin\'o  las repeticiones v\'alidas e inv\'alidas (de acuerdo a los intervalos de confianza del modelo de reconocimiento de los pasos requeridos de un movimiento deportivo  y el algoritmo clasificador de repetici\'on de un movimiento v\'alido), as\'i mismo se observa que el mejor submodelo (submodelo que tiene la menor RECM y DMA) es el que tiene una mayor cantidad de volumen de repeticiones v\'alidas y una menor cantidad de volumen de repeticiones inv\'alidas.
+\item A partir de las repeticiones inv\'alidas se pueden calcular el n\'umero de repeticiones inv\'alidas por no detectar el paso correspondiente (es un par\'ametro que le puede ayudar al usuario a saber en cu\'al paso ha fallado los atletas de testeos). 
 \end{itemize}
 \begin{table}[H]
 \begin{center}
@@ -214,7 +214,7 @@ Estos resultados demuestran lo siguiente:
 \end{tabular}
 \end{center}
 \end{table}
-De igual manera, se an\'aliza si el modelo de clasificaci\'on es aceptable, bas\'andose en los porcentajes de referencias v\'alidas e inv\'alidas (determinados a partir de las posibles combinaciones de una repetici\'on inv\'alida y una repetici\'on v\'alida), lo cual se busca mejorar el porcentaje de referencia v\'alidas y por  consiguiente disminuir el porcentaje de referencia inv\'alidas:
+De igual manera, se an\'aliza si el algoritmo de clasificaci\'on es aceptable, bas\'andose en los porcentajes de referencias v\'alidas e inv\'alidas (determinados a partir de las posibles combinaciones de una repetici\'on inv\'alida y una repetici\'on v\'alida), lo cual se busca mejorar el porcentaje de referencia v\'alidas y por  consiguiente disminuir el porcentaje de referencia inv\'alidas:
 \begin{table}[H]
 \begin{center}
 \caption{Aceptaci\'on del modelo de clasificaci\'on del equipo de animaci\'on}
@@ -276,7 +276,7 @@ Estos resultados demuestran que el factor del movimiento de cada movimiento anal
 	\includegraphics[width=445px,height=440px]{graphics/resultados/compFM.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo (ver instrumento \ref{ins:VisualGestureBuilder}).
 \end{table}
-\section{Muestras de regresiones de los movimientos} \label{res:regretions}
+\section{Muestras de regresiones de los movimientos aprobados} \label{res:regretions}
 Estos resultados muestran:
 \begin{itemize}
 \item  Un ejemplo de las posibles regresiones (para este caso se analiz\'o una l\'inea de tendencia de grado 3) que pueden implementar cada \'arbol de regresi\'on del algoritmo Random Forest Regression.
@@ -298,7 +298,7 @@ Estos resultados muestran:
 	\includegraphics[width=445px,height=180px]{graphics/resultados/cluster-tennis.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo.
 \end{figure}
-\section{Reconocimiento de movimiento}
+\section{Interfaz de reconocimiento de un  movimiento v\'alido}
 En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del reconocimiento de repeticiones de un movimiento, la cual est\'a conformado por un conjunto de im\'agenes que muestran el seguimiento del esqueleto durante la ejecuci\'on de una repetici\'on, as\'i mismo en cada imagen se muestra los siguientes detalles:
 \begin{itemize}
 \item \textbf{Estado:} Tiene el valor de trabajo, debido que fue capturado durante el tiempo de trabajo en una rutina de tabata.
@@ -380,23 +380,24 @@ Por otro lado, estos resultados se dividen en dos partes:
 \end{center}
 \end{table}
 \end{landscape}
-\section{Validaci\'on del modelo clasificador de los pasos requeridos de un movimiento v\'alido,  ejecutado por los sujetos de validaci\'on} \label{res:valResults}
-Estos resultados demuestran si el modelo funciona de acuerdo al peor de los casos de una repetici\'on del movimiento v\'alido, tomando en cuenta los siguientes aspectos:
+\section{Validaci\'on del algoritmo clasificador,   validados por los sujetos de validaci\'on} \label{res:valResults}
+Estos resultados demuestran si el algoritmo funciona de acuerdo a un pron\'ostico que toma en cosideraci\'on al peor de los casos de una repetici\'on del movimiento v\'alido (tiempo m\'aximo para ejecutar una repetici\'on v\'alida), tomando en cuenta los siguientes aspectos:
 \begin{itemize}
 \item Sujetos para la validaci\'on.
 \item El tiempo de trabajo de la rutina tabata que fue programado a los sujetos de validaci\'on.
 \item El tiempo m\'aximo para ejecutar una repetici\'on de un movimiento, realizados por los sujetos de pruebas y entrenamientos (ver secci\'on de muestras de regresiones de los movimientos).
-\item El pron\'ostico de repeticiones totales de los sujetos de validaci\'on (de acuerdo al tiempo m\'aximo de una repetici\'on de lo sujetos de pruebas).
+\item El pron\'ostico de repeticiones totales de los sujetos de validaci\'on (de acuerdo al tiempo m\'aximo de una repetici\'on de lo sujetos de pruebas y el tiempo de trabajo de la rutina tabata).
 \item El porcentaje de repeticiones v\'alidas de cada movimiento deportivo (ver secci\'on de clasificaciones de movimientos v\'alidos e inv\'alidos).
 \item El pron\'ostico de repeticiones v\'alidas de cada sujeto de validaci\'on (determinado a partir del porcentaje de repeticiones v\'alidas y el total de repeticiones pronosticadas).
-\item Las repeticiones promedios por cada serie que realiz\'o el sujeto de validaci\'on durante su rutina de tabata (ver secci\'on de resultados de los sujetos de validaci\'ion).
+\item Las repeticiones promedios por cada serie que realiz\'o el sujeto de validaci\'on durante su rutina de tabata (ver secci\'on de resultados de los sujetos de validaci\'on).
 \item  Ajuste del porcentaje de repetici\'on v\'alidas, la cual compara las repeticiones realizadas respecto a las pronosticadas.
 \end{itemize}
-De acuerdo a todos los aspectos, se observa que los  modelos clasificadores de los pasos requeridos de los movimientos v\'alidos de tenis de mesa y animaci\'on, detectaron m\'as repeticiones con respecto al peor de los casos de cada modelo deportivo (debido a que sus ajustes de porcentuales de repeticiones v\'alidas son positivos):
+\medbreak
+De acuerdo al ajuste del porcentaje de repetici\'on, se observa que las repeticiones detectadas por los algoritmos clasificadores de los pasos requeridos de los movimientos v\'alidos de tenis de mesa y animaci\'on, es mayor a las repeticiones v\'alidas pronosticadas (debido a que sus ajustes de porcentuales de repeticiones v\'alidas son positivos), por lo tanto se demuestra el funcionamiento de detecci\'on de repeticiones v\'alidas:
 \begin{landscape}
 \begin{table}[H]
 \begin{center}
-\caption{Validaci\'on de los resultados de tenis de mesa}
+\caption{Validaci\'on del algoritmo clasificador de  tenis de mesa}
 \label{tab:validationtenis}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
@@ -412,7 +413,7 @@ De acuerdo a todos los aspectos, se observa que los  modelos clasificadores de l
 
 \begin{table}[H]
 \begin{center}
-\caption{Validaci\'on de los resultados de animaci\'on }
+\caption{Validaci\'on del algoritmo clasificador de animaci\'on }
 \label{tab:validationAnimation}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
