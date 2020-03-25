@@ -1,3 +1,7 @@
+\afterpage{\blankpage}
+\newpage
+\afterpage{\blankpage}
+\newpage
 \chapter{Presentaci\'on y an\'alisis de resultados}
 \section{Distancias de profundidades recomendadas entre el atleta y el sensor} \label{res:idMov}
 En la siguiente tabla se muestra un resumen general de las caracter\'isticas de la muestra de cada equipo deportivo, en ella se describe la altura promedio y las distancias recomendadas para ejecutar correctamente el seguimiento del esqueleto (renderizaci\'on completa del esqueleto humano), dichos datos fueron capturados por el sensor Kinect a una altura de 0.70 metros desde el suelo y tomando como punto de referencia, la cadera central de cada atleta:
@@ -89,11 +93,11 @@ As\'i mismo, estos resultados demuestran dos caracter\'isticas de la muestra de 
 	\includegraphics[width=445px,height=350px]{graphics/resultados/GraSegTaekwondo.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo (ver instrumento \ref{ins:VisualGestureBuilder})
 \end{table}
-\section{Selecci\'on y pruebas del modelo de reconocimiento de pasos v\'alidos} \label{res:chooseModel}
-Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de reconocimiento de los pasos de un movimiento v\'alido, la cual se divide en tres partes:
+\section{Modelo de detecci\'on de los pasos requeridos} \label{res:chooseModel}
+Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de detecci\'on de los pasos requeridos de un movimiento, la cual se divide en tres partes:
 \begin{itemize}
 \item  La primera parte se encontr\'o la desviaci\'on de factor de movimiento con respecto a una etiqueta  (RECM) y la menor dispersi\'on del factor del movimiento (MAD) posteriormente se calcul\'o la media de cada error, la cual representa una \'idea de los  errores de todas las muestras de un equipo deportivo.
-\item  La segunda parte se compone en la selecci\'on del submodelo que tenga la menor desviaci\'on de factor de movimiento con respecto a una etiqueta  (prioridad) y la menor dispersi\'on del factor del movimiento  (se verifica en caso que exista desviaciones de factores de movimientos iguales), adem\'as de la aprobaci\'on o el rechazo de cada modelo (chequeando si el promedio RECM es menor a un medio del valor de identificaci\'on, con el fin objetivo de evitar colisiones de intervalos de confianzas en los pasos intermedios),  adem\'as de encontrar el porcentaje de recognition.
+\item  La segunda parte se compone en la selecci\'on del submodelo que tenga la menor desviaci\'on de factor de movimiento con respecto a una etiqueta  (prioridad) y la menor dispersi\'on del factor del movimiento  (se verifica en caso que exista desviaciones de factores de movimientos iguales), adem\'as de la aprobaci\'on o el rechazo de cada modelo (chequeando si el promedio RECM es menor a un medio del valor de identificaci\'on, con el fin objetivo de evitar colisiones de intervalos de confianzas en los pasos intermedios),  y as\'i mismo calcular el porcentaje de recognition.
 \item Finalmente, la tercera parte se muestra en caso que se apruebe el modelo, la cual detalla los intervalos de confianza para reconocer los pasos requeridos  de un movimiento.
 \end{itemize}
 \begin{table}[H]
@@ -176,7 +180,7 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 Estos resultados demuestran lo siguiente:
 \begin{itemize}
 \item  Cada submodelo fue entrenado con distintos datos de entrenamientos y testeos (adem\'as de mostrar los porcentajes de datos de entrenamientos y testeos).
-\item Por cada v\'ideo de entrenamiento de cada submodelo, se determin\'o  las repeticiones v\'alidas e inv\'alidas (de acuerdo a los intervalos de confianza del modelo de reconocimiento de los pasos requeridos de un movimiento deportivo  y el algoritmo clasificador de repetici\'on de un movimiento v\'alido), as\'i mismo se observa que el mejor submodelo (submodelo que tiene la menor RECM y DMA) es el que tiene una mayor cantidad de volumen de repeticiones v\'alidas y una menor cantidad de volumen de repeticiones inv\'alidas.
+\item Por cada v\'ideo de entrenamiento de cada submodelo, se determin\'o  las repeticiones v\'alidas e inv\'alidas (de acuerdo a los intervalos de confianza del modelo de detecci\'on de los pasos requeridos de un movimiento deportivo  y el algoritmo clasificador de repetici\'on de un movimiento v\'alido), as\'i mismo se observa que el mejor submodelo (submodelo que tiene la menor RECM y DMA) es el que tiene una mayor cantidad de volumen de repeticiones v\'alidas y una menor cantidad de volumen de repeticiones inv\'alidas.
 \item A partir de las repeticiones inv\'alidas se pueden calcular el n\'umero de repeticiones inv\'alidas por no detectar el paso correspondiente (es un par\'ametro que le puede ayudar al usuario a saber en cu\'al paso ha fallado los atletas de testeos). 
 \end{itemize}
 \begin{table}[H]
@@ -244,10 +248,10 @@ Repeticiones inv\'alidas            & 67,00\%                   & 34,69\%       
 \end{center}
 \end{table}
 \section{Interpretaci\'on de recognition} \label{res:recognition}
-Estos resultados demuestran que al tener un valor recognition cercano al 100\%, reconocer\'a fotogramas similares a los fotogramas etiquetados de cada paso (lo esperado):
+Estos resultados demuestran que al tener un valor recognition cercano al 100\%, detectar\'a fotogramas similares a los fotogramas etiquetados de cada paso (lo esperado):
 \begin{itemize}
-\item  Para el equipo de animaci\'on, se identific\'o los fotogramas relacionados al paso dos, donde el valor esperado es cuando el factor de movimiento tiene un valor de 0.5 (etiqueta del paso dos). Sin embargo, se observa que el modelo reconoce un 82.96\% de los fotogramas parecidos a lo esperado (fotogramas que se encuentran dentro del intervalo de confianza del reconocimiento del paso dos), cuyas diferencias son unos peque\~nos desplazamientos en la parte inferior del cuerpo y brazos, mientras que los fotogramas debajo del valor de recognition, las diferencias de desplazamientos son m\'as notables (ya no son tan similares).
-\item  Para el equipo de tenis de mesa, se aplic\'o  los fotogramas relacionados al paso uno, donde el valor esperado es cuando el factor de movimiento tiene un valor de 0 (etiqueta del paso uno). Sin embargo, se observa que el modelo reconoce un 52.08\% de los fotogramas parecidos a lo esperado (fotogramas que se encuentran dentro del intervalo de confianza del reconocimiento del paso uno), esto conlleva a reconocer aquellos fotogramas donde el saque no ha llegado a la distancia frontal (cara), mientras que los fotogramas por abajo del valor de recognition, son aquellos que han cruzado la distancia frontal.
+\item  Para el equipo de animaci\'on, se identific\'o los fotogramas relacionados al paso dos, donde el valor esperado es cuando el factor de movimiento tiene un valor de 0.5 (etiqueta del paso dos). Sin embargo, se observa que el modelo detecta un 82.96\% de los fotogramas parecidos a lo esperado (fotogramas que se encuentran dentro del intervalo de confianza del reconocimiento del paso dos), cuyas diferencias son unos peque\~nos desplazamientos en la parte inferior del cuerpo y brazos, mientras que los fotogramas debajo del valor de recognition, las diferencias de desplazamientos son m\'as notables (ya no son tan similares).
+\item  Para el equipo de tenis de mesa, se aplic\'o  los fotogramas relacionados al paso uno, donde el valor esperado es cuando el factor de movimiento tiene un valor de 0 (etiqueta del paso uno). Sin embargo, se observa que el modelo detecta un 52.08\% de los fotogramas parecidos a lo esperado (fotogramas que se encuentran dentro del intervalo de confianza del reconocimiento del paso uno), esto conlleva a detectar aquellos fotogramas donde el saque no ha llegado a la distancia frontal (cara), mientras que los fotogramas por abajo del valor de recognition, son aquellos que han cruzado la distancia frontal.
 \end{itemize}
 \begin{table}[H]
 	\caption{Interpretaci\'on del valor de recognition del paso dos de un jumping jack}
@@ -263,11 +267,19 @@ Estos resultados demuestran que al tener un valor recognition cercano al 100\%, 
 	\includegraphics[width=445px,height=220px]{graphics/resultados/RecognitionTen.PNG} \\
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo (ver instrumento \ref{ins:VisualGestureBuilder}).
 \end{table}
-\section{El modelo reconoce solo el movimiento analizado} \label{res:recoMovAna}
-Estos resultados demuestran que el factor del movimiento de cada movimiento analizado busca reconocer todos los pasos del movimiento analizado (debido que los factores del movimiento se encuentran en todos los intervalos de confianza de cada equipo deportivo), la cual se realiz\'o un cuadro comparativo entre jumping jack y un saque derecha, donde se comparan los factores de los movimientos:
+\section{El modelo de detecci\'on detecta los pasos del movimiento analizado} \label{res:recoMovAna}
+Estos resultados demuestran que el modelo de detecci\'on busca detectar todos los pasos del movimiento analizado (debido que los factores del movimiento se encuentran en todos los intervalos de confianza de cada equipo deportivo), la cual se realiz\'o un cuadro comparativo entre jumping jack y un saque derecha:
 \begin{itemize}
-\item  Durante la ejecuci\'on de un saque derecha, el factor del movimiento de saque derecha reconoce el paso uno y dos (debido que los factores de movimiento se encuentran en sus respectivos intervalos de confianza del equipo de  tenis de mesa). Mientras que el factor del movimiento de jumping jack reconoce el paso uno durante esos dos fotogramas (debido que los factores de movimiento se encuentran en el intervalo de confianza del paso uno del equipo de tenis de mesa).
-\item  Durante la ejecuci\'on de un jumping jack, el factor del movimiento de jumping jack reconoce el paso uno, dos y tres (debido que los factores de movimiento se encuentran en sus respectivos intervalos de confianza del equipo de animaci\'on), mientras que el factor del movimiento de saque derecha no est\'a reconociendo ning\'un paso (debido que los factores de movimiento no se encuentran en ning\'un intervalo de confianza del equipo de animaci\'on).
+\item  \textbf{Durante la ejecuci\'on de un saque derecha}: 
+\begin{itemize}
+\item El modelo de detecci\'on de saque derecha, detecta todos los pasos.
+\item El modelo de detecci\'on de jumping jack, no detecta ning\'un paso.
+\end{itemize} 
+\item  \textbf{Durante la ejecuci\'on de un jumping jack:}
+\begin{itemize}
+\item  El modelo de detecci\'on de jumping jack, detecta todos los pasos.
+\item El modelo de detecci\'on de saque derecha,  detecta el paso uno en los fotogramas dos y tres (debido que tiene un valor de recognition lejos al 100\%, por ende los intervalos de confianza son m\'as grandes y los errores aumentan).
+\end{itemize} 
 \end{itemize}
 \begin{table}[H]
 	\caption{Cuadro comparativo entre un jumping jack y saque derecha}
@@ -280,7 +292,7 @@ Estos resultados demuestran que el factor del movimiento de cada movimiento anal
 Estos resultados muestran:
 \begin{itemize}
 \item  Un ejemplo de las posibles regresiones (para este caso se analiz\'o una l\'inea de tendencia de grado 3) que pueden implementar cada \'arbol de regresi\'on del algoritmo Random Forest Regression.
-\item  Comprobar que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (uniformidad con los tiempos de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
+\item  Comprueba que los modelos aceptados fueron entrenados con distintos datos de entrenamientos (uniformidad con los tiempos de capturas y una dispersi\'on con los recorridos de una articulaci\'on, durante la ejecuci\'on del  movimiento).
 \item  El tiempo m\'aximo de una repetici\'on de un movimiento v\'alido o inv\'alido (el peor de los casos para ejecutar una repetici\'on), esto quiere  decir que para ejecutar un jumping jack se requiere a lo m\'aximo 0.53 segundos, mientras que para un saque derecha se requiere a lo m\'aximo 0.73 segundos.
 \end{itemize}
 
@@ -299,13 +311,13 @@ Estos resultados muestran:
 	\textbf{Fuente:} Recuperado por los v\'ideos etiquetados del trabajo de campo.
 \end{figure}
 \section{Interfaz de reconocimiento de un  movimiento v\'alido}
-En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del reconocimiento de repeticiones de un movimiento, la cual est\'a conformado por un conjunto de im\'agenes que muestran el seguimiento del esqueleto durante la ejecuci\'on de una repetici\'on, as\'i mismo en cada imagen se muestra los siguientes detalles:
+En esta secci\'on se ense\~na los resultados de la interfaz gr\'afica del reconocimiento de repeticiones de un movimiento v\'alido, la cual est\'a conformado por un conjunto de im\'agenes que muestran el seguimiento del esqueleto durante la ejecuci\'on de una repetici\'on, as\'i mismo en cada imagen se muestra los siguientes detalles:
 \begin{itemize}
 \item \textbf{Estado:} Tiene el valor de trabajo, debido que fue capturado durante el tiempo de trabajo en una rutina de tabata.
 \item \textbf{Temporizador:} Tiempo de cuenta regresiva, la cual indica cu\'antos segundos le quedan al atleta en el estado de trabajo.
 \item \textbf{Serie:} Le indica al atleta, cu\'al n\'umero de serie se est\'a ejecutando (los resultados fueron capturado durante la serie No. 1 de trabajo).
 \item \textbf{Repeticiones:} Le muestran al atleta la cantidad de repeticiones que lleva durante una   serie de trabajo (se debe observar que este indicador incrementa en el \'ultimo paso de cada movimiento).
-\item \textbf{Paso:} N\'umero que indica el \'ultimo paso ejecutado (comenzando desde el valor 0). Se debe tomar en cuenta que dicho valor cambia dependiendo del factor de movimiento (progreso). Es decir, se  reconoce cada paso del movimiento, ya que el valor del progreso se encuentra dentro de alg\'un intervalo de confianza (Ver las tablas de resultados de selecci\'on y pruebas del modelo).
+\item \textbf{Paso:} N\'umero que indica el \'ultimo paso ejecutado (comenzando desde el valor 0). Se debe tomar en cuenta que dicho valor cambia dependiendo del factor de movimiento (progreso). Es decir, se  detecta cada paso del movimiento, ya que el valor del progreso se encuentra dentro de alg\'un intervalo de confianza (ver las tablas de resultados del modelo de detecci\'on de los pasos requeridos).
 \item \textbf{Progreso:} Factor del movimiento en tiempo real (obtenido a partir del algoritmo Random Forest Regression), la cual va incrementado por cada paso que avance el atleta.
 \item \textbf{Tiempo total:} Tiempo total que lleva actualmente el atleta. En los resultados se pueden ver que el atleta emplea una repetici\'on en per\'iodos de segundos, esto quiere decir que el atleta tard\'o 1.089 segundos durante el movimiento derecha y  0.363 segundos para un jumping jack.
 \end{itemize}
@@ -328,7 +340,7 @@ A continuaci\'on se presenta la interfaz gr\'afica de los resultados de la rutin
 \begin{itemize}
 \item Se utilizaron atletas que no participaron en la toma de datos iniciales (entrenamientos y testeos del modelo).
 \item Se utilizaron atletas que ten\'ian  condiciones adecuadas (vestuarios adecuados, buena alimentaci\'on,  buena salud f\'isica).
-\item Se utilizaron atletas que realizar\'on su rutina de estiramiento y calentamiento previamente al entrenamiento (con el fin de objetivo de preparar el cuerpo humano).
+\item Se utilizaron atletas que realizaron su rutina de estiramiento y calentamiento previamente al entrenamiento (con el fin de objetivo de preparar el cuerpo humano).
 \item Se utilizaron atletas que saben ejecutar repeticiones v\'alidas (conocen todos los pasos del movimiento). 
 \end{itemize}
 \medbreak
@@ -393,11 +405,13 @@ Estos resultados demuestran si el algoritmo funciona de acuerdo a un pron\'ostic
 \item  Ajuste del porcentaje de repetici\'on v\'alidas, la cual compara las repeticiones realizadas respecto a las pronosticadas.
 \end{itemize}
 \medbreak
-De acuerdo al ajuste del porcentaje de repetici\'on, se observa que las repeticiones detectadas por los algoritmos clasificadores de los pasos requeridos de los movimientos v\'alidos de tenis de mesa y animaci\'on, es mayor a las repeticiones v\'alidas pronosticadas (debido a que sus ajustes de porcentuales de repeticiones v\'alidas son positivos), por lo tanto se demuestra el funcionamiento de detecci\'on de repeticiones v\'alidas:
+De acuerdo al ajuste del porcentaje de repetici\'on, se observa que las repeticiones detectadas por los algoritmos clasificadores de los pasos requeridos de los movimientos v\'alidos de tenis de mesa y animaci\'on, es mayor a las repeticiones v\'alidas pronosticadas (debido a que sus ajustes de porcentuales de repeticiones v\'alidas son positivos), por lo tanto se demuestra el funcionamiento de detecci\'on de repeticiones v\'alidas.
+\medbreak
+As\'i mismo el ajuste del porcentaje de tenis de mesa es menor a la de animaci\'on, ya que el error del modelo de detecci\'on de saque derecha es mayor al modelo de detecci\'on de jumping jack (se debe recordar que el algoritmo clasificador utiliza el modelo de detecci\'on).
 \begin{landscape}
 \begin{table}[H]
 \begin{center}
-\caption{Validaci\'on del algoritmo clasificador de  tenis de mesa}
+\caption{Comparaci\'on del algoritmo clasificador del equipo de tenis de mesa, entre el valor pron\'osticado (dado por el tiempo m\'as largo de un saque derecha) y los resultados de los atletas de validaci\'on (usuarios que validaron el algoritmo en tiempo real)}
 \label{tab:validationtenis}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
@@ -413,7 +427,7 @@ De acuerdo al ajuste del porcentaje de repetici\'on, se observa que las repetici
 
 \begin{table}[H]
 \begin{center}
-\caption{Validaci\'on del algoritmo clasificador de animaci\'on }
+\caption{Comparaci\'on del algoritmo clasificador del equipo de animaci\'on, entre el valor pron\'osticado (dado por el tiempo m\'as largo de un jumping jack) y los resultados de los atletas de validaci\'on (usuarios que validaron el algoritmo en tiempo real) }
 \label{tab:validationAnimation}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline

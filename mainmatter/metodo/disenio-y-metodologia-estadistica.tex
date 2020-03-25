@@ -82,7 +82,7 @@ Para el presente proyecto se midi\'o la altura del usuario, a partir de la difer
 	\begin{equation}
 y_{usuario}=y_{cabeza}-\frac{y_{pie \: derecho}+y_{pie \: izquierdo}}{2}
 	\end{equation}
-			\textbf{Fuente:} Planteado por el autor de tesis
+			\textbf{Fuente:} Propia.
 \end{formula} 
 \subsection{C\'alculo de distancia de profundidad m\'inima y m\'axima} \label{dis:deep}
 Para los siguientes c\'alculos se utilizaron la hoja de observaciones de profundidad (Ver anexo, tabla  \ref{tab:obsDepth}), aplicando las siguientes funciones de microsoft excel (versi\'on ingl\'es):
@@ -95,7 +95,7 @@ Para los siguientes c\'alculos se utilizaron la hoja de observaciones de profund
 	\begin{equation}
 	Altura \: promedio =AVERAGE([Altura])
 	\end{equation}
-		\textbf{Fuente:} Elaborado por el autor, a partir de funci\'on de excel
+		\textbf{Fuente:} funci\'on de Excel.
 \end{formula}
        \item \textbf{Stdev}: Funci\'on para determinar la desviaci\'on est\'andar de la altura.
 \begin{formula}[H]
@@ -356,7 +356,7 @@ RECM_{muestra\, total}=AVERAGE([RECM_{modelo}])
 	\end{equation}
 	\textbf{Fuente:} F\'ormula de Excel.
 \end{formula} 
-Los errores de la muestra total ayudan aceptar o rechazar el modelo; si la \acrshort{RECM} promedio  es menor a un medio del valor de identificaci\'on se aprueba (se divide entre dos, debido que las etiquetas de los pasos intermedio se encuentra a la mitad de cada rango de identificaci\'on respectiva). En caso que sea mayor o igual, se rechaza, debido que los intervalos de confianza colisiona con otros intervalos de confianza (Intervalos que se utiliza para la detecci\'on de un paso):
+Los errores de la muestra total ayudan aceptar o rechazar el modelo; si la \acrshort{RECM} promedio  es menor a un medio del valor de identificaci\'on se aprueba (se divide entre dos, debido que las etiquetas de los pasos intermedios se encuentran a la mitad de cada rango de identificaci\'on respectiva). En caso que sea mayor o igual, se rechaza, debido que los intervalos de confianza colisiona con otros intervalos de confianza (Intervalos que se utiliza para la detecci\'on de un paso):
 \begin{figure}[H]
 	\caption{Criterios de aceptaci\'on de un modelo de detecci\'on de los pasos requeridos de un movimiento}
 	\label{fig:AproveOrDennie}
@@ -388,7 +388,7 @@ etiqueta(paso)- RECM_{muestra\, total} & si\: es\: paso\: intermedio \\
 1-RECM_{muestra\, total}& si\, es\, el\, \acute{u}ltimo\, paso
 \end{matrix}\right. \\ 
 \\ 
-inferior(paso)=\left\{\begin{matrix}
+superior(paso)=\left\{\begin{matrix}
 RECM_{muestra\, total}& si\, es\, el\, primer\, paso \\
 \\
 etiqueta(paso)+RECM_{muestra\, total} & si\: es\: paso\: intermedio \\ \\ 
@@ -426,7 +426,7 @@ Se presenta el algoritmo clasificador de repetici\'on de un movimiento v\'alido:
 \item Procesos:
 \begin{enumerate}[1.]
 \item Asignar el paso siguiente como paso inicial (paso No.1), debido que marca el inicio de la repetici\'on. %1
-\item Capturar un nuevo fotograma del Kinect, y obtiene el factor del movimiento del respectivo fotograma, a partir del algoritmo Random Forest Regression y la herramienta, Visual Gesture Builder. %2
+\item Capturar un nuevo fotograma del Kinect, y obtener el factor del movimiento del respectivo fotograma, a partir del algoritmo Random Forest Regression y la herramienta, Visual Gesture Builder. %2
 \item Verificar si el factor del movimiento se encuentra en alg\'un intervalo de confianza para obtener el paso detectado, en caso que no se encuentre, no devolver\'a ning\'un valor.  %3
 \item Verificar si el paso detectado tiene un valor, adem\'as de chequear que no sea un valor anterior (valor anterior del paso siguiente), en caso que no cumpla ambas condiciones, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
 \item Verificar si el paso detectado es igual al paso siguiente, en caso que sea diferente se detect\'o una repetici\'on inv\'alida (saltar al proceso No. 9). %5
@@ -489,7 +489,7 @@ repeticiones\: inv\acute{a}lidas = repeticiones\; totales\: del\: video - repeti
 	\end{equation}
 	\textbf{Fuente:} Propia.
 \end{formula}
-Es importante saber si el modelo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las posibles combinaciones de una  repetici\'on inv\'alida): 
+Es importante saber si el algoritmo de clasificaci\'on  de un movimiento v\'alido se aprueba, por lo tanto se debe calcular los porcentajes de referencias v\'alido e inv\'alido, que se determinan a partir del peor de los casos (detecta una repetici\'on v\'alida y las posibles combinaciones de una  repetici\'on inv\'alida): 
  \begin{figure}[H]
 	\caption{Porcentajes de referencias v\'alidos e inv\'alidos }
 	\label{fig:porcValido}
@@ -670,7 +670,7 @@ En esta secci\'on se presenta todos los criterios que se siguieron para crear el
 	\item Se debe calcular la dispersi\'on entre los datos reales y pronosticado a partir de la desviaci\'on media absoluta (DMA). 
 	\item El error se encuentra en un rango de 0 a 1.
 \end{itemize}
-\subsection{Criterios de selecci\'on del modelo}
+\subsection{Criterios de selecci\'on del submodelo}
 \begin{itemize}
 	\item Se selecciona el submodelo que contenga la  menor RECM, en caso que exista RECM iguales, se escoge el modelo que tenga la menor DMA.
 \end{itemize}
@@ -678,4 +678,11 @@ En esta secci\'on se presenta todos los criterios que se siguieron para crear el
 \begin{itemize}
 	\item El modelo seleccionado debe considerar los errores de todas las muestras, a partir del promedio de errores de los submodelos comparados.
 	\item Se aprueba el modelo, s\'i el valor promedio de la RECM es menor a un medio del valor de  identificaci\'on.
+\end{itemize}
+\subsection{Criterios de aceptaci\'on del algoritmo clasificador}
+\begin{itemize}
+	\item Se debe determinar los porcentajes v\'alidos e inv\'alidos a partir de los datos de testeos.
+	\item Se debe determinar los porcentaje inv\'alidos de cada paso respectivo.
+	\item El porcentaje real de v\'alidos debe ser mayor al porcentaje de referencia de v\'alido.
+	\item El porcentaje real de inv\'alidos debe ser menor al porcentaje de referencia de v\'alido.
 \end{itemize}
