@@ -1,0 +1,67 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Movimientos corporales de los m\'usculos esquel\'eticos\relax }}{10}{figure.caption.3}% 
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Continuaci\'on de movimientos corporales de los m\'usculos esquel\'eticos\relax }}{10}{figure.caption.4}% 
+\contentsline {figure}{\numberline {1.3}{\ignorespaces An\'alisis de habilidades f\IeC {\'\i }sicas del movimiento: Press con mancuerna\relax }}{12}{figure.caption.5}% 
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Captura de datos de una c\'amara con sensor de profundidad\relax }}{14}{figure.caption.7}% 
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Especificaciones de una c\'amara con RGB-D\relax }}{15}{figure.caption.8}% 
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Componentes del Kinect V2\relax }}{17}{figure.caption.10}% 
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Adaptador del Kinect V2\relax }}{17}{figure.caption.11}% 
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Interacci\'on del software y hardware\relax }}{18}{figure.caption.12}% 
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Arquitectura del software, Kinect-NUI\relax }}{19}{figure.caption.13}% 
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Kinect v2 configuration verifier\relax }}{20}{figure.caption.14}% 
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Diagrama de venn para la identificaci\'on del movimiento de un objeto\relax }}{21}{figure.caption.15}% 
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Visualizaci\'on del v\IeC {\'\i }deo, Kinect Studio\relax }}{22}{figure.caption.16}% 
+\contentsline {figure}{\numberline {1.13}{\ignorespaces T\'ecnica boosting\relax }}{23}{figure.caption.17}% 
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Etiquetas de movimientos est\'aticos\relax }}{24}{figure.caption.18}% 
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Algoritmo de Random Forest Regression\relax }}{25}{figure.caption.19}% 
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Etiquetas de movimientos din\'amicos\relax }}{25}{figure.caption.20}% 
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Seguimiento de uniones del Kinect\relax }}{26}{figure.caption.21}% 
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Arquitectura del seguimiento del esqueleto\relax }}{27}{figure.caption.22}% 
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Sistema de coordenadas de la uni\'on\relax }}{27}{figure.caption.23}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Organigrama del departamento de deportes de la Universidad Rafael Land\'ivar\relax }}{37}{figure.caption.29}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Interfaz gr\'afica de detecci\'on de profundidad entre el usuario y el sensor\relax }}{40}{figure.caption.30}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Interfaz gr\'afica de evaluaci\'on de un movimiento\relax }}{41}{figure.caption.31}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arquitectura web\relax }}{43}{figure.caption.32}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vista de listado de movimientos\relax }}{44}{figure.caption.33}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Vista de crear un movimiento\relax }}{45}{figure.caption.34}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Vista de lectura del movimiento\relax }}{47}{figure.caption.35}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Resultados de la rutina tabata de un movimiento\relax }}{48}{figure.caption.36}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Aplicaci\'on de extracci\'on de datos en los v\'ideos (xef)\relax }}{48}{figure.caption.37}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Canales por defecto para grabar un v\'ideo en Kinect studio \relax }}{50}{figure.caption.38}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Lectura de v\'ideo .xef \relax }}{51}{figure.caption.39}% 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Variables de configuraci\'on de Visual Gesture Builder\relax }}{52}{figure.caption.40}% 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Metodolog\'ia de cascada\relax }}{53}{figure.caption.41}% 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Fotograf\'ias durante la toma de datos\relax }}{54}{figure.caption.42}% 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Formulario de movimiento de tenis de mesa\relax }}{55}{figure.caption.43}% 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Formulario de rutina de tenis de mesa\relax }}{56}{figure.caption.44}% 
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Formulario de movimiento de animaci\'on\relax }}{57}{figure.caption.45}% 
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Formulario de rutina de animaci\'on\relax }}{58}{figure.caption.46}% 
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Formulario de movimiento taekwondo\relax }}{59}{figure.caption.47}% 
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Formulario de rutina de taekwondo\relax }}{60}{figure.caption.48}% 
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Proceso de etiquetaci\'on del movimiento derecha\relax }}{61}{figure.caption.49}% 
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Obtenci\'on del valor real y pronosticado\relax }}{62}{figure.caption.50}% 
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Segmentos de repeticiones de un v\'ideo\relax }}{63}{figure.caption.51}% 
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Fotograf\'ias durante la validaci\'on del modelo\relax }}{63}{figure.caption.52}% 
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Criterios de aceptaci\'on de un modelo de detecci\'on de los pasos requeridos de un movimiento\relax }}{71}{figure.caption.75}% 
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Algoritmo clasificador de repetici\'on de un movimiento v\'alido \relax }}{74}{figure.caption.78}% 
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Clasificaci\'on de repeticiones de movimiento v\'alido o inv\'alido en un v\'ideo de testeo\relax }}{75}{figure.caption.79}% 
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Porcentajes de referencias v\'alidos e inv\'alidos \relax }}{77}{figure.caption.81}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Fotogramas de 6 sujetos del equipo de tenis de mesa\relax }}{84}{figure.caption.88}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Fotogramas de 7 sujetos del equipo de animaci\'on\relax }}{85}{figure.caption.89}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Fotogramas de 7 sujetos del equipo de taekwondo\relax }}{86}{figure.caption.90}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de ishikawa sobre el fallo del seguimiento del esqueleto\relax }}{87}{figure.caption.91}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Regresi\'on distancia versus tiempo, del equipo animaci\'on\relax }}{96}{figure.caption.105}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Regresi\'on distancia versus tiempo del equipo de tenis de mesa\relax }}{96}{figure.caption.106}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Reconocimiento del movimiento derecha\relax }}{98}{figure.caption.107}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Reconocimiento del movimiento jumping jacks\relax }}{98}{figure.caption.108}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.2.1}{\ignorespaces Formulario de registro de movimiento (blanco)\relax }}{119}{figure.caption.119}% 
+\contentsline {figure}{\numberline {A.2.2}{\ignorespaces Formulario de registro de rutina (blanco)\relax }}{119}{figure.caption.120}% 
+\contentsline {figure}{\numberline {A.3.3}{\ignorespaces Ejercicios de calentamientos 1\relax }}{120}{figure.caption.121}% 
+\contentsline {figure}{\numberline {A.3.4}{\ignorespaces Ejercicios de calentamientos 2\relax }}{121}{figure.caption.122}% 
+\contentsline {figure}{\numberline {A.3.5}{\ignorespaces Ejercicios de calentamientos 3\relax }}{122}{figure.caption.123}% 

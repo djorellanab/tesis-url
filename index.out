@@ -1,0 +1,103 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Lo escrito sobre el tema}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Sistema de detecci\363n y reconocimiento de la postura corporal basado en Kinect}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Reconstrucci\363n de posturas en tiempo real}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Detecci\363n de posturas a la hora de sentarse para prevenir el s\355ndrome de los trabajadores de oficina usando el Kinect}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Comparaci\363n de los m\351todos de m\341quina de aprendizaje para el prop\363sito de la detecci\363n de la ca\355da humana}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{Sistema de monitoreo de sue\361o usando el sensor Kinect}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.6}{Entrenador personal virtual a trav\351s del sensor de Kinect}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.7}{Una comparaci\363n entre las t\351cnicas heur\355sticas y de aprendizaje autom\341tico en la detecci\363n de ca\355das con Kinect v2}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.8}{Sistema de detecci\363n de posiciones de un humano en tiempo real}{section.1.1}% 10
+\BOOKMARK [2][-]{subsection.1.1.9}{Sistema que detecta pasos de bailes K-Pop}{section.1.1}% 11
+\BOOKMARK [2][-]{subsection.1.1.10}{Comparaci\363n de trabajos relacionados}{section.1.1}% 12
+\BOOKMARK [1][-]{section.1.2}{Marco te\363rico}{chapter.1}% 13
+\BOOKMARK [2][-]{subsection.1.2.1}{Actividad f\355sica}{section.1.2}% 14
+\BOOKMARK [2][-]{subsection.1.2.2}{Sistema muscular}{section.1.2}% 15
+\BOOKMARK [3][-]{subsubsection.1.2.2.1}{Contracci\363n de un m\372sculo esquel\351tico en su conjunto}{subsection.1.2.2}% 16
+\BOOKMARK [2][-]{subsection.1.2.3}{Movimiento deportivo}{section.1.2}% 17
+\BOOKMARK [3][-]{subsubsection.1.2.3.1}{Entrenamientos por intervalos controlados}{subsection.1.2.3}% 18
+\BOOKMARK [2][-]{subsection.1.2.4}{C\341mara con sensor de profundidad}{section.1.2}% 19
+\BOOKMARK [3][-]{subsubsection.1.2.4.1}{Dispositivos en el mercado}{subsection.1.2.4}% 20
+\BOOKMARK [3][-]{subsubsection.1.2.4.2}{Microsoft Kinect V2}{subsection.1.2.4}% 21
+\BOOKMARK [0][-]{chapter.2}{Planteamiento del problema}{}% 22
+\BOOKMARK [1][-]{section.2.1}{Objetivos}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.1.1}{Objetivo general}{section.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.1.2}{Objetivos espec\355ficos}{section.2.1}% 25
+\BOOKMARK [1][-]{section.2.2}{Hip\363tesis}{chapter.2}% 26
+\BOOKMARK [1][-]{section.2.3}{Variables}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.3.1}{Variables dependientes}{section.2.3}% 28
+\BOOKMARK [2][-]{subsection.2.3.2}{Variables independientes}{section.2.3}% 29
+\BOOKMARK [1][-]{section.2.4}{Alcances y limitaciones}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.5}{Aportes}{chapter.2}% 31
+\BOOKMARK [0][-]{chapter.3}{Metodolog\355a}{}% 32
+\BOOKMARK [1][-]{section.3.1}{Sujetos}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.1.1}{Primer tipo}{section.3.1}% 34
+\BOOKMARK [3][-]{subsubsection.3.1.1.1}{Equipo de animaci\363n de la Universidad Rafael Land\355var}{subsection.3.1.1}% 35
+\BOOKMARK [3][-]{subsubsection.3.1.1.2}{Equipo de tenis de mesa de la Universidad Rafael Land\355var}{subsection.3.1.1}% 36
+\BOOKMARK [3][-]{subsubsection.3.1.1.3}{Equipo de taekwondo de la Universidad Rafael Land\355var}{subsection.3.1.1}% 37
+\BOOKMARK [2][-]{subsection.3.1.2}{Segundo tipo}{section.3.1}% 38
+\BOOKMARK [2][-]{subsection.3.1.3}{Unidades de an\341lisis}{section.3.1}% 39
+\BOOKMARK [1][-]{section.3.2}{Instrumentos}{chapter.3}% 40
+\BOOKMARK [2][-]{subsection.3.2.1}{Formulario de registro de movimiento}{section.3.2}% 41
+\BOOKMARK [2][-]{subsection.3.2.2}{Formulario de registro de rutina}{section.3.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.3}{Interfaces de usuarios}{section.3.2}% 43
+\BOOKMARK [3][-]{subsubsection.3.2.3.1}{Windows presentation foundation \(WPF\)}{subsection.3.2.3}% 44
+\BOOKMARK [3][-]{subsubsection.3.2.3.2}{Web}{subsection.3.2.3}% 45
+\BOOKMARK [3][-]{subsubsection.3.2.3.3}{Consola \(Windows\)}{subsection.3.2.3}% 46
+\BOOKMARK [2][-]{subsection.3.2.4}{Kinect configuration verifier}{section.3.2}% 47
+\BOOKMARK [2][-]{subsection.3.2.5}{Kinect studio}{section.3.2}% 48
+\BOOKMARK [2][-]{subsection.3.2.6}{Visual Gesture Builder}{section.3.2}% 49
+\BOOKMARK [2][-]{subsection.3.2.7}{Herramienta para el an\341lisis de datos}{section.3.2}% 50
+\BOOKMARK [1][-]{section.3.3}{Procedimiento}{chapter.3}% 51
+\BOOKMARK [2][-]{subsection.3.3.1}{Selecci\363n del movimiento}{section.3.3}% 52
+\BOOKMARK [2][-]{subsection.3.3.2}{Toma de datos}{section.3.3}% 53
+\BOOKMARK [2][-]{subsection.3.3.3}{Documentaci\363n del movimiento}{section.3.3}% 54
+\BOOKMARK [3][-]{subsubsection.3.3.3.1}{Formularios de entradas de tenis de mesa}{subsection.3.3.3}% 55
+\BOOKMARK [3][-]{subsubsection.3.3.3.2}{Formularios de entradas de animaci\363n}{subsection.3.3.3}% 56
+\BOOKMARK [3][-]{subsubsection.3.3.3.3}{Formularios de entradas de taekwondo}{subsection.3.3.3}% 57
+\BOOKMARK [2][-]{subsection.3.3.4}{Etiquetaci\363n de v\355deos}{section.3.3}% 58
+\BOOKMARK [2][-]{subsection.3.3.5}{Construcci\363n y pruebas del modelo}{section.3.3}% 59
+\BOOKMARK [2][-]{subsection.3.3.6}{Selecci\363n y aceptaci\363n del modelo}{section.3.3}% 60
+\BOOKMARK [2][-]{subsection.3.3.7}{Extracci\363n de datos de los v\355deos}{section.3.3}% 61
+\BOOKMARK [2][-]{subsection.3.3.8}{Validaci\363n del modelo en tiempo real}{section.3.3}% 62
+\BOOKMARK [1][-]{section.3.4}{Dise\361o de la metodolog\355a}{chapter.3}% 63
+\BOOKMARK [2][-]{subsection.3.4.1}{Asignaci\363n de valores de etiquetas y rangos de identificaci\363n}{section.3.4}% 64
+\BOOKMARK [2][-]{subsection.3.4.2}{C\341lculo indirecto de la altura del usuario}{section.3.4}% 65
+\BOOKMARK [2][-]{subsection.3.4.3}{C\341lculo de distancia de profundidad m\355nima y m\341xima}{section.3.4}% 66
+\BOOKMARK [2][-]{subsection.3.4.4}{Eventos del Kinect}{section.3.4}% 67
+\BOOKMARK [2][-]{subsection.3.4.5}{Captura de datos durante una rutina \(normalizaci\363n de datos\)}{section.3.4}% 68
+\BOOKMARK [2][-]{subsection.3.4.6}{Validaci\363n del modelo de reconocimiento de movimiento}{section.3.4}% 69
+\BOOKMARK [2][-]{subsection.3.4.7}{Algoritmo clasificador de un movimiento v\341lido}{section.3.4}% 70
+\BOOKMARK [2][-]{subsection.3.4.8}{Dise\361o de los resultados de una rutina tabata}{section.3.4}% 71
+\BOOKMARK [1][-]{section.3.5}{Criterios del proyecto}{chapter.3}% 72
+\BOOKMARK [2][-]{subsection.3.5.1}{Criterios de selecci\363n de movimiento}{section.3.5}% 73
+\BOOKMARK [2][-]{subsection.3.5.2}{Criterios de an\341lisis de movimiento}{section.3.5}% 74
+\BOOKMARK [2][-]{subsection.3.5.3}{Criterios de etiquetaci\363n de movimiento}{section.3.5}% 75
+\BOOKMARK [2][-]{subsection.3.5.4}{Criterios de error del modelo}{section.3.5}% 76
+\BOOKMARK [2][-]{subsection.3.5.5}{Criterios de selecci\363n del submodelo}{section.3.5}% 77
+\BOOKMARK [2][-]{subsection.3.5.6}{Criterios de aceptaci\363n del modelo}{section.3.5}% 78
+\BOOKMARK [2][-]{subsection.3.5.7}{Criterios de aceptaci\363n del algoritmo clasificador}{section.3.5}% 79
+\BOOKMARK [0][-]{chapter.4}{Presentaci\363n y an\341lisis de resultados}{}% 80
+\BOOKMARK [1][-]{section.4.1}{Distancias de profundidades recomendadas entre el atleta y el sensor}{chapter.4}% 81
+\BOOKMARK [1][-]{section.4.2}{Muestras de fotogramas del movimiento}{chapter.4}% 82
+\BOOKMARK [1][-]{section.4.3}{Razones de fallo del seguimiento del esqueleto}{chapter.4}% 83
+\BOOKMARK [1][-]{section.4.4}{Proceso de etiquetaci\363n de un movimiento}{chapter.4}% 84
+\BOOKMARK [1][-]{section.4.5}{Modelo de detecci\363n de los pasos requeridos}{chapter.4}% 85
+\BOOKMARK [1][-]{section.4.6}{Clasificaciones de movimiento v\341lidos e inv\341lidos}{chapter.4}% 86
+\BOOKMARK [1][-]{section.4.7}{Interpretaci\363n de recognition}{chapter.4}% 87
+\BOOKMARK [1][-]{section.4.8}{El modelo de detecci\363n detecta los pasos del movimiento analizado}{chapter.4}% 88
+\BOOKMARK [1][-]{section.4.9}{Muestras de regresiones de los movimientos aprobados}{chapter.4}% 89
+\BOOKMARK [1][-]{section.4.10}{Interfaz de reconocimiento de un movimiento v\341lido}{chapter.4}% 90
+\BOOKMARK [1][-]{section.4.11}{Resultados de los sujetos de validaci\363n}{chapter.4}% 91
+\BOOKMARK [1][-]{section.4.12}{Validaci\363n del algoritmo clasificador, validados por los sujetos de validaci\363n}{chapter.4}% 92
+\BOOKMARK [0][-]{chapter.5}{Discusi\363n}{}% 93
+\BOOKMARK [0][-]{chapter.6}{Conclusiones finales del proyecto}{}% 94
+\BOOKMARK [1][-]{section.6.1}{Conclusiones}{chapter.6}% 95
+\BOOKMARK [1][-]{section.6.2}{Recomendaciones}{chapter.6}% 96
+\BOOKMARK [0][-]{chapter*.115}{Referencias}{}% 97
+\BOOKMARK [0][-]{section*.116}{Anexos}{}% 98
+\BOOKMARK [1][-]{section.Alph0.1}{Glosario y abreviaciones}{section*.116}% 99
+\BOOKMARK [1][-]{section.Alph0.2}{Formularios}{section*.116}% 100
+\BOOKMARK [1][-]{section.Alph0.3}{Ejercicios para calentamientos}{section*.116}% 101
+\BOOKMARK [1][-]{section.Alph0.4}{Hojas de observaciones}{section*.116}% 102
+\BOOKMARK [1][-]{section.Alph0.5}{Archivos de json de informaci\363n}{section*.116}% 103

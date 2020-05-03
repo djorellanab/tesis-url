@@ -21,7 +21,7 @@ En la siguiente tabla se muestra un resumen general de las caracter\'isticas de 
 \end{center}
 \end{table}
 \section{Muestras de fotogramas del movimiento} \label{res:fotogramas}
-En esta secci\'on se realiz\'o por cada equipo deportivo, una tabla en donde se muestra las  fotogramas del seguimiento del  esqueleto de cada atleta (utilizados para los entrenamientos y los testeos del algoritmo Random Forest Regression), con la finalidad de mostrar distintas formas correctas para ejecutar un paso (de acuerdo al profesional). As\'i mismo por cada fotograf\'ia se muestra cuatros elementos importantes:
+En esta secci\'on se realiz\'o por cada equipo deportivo, una tabla en donde se muestra los  fotogramas del seguimiento del  esqueleto de cada atleta (utilizados para los entrenamientos y los testeos del algoritmo Random Forest Regression), con la finalidad de mostrar distintas formas correctas para ejecutar un paso (de acuerdo al profesional). As\'i mismo por cada fotograf\'ia se muestra cuatros elementos importantes:
 \begin{itemize}
 \item El fondo de color negro.
 \item El piso representado por cuadros de colores grises.
@@ -58,7 +58,7 @@ El seguimiento del esqueleto es un elemento  fundamental en cada fotograma, sin 
 	 \begin{center}
 	\includegraphics[width=500px,height=270px]{graphics/resultados/Ishi-SeguimientoDeEsqueleto.PNG}	 \\
 	\end{center}
-	\textbf{Fuente:} Este diagrama fue realizado con base a las observaciones del trabajo de campo, la cual el investigador observ\'o los sucesos en que fallaban el seguimiento del esqueleto, como por ejemplo las interrupciones de personas (generaba dos o m\'as seguimientos de esqueletos) u objetos externos (interrupciones de pelotas de otros deportes), las fallas del hardware o software (falta de alimentaci\'on de energ\'ia), fallas en el ambiente que fue instalado el prototipo (exceso de calor, espacios cerrados, lluv\'ia, la iluminaci\'on incorrecta), fallas de la medici\'on (posici\'on del atleta o el sensor) y  fallas con respecto a la preparaci\'on del atleta (falta de calentamiento o impedimentos del salud del atleta, que conllevaba a realizar repeticiones no v\'alidas).
+	\textbf{Fuente:} Este diagrama fue realizado con base a las observaciones del trabajo de campo, la cual el investigador observ\'o los sucesos en que fallaban el seguimiento del esqueleto, como por ejemplo las interrupciones de personas (generaba dos o m\'as seguimientos de esqueletos) u objetos externos (interrupciones de pelotas de otros deportes), las fallas del hardware o software (falta de alimentaci\'on de energ\'ia), fallas en el ambiente que fue instalado el prototipo (exceso de calor, espacios cerrados, lluvia, la iluminaci\'on incorrecta), fallas de la medici\'on (posici\'on del atleta o el sensor) y  fallas con respecto a la preparaci\'on del atleta (falta de calentamiento o impedimentos del salud del atleta, que conllevaba a realizar repeticiones no v\'alidas).
 \end{figure}
 \end{landscape}
 \section{Proceso de etiquetaci\'on de un movimiento}
@@ -106,7 +106,7 @@ Por cada equipo deportivo se realiz\'o una tabla de informaci\'on del modelo de 
 \label{tab:chooseTaekwondo}
 \begin{tabular}{cccc}
 \hline
-\multicolumn{4}{|c|}{1. Datos de los errores de los submodelo} \\ \hline
+\multicolumn{4}{|c|}{1. Datos de los errores de los submodelos} \\ \hline
 \multicolumn{1}{|c|}{\textbf{Submodelo}} & \multicolumn{1}{c|}{\textbf{EMP}} & \multicolumn{1}{c|}{\textbf{DMA}} & \multicolumn{1}{c|}{\textbf{RECM}} \\ \hline
 \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{-0,03543} & \multicolumn{1}{c|}{0,301911} & \multicolumn{1}{c|}{+/-0,374544} \\ \hline
 \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{0,050888} & \multicolumn{1}{c|}{0,297433} & \multicolumn{1}{c|}{+/-0,393153} \\ \hline
@@ -218,7 +218,7 @@ Estos resultados demuestran lo siguiente:
 \end{tabular}
 \end{center}
 \end{table}
-De igual manera, se an\'aliza si el algoritmo de clasificaci\'on es aceptable, bas\'andose en los porcentajes de referencias v\'alidas e inv\'alidas (determinados a partir de las posibles combinaciones de una repetici\'on inv\'alida y una repetici\'on v\'alida), lo cual se busca mejorar el porcentaje de referencia v\'alidas y por  consiguiente disminuir el porcentaje de referencia inv\'alidas:
+De igual manera, se analiza si el algoritmo de clasificaci\'on es aceptable, bas\'andose en los porcentajes de referencias v\'alidas e inv\'alidas (determinados a partir de las posibles combinaciones de una repetici\'on inv\'alida y una repetici\'on v\'alida), lo cual se busca mejorar el porcentaje de referencia v\'alidas y por  consiguiente disminuir el porcentaje de referencia inv\'alidas:
 \begin{table}[H]
 \begin{center}
 \caption{Aceptaci\'on del modelo de clasificaci\'on del equipo de animaci\'on}
@@ -401,7 +401,7 @@ Estos resultados demuestran si el algoritmo funciona de acuerdo a un pron\'ostic
 \item El pron\'ostico de repeticiones totales de los sujetos de validaci\'on (de acuerdo al tiempo m\'aximo de una repetici\'on de lo sujetos de pruebas y el tiempo de trabajo de la rutina tabata).
 \item El porcentaje de repeticiones v\'alidas de cada movimiento deportivo (ver secci\'on de clasificaciones de movimientos v\'alidos e inv\'alidos).
 \item El pron\'ostico de repeticiones v\'alidas de cada sujeto de validaci\'on (determinado a partir del porcentaje de repeticiones v\'alidas y el total de repeticiones pronosticadas).
-\item Las repeticiones promedios por cada serie que realiz\'o el sujeto de validaci\'on durante su rutina de tabata (ver secci\'on de resultados de los sujetos de validaci\'on).
+\item Las repeticiones promedias por cada serie que realiz\'o el sujeto de validaci\'on durante su rutina de tabata (ver secci\'on de resultados de los sujetos de validaci\'on).
 \item  Ajuste del porcentaje de repetici\'on v\'alidas, la cual compara las repeticiones realizadas respecto a las pronosticadas.
 \end{itemize}
 \medbreak

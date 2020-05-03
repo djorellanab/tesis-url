@@ -1,0 +1,39 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Comparaci\'on de trabajos relacionados con el sensor Kinect\relax }}{7}{table.caption.1}% 
+\contentsline {table}{\numberline {1.2}{\ignorespaces Comparaci\'on de especificaciones entre c\'amaras de RGB-D \relax }}{15}{table.caption.9}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Definiciones de variables dependientes\relax }}{31}{table.caption.24}% 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Definiciones de variables Independientes\relax }}{32}{table.caption.25}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Muestra del equipo de animadoras\relax }}{36}{table.caption.26}% 
+\contentsline {table}{\numberline {3.2}{\ignorespaces Muestra del equipo de tenis de mesa\relax }}{36}{table.caption.27}% 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Muestra del equipo de taekwondo\relax }}{37}{table.caption.28}% 
+\contentsline {table}{\numberline {3.4}{\ignorespaces Validaci\'on cruzada, 3-fold de tenis de mesa\relax }}{68}{table.caption.66}% 
+\contentsline {table}{\numberline {3.5}{\ignorespaces Validaci\'on cruzada, 3-fold de animaci\'on\relax }}{69}{table.caption.67}% 
+\contentsline {table}{\numberline {3.6}{\ignorespaces Validaci\'on cruzada, 3-fold de taekwondo\relax }}{69}{table.caption.68}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Distancias de profundidades recomendadas para el funcionamiento del seguimiento del esqueleto\relax }}{83}{table.caption.87}% 
+\contentsline {table}{\numberline {4.2}{\ignorespaces Etiquetaci\'on de fotogramas del equipo de tenis de mesa\relax }}{88}{table.caption.92}% 
+\contentsline {table}{\numberline {4.3}{\ignorespaces Etiquetaci\'on de fotogramas del equipo de animaci\'on\relax }}{89}{table.caption.93}% 
+\contentsline {table}{\numberline {4.4}{\ignorespaces Etiquetaci\'on de fotogramas del equipo de taekwondo\relax }}{89}{table.caption.94}% 
+\contentsline {table}{\numberline {4.5}{\ignorespaces Modelos y pruebas del equipo de Taekwondo\relax }}{90}{table.caption.95}% 
+\contentsline {table}{\numberline {4.6}{\ignorespaces Modelos y pruebas del equipo de tenis de mesa \relax }}{91}{table.caption.96}% 
+\contentsline {table}{\numberline {4.7}{\ignorespaces Modelos y pruebas del equipo de animaci\'on\relax }}{91}{table.caption.97}% 
+\contentsline {table}{\numberline {4.8}{\ignorespaces C\'alculo de movimientos v\'alidos e inv\'alidos del equipo de animaci\'on\relax }}{92}{table.caption.98}% 
+\contentsline {table}{\numberline {4.9}{\ignorespaces C\'alculo de movimientos v\'alidos e inv\'alidos del equipo de tenis de mesa\relax }}{92}{table.caption.99}% 
+\contentsline {table}{\numberline {4.10}{\ignorespaces Aceptaci\'on del modelo de clasificaci\'on del equipo de animaci\'on\relax }}{93}{table.caption.100}% 
+\contentsline {table}{\numberline {4.11}{\ignorespaces Aceptaci\'on del modelo de clasificaci\'on del equipo de tenis de mesa\relax }}{93}{table.caption.101}% 
+\contentsline {table}{\numberline {4.12}{\ignorespaces Interpretaci\'on del valor de recognition del paso dos de un jumping jack\relax }}{94}{table.caption.102}% 
+\contentsline {table}{\numberline {4.13}{\ignorespaces Interpretaci\'on del valor de recognition del paso uno de un saque derecha\relax }}{94}{table.caption.103}% 
+\contentsline {table}{\numberline {4.14}{\ignorespaces Cuadro comparativo entre un jumping jack y saque derecha\relax }}{95}{table.caption.104}% 
+\contentsline {table}{\numberline {4.15}{\ignorespaces Detalle de la rutina tabata del equipo de tenis de mesa\relax }}{100}{table.caption.110}% 
+\contentsline {table}{\numberline {4.16}{\ignorespaces Detalle de la rutina tabata del equipo de animaci\'on\relax }}{101}{table.caption.112}% 
+\contentsline {table}{\numberline {4.17}{\ignorespaces Comparaci\'on del algoritmo clasificador del equipo de tenis de mesa, entre el valor pron\'osticado (dado por el tiempo m\'as largo de un saque derecha) y los resultados de los atletas de validaci\'on (usuarios que validaron el algoritmo en tiempo real)\relax }}{103}{table.caption.113}% 
+\contentsline {table}{\numberline {4.18}{\ignorespaces Comparaci\'on del algoritmo clasificador del equipo de animaci\'on, entre el valor pron\'osticado (dado por el tiempo m\'as largo de un jumping jack) y los resultados de los atletas de validaci\'on (usuarios que validaron el algoritmo en tiempo real) \relax }}{103}{table.caption.114}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.4.1}{\ignorespaces Ejemplo de observaciones de datos de profundidades entre el usuario y el Kinect\relax }}{122}{table.caption.124}% 
+\contentsline {table}{\numberline {A.4.2}{\ignorespaces Ejemplo de observaciones de los errores del modelo\relax }}{122}{table.caption.125}% 
+\contentsline {table}{\numberline {A.4.3}{\ignorespaces Ejemplo de extracci\'on de los datos de v\'ideo\relax }}{122}{table.caption.126}% 
+\contentsline {table}{\numberline {A.4.4}{\ignorespaces Ejemplo de clasificar repeticiones v\'alidas o invalidas del movimiento jumping jacks en un v\'ideo de testeo\relax }}{123}{table.caption.127}% 

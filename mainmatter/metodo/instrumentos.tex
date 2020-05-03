@@ -68,7 +68,7 @@ El desarrollador, \citeA{wpf2019}, menciona que este tipo de interfaz permite cr
 \begin{itemize}
 	\item \textbf{Windows inputs:} Herramienta que permite crear elementos de un formulario (e.g. botones, cajas de textos) \cite{wpfWindows2019}.
 	\item \textbf{Windows media:} Herramientas que permiten renderizar el seguimiento del esqueleto en tiempo real a partir de pinceles, colores, formas y dibujos \cite{WindowMedia2019}.
-	\item \textbf{Windows threading:} Herramientas que permiten crear temporizadores para la renderizaci\'on del seguimiento del esqueleto en un per\'iodo del tiempo (30 fotogramas por segundos) \cite{WindowThreading2019}.
+	\item \textbf{Windows threading:} Herramientas que permiten crear temporizadores para la renderizaci\'on del seguimiento del esqueleto en un per\'iodo de tiempo \cite{WindowThreading2019}.
 	\item \textbf{Kinect:} Herramientas que permiten acceder a las funcionalidades del sensor \cite{WindowKinect2019}, tales:
 	\begin{itemize}
 					\item \textbf{Body frame reader:} Obtiene la informaci\'on del seguimiento del esqueleto.
@@ -115,7 +115,7 @@ Dicha interfaz se divide en 13 componentes:
     \item Bot\'on que permite comenzar la rutina de tabata (en tiempo real).
    \item  Caja de texto num\'erica que indica la cantidad de tiempos de trabajos y descansos del atleta durante su rutina de tabata.
    \item  Caja de texto num\'erica que se\~nala el tiempo de descanso durante una rutina.
-   \item  Caja de texto n\'umerica que muestra el tiempo de trabajo durante una rutina (durante este tiempo, el atleta debe realizar la cantidad m\'axima de repeticiones).
+   \item  Caja de texto num\'erica que muestra el tiempo de trabajo durante una rutina (durante este tiempo, el atleta debe realizar la cantidad m\'axima de repeticiones).
    \item  Etiqueta de articulaci\'on de an\'alisis para medir la distancia de profundidad entre el atleta y el sensor.
    \item  Etiqueta de la altura  recomendada (en metros)  del sensor y el suelo.
       \item  Etiqueta de la distancia m\'inima y m\'axima de profundidad del atleta con respecto al sensor, y por otra parte indica la distancia profundidad actual del usuario y el sensor.
@@ -176,7 +176,7 @@ Interfaz de usuario que permite capturar la informaci\'on de los formularios de 
 \item \textbf{Angular 7:} Herramienta que facilita la creaci\'on y el mantenimiento de una aplicaci\'on web \cite{angular2019}.
 \item \textbf{Argon dashboard angular:} Herramienta  que facilita realizar una aplicaci\'on responsiva (adaptable a cualquier dispositivo a partir de un navegador web) \cite{argonDash}.
 \item \textbf{Express js:} Herramienta encargada de realizar la comunicaci\'on entre aplicaciones, a partir del \acrlong{HTTP} \cite{fileSistem2019}.
-\item \textbf{Mongoose:} Herramienta encargada de realizar cualquier operaci\'on de la base de datos de mongo (e.g. conexi\'on, recuperar datos, modificar registros) \cite{mongoose2019}.
+\item \textbf{Mongoose:} Herramienta encargada de realizar cualquier operaci\'on de la base de datos de mongo \cite{mongoose2019}.
 \end{itemize}
 \end{itemize}
 As\'i mismo la aplicaci\'on web est\'a conformada por 4 vistas:
@@ -227,7 +227,7 @@ Vista que se encarga de insertar toda la informaci\'on del movimiento, recuperad
 \item Caja de texto num\'erica que ingresa la distancia m\'inima de profundidad (ver formula \ref{frm:maxDepth}).
 \item Caja de texto num\'erica que ingresa la distancia m\'axima de profundidad (ver formula \ref{frm:minDepth}).
 \item Caja de texto num\'erica que ingresa la altura del Kinect con respecto al suelo (para el presente proyecto es de 0.70 metros, debido que es la altura de la mesa que daba soporte al sensor).
-\item Listado m\'ultiples de articulaciones que intervienen en el movimiento (recuperado del formulario de registro de rutinas, atributo de articulaciones no ignoradas).
+\item Listados m\'ultiples de articulaciones que intervienen en el movimiento (recuperado del formulario de registro de rutinas, atributo de articulaciones no ignoradas).
 \item Bot\'on que almacena toda la informaci\'on respectiva del formulario web.
 \end{enumerate}
 \paragraph{Vista de lectura de un movimiento}\mbox{} \\ \label{ins:UI:web:read}
@@ -327,8 +327,8 @@ Herramienta que genera datos para la detecci\'on de gestos en tiempo de ejecuci\
 \end{figure} 
 \begin{itemize}
 \item \textbf{Gesture name:} Nombre del movimiento  (Recuperado del formulario de registro de movimiento, atributo de nombre).
-\item \textbf{Body side:} Valor por defecto es  ninguno, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la replica de una patada lateral izquierda.
-\item \textbf{Gesture type:} El valor por defecto es RFRProgress (Algoritmo de Random Forest Regression), debido que est\'a analizando movimiento continuos (e.g. salto, patada, saque).
+\item \textbf{Body side:} Valor por defecto es  ninguno, debido que no importa el lado que se est\'a ejecutando el movimiento, en caso de que sea un movimiento unilateral, el modelo replica un modelo espejo, por ejemplo una patada lateral derecha es la r\'eplica de una patada lateral izquierda.
+\item \textbf{Gesture type:} El valor por defecto es RFRProgress (Algoritmo de Random Forest Regression), debido que est\'a analizando movimientos continuos (e.g. salto, patada, saque).
 \item \textbf{Duplicate and mirror data during training:} Se selecciona, si no es un \gls{MovUni} (Ver formulario de registro de movimiento, atributo unilateral), debido que replica datos de lado izquierdo al lado derecho y viceversa, por ejemplo en un salto.
 \item \textbf{User hand:} El valor de defecto es falso, debido que no se est\'a analizando el agarre de la mano ante un objeto (e.g. bal\'on, pesa, raqueta).
 \item \textbf{Ignore part body:} Se activan  aquellas partes del cuerpo que se desean ignorar durante el movimiento (Ver formulario de registro de movimiento, articulaciones ignoradas).

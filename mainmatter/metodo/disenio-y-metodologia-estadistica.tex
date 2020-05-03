@@ -427,8 +427,8 @@ Se presenta el algoritmo clasificador de repetici\'on de un movimiento v\'alido:
 \begin{enumerate}[1.]
 \item Asignar el paso siguiente como paso inicial (paso No.1), debido que marca el inicio de la repetici\'on. %1
 \item Capturar un nuevo fotograma del Kinect, y obtener el factor del movimiento del respectivo fotograma, a partir del algoritmo Random Forest Regression y la herramienta, Visual Gesture Builder. %2
-\item Verificar si el factor del movimiento se encuentra en alg\'un intervalo de confianza para obtener el paso detectado, en caso que no se encuentre, no devolver\'a ning\'un valor.  %3
-\item Verificar si el paso detectado tiene un valor, adem\'as de chequear que no sea un valor anterior (valor anterior del paso siguiente), en caso que no cumpla ambas condiciones, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
+\item Verificar si el factor del movimiento se encuentra en alg\'un intervalo de confianza para obtener el paso detectado, en caso de que no se encuentre, no devolver\'a ning\'un valor.  %3
+\item Verificar si el paso detectado tiene un valor, adem\'as de chequear que no sea un valor anterior (valor anterior del paso siguiente), en caso de que no cumpla ambas condiciones, se debe esperar a capturar un nuevo fotograma (Volver al proceso No.2). %4
 \item Verificar si el paso detectado es igual al paso siguiente, en caso que sea diferente se detect\'o una repetici\'on inv\'alida (saltar al proceso No. 9). %5
 \item Verificar si el paso detectado es el \'ultimo paso, en caso contrario (saltar al proceso No. 8) %6
 \item Finalizar algoritmo con repetici\'on v\'alida. %7 
